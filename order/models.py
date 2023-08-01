@@ -25,4 +25,22 @@ class Ramen(models.Model):
         (2, "Two"),
     )
 
-    
+    price = models.DecimalField(
+        max_digits=5, decimal_places=2, default=10.00)  # 22.12
+    ingredient_choice = models.IntegerField(
+        choices=INGREDIENT_CHOICES, default=1)
+    side_dish = models.IntegerField(choices=SIDE_DISH_CHOICES, default=1)
+    soup_choice = models.IntegerField(choices=SOUP_CHOICES, default=1)
+    noodle_choice = models.IntegerField(choices=NOODLE_CHOICES, default=1)
+
+    def __str__(self) -> str:
+        return "RAMEN"
+
+    def save(self, *args, **kwargs):
+        if self.ingredient_choice == 1:
+            self.price = decimal.Decimal(12)
+        if self.ingredient_choice == 2:
+            self.price = decimal.Decimal(13)
+        if self.ingredient_choice == 3:
+            self.price = decimal.Decimal(14)
+        super(Ramen, self).save(*args, **kwargs)
