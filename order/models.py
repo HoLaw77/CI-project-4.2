@@ -125,3 +125,13 @@ class Sushi(models.Model):
         if self.TEMAKI_SUSHI >= 6:
             self.price = decimal.Decimal(15)
         super(Sushi, self).save(*args, **kwargs)
+
+class Drinks(models.Model):
+    SAKE = (
+        (1, bottle)
+    )
+    BEER = (
+        (1, bottle)
+    )
+    CHOYA =
+    GREEN TEA = 
