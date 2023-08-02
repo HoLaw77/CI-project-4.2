@@ -149,6 +149,15 @@ class Drink(models.Model):
         (2, "None"),
     )
 
+    price = models.DecimalField(
+        max_digits=5, decimal_places=2, default=10.00)  # 22.12
+    SAKE = models.IntegerField(
+        choices=SAKE, default=1)
+    BEER = models.IntegerField(choices=BEER, default=1)
+    CHOYA = models.IntegerField(choices=CHOYA, default=1)
+    GREEN_TEA = models.IntegerField(choices=GREEN_TEA, default=1)
+    WATER = models.IntegerField(choices=WATER, default=1)
+    
     def __str__(self) -> str:
         return "DRINK"
 
