@@ -126,12 +126,20 @@ class Sushi(models.Model):
             self.price = decimal.Decimal(15)
         super(Sushi, self).save(*args, **kwargs)
 
-class Drinks(models.Model):
+
+class Drink(models.Model):
     SAKE = (
-        (1, bottle)
+        (1, "bottle"),
     )
     BEER = (
-        (1, bottle)
+        (1, "bottle"),
     )
-    CHOYA =
-    GREEN TEA = 
+    CHOYA = (
+        (1, "bottle"),
+    )
+    GREEN_TEA = (
+        (1, "cup"),
+    )
+    WATER = (
+        (1, "cup")
+    )
