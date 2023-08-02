@@ -157,7 +157,7 @@ class Drink(models.Model):
     CHOYA = models.IntegerField(choices=CHOYA, default=1)
     GREEN_TEA = models.IntegerField(choices=GREEN_TEA, default=1)
     WATER = models.IntegerField(choices=WATER, default=1)
-    
+
     def __str__(self) -> str:
         return "DRINK"
 
@@ -171,3 +171,14 @@ class Drink(models.Model):
         if self.WATER == "cup":
             self.price = decimal.Decimal(0)
         super(Drink, self).save(*args, **kwargs)
+
+
+class Order(models.Model):
+    ramen = models.ForeignKey(
+        Ramen, related_name="orders", on_delete=models.CASCADE)
+    sushi = models.ForeignKey(
+        Sushi, related_name="orders", on_delete=models.CASCADE)
+    drink = models.ForeignKey(
+        Drink, related_name="orders", on_delete=models.CASCADE)
+    total_price = models.DecimalField(
+        max_digits=6, decimal_places=2, default=0.00)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Ramen, Sushi, Drink
+from .models import Ramen, Sushi, Drink, Order
 # Register your models here.
 
 
