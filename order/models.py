@@ -130,16 +130,35 @@ class Sushi(models.Model):
 class Drink(models.Model):
     SAKE = (
         (1, "bottle"),
+        (2, "None"),
     )
     BEER = (
         (1, "bottle"),
+        (2, "None"),
     )
     CHOYA = (
         (1, "bottle"),
+        (2, "None"),
     )
     GREEN_TEA = (
         (1, "cup"),
+        (2, "None"),
     )
     WATER = (
-        (1, "cup")
+        (1, "cup"),
+        (2, "None"),
     )
+
+    def __str__(self) -> str:
+        return "DRINK"
+
+    def save(self, *args, **kwargs):
+        if self.SAKE == "bottle":
+            self.price = decimal.Decimal(12)
+        if self.CHOYA == "bottle":
+            self.price = decimal.Decimal(12)
+        if self.GREEN_TEA == "cup":
+            self.price = decimal.Decimal(5)
+        if self.WATER == "cup":
+            self.price = decimal.Decimal(0)
+        super(Drink, self).save(*args, **kwargs)
