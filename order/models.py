@@ -1,5 +1,5 @@
 from django.db import models
-
+import decimal
 # Create your models here.
 
 
@@ -114,7 +114,7 @@ class Sushi(models.Model):
             self.price = decimal.Decimal(15)
         if self.INARI_SUSHI <= 3:
             self.price = decimal.Decimal(12)
-        if self.INAKI_SUSHI >= 6:
+        if self.INARI_SUSHI >= 6:
             self.price = decimal.Decimal(15)
         if self.MAKI_SUSHI <= 3:
             self.price = decimal.Decimal(12)
