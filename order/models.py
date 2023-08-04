@@ -4,10 +4,11 @@ import decimal
 
 
 class Ramen(models.Model):
-    INGREDIENT_CHOICES = (
+    TOPPINGS_CHOICES = (
         (1, "Egg"),
-        (2, "Chicken"),
+        (2, "Sea weed"),
         (3, "Pork"),
+        (4, "Garlic"),
     )
 
     SIDE_DISH_CHOICES = (
@@ -16,8 +17,10 @@ class Ramen(models.Model):
     )
 
     SOUP_CHOICES = (
-        (1, "Beef soup"),
-        (2, "Pork soup"),
+        (1, "pork bones soup"),
+        (2, "Salt soup"),
+        (3, "miso soup"),
+        (4, "soy sauce soup")
     )
 
     NOODLE_CHOICES = (
@@ -27,8 +30,8 @@ class Ramen(models.Model):
 
     price = models.DecimalField(
         max_digits=5, decimal_places=2, default=10.00)  # 22.12
-    ingredient_choice = models.IntegerField(
-        choices=INGREDIENT_CHOICES, default=1)
+    toppings_choice = models.IntegerField(
+        choices=TOPPINGS_CHOICES, default=3)
     side_dish = models.IntegerField(choices=SIDE_DISH_CHOICES, default=1)
     soup_choice = models.IntegerField(choices=SOUP_CHOICES, default=1)
     noodle_choice = models.IntegerField(choices=NOODLE_CHOICES, default=1)
