@@ -40,11 +40,11 @@ class Ramen(models.Model):
         return "RAMEN"
 
     def save(self, *args, **kwargs):
-        if self.ingredient_choice == 1:
+        if self.toppings_choice == 1:
             self.price = decimal.Decimal(12)
-        if self.ingredient_choice == 2:
+        if self.toppings_choice == 2:
             self.price = decimal.Decimal(13)
-        if self.ingredient_choice == 3:
+        if self.toppings_choice == 3:
             self.price = decimal.Decimal(14)
         super(Ramen, self).save(*args, **kwargs)
 
