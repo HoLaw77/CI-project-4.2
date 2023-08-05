@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Sum
 import decimal
 # Create your models here.
 
@@ -12,8 +13,13 @@ class Ramen(models.Model):
     )
 
     SIDE_DISH_CHOICES = (
-        (1, "Pork dumpling"),
-        (2, "Beef dumpling"),
+        (1, "Gyoza dumpling"),
+        (2, "Edamame beans"),
+        (3, "Yakitori skewers (chicken, beef)"),
+        (4, "Tempura (Chilli squid )"),
+        (5, "kimchi"),
+        (6, "fried chicken"),
+        (7, "None"),
     )
 
     SOUP_CHOICES = (
@@ -23,18 +29,12 @@ class Ramen(models.Model):
         (4, "soy sauce soup")
     )
 
-    NOODLE_CHOICES = (
-        (1, "One"),
-        (2, "Two"),
-    )
-
     price = models.DecimalField(
         max_digits=5, decimal_places=2, default=10.00)  # 22.12
     toppings_choice = models.IntegerField(
         choices=TOPPINGS_CHOICES, default=3)
     side_dish = models.IntegerField(choices=SIDE_DISH_CHOICES, default=1)
     soup_choice = models.IntegerField(choices=SOUP_CHOICES, default=1)
-    noodle_choice = models.IntegerField(choices=NOODLE_CHOICES, default=1)
 
     def __str__(self) -> str:
         return "RAMEN"
@@ -51,18 +51,18 @@ class Ramen(models.Model):
 
 class Sushi(models.Model):
     NIGIRI_SUSHI = (
-        (1, "raw Salmon"),
-        (2, "raw Tuna"),
-        (3, "shrimp"),
-        (4, "sea urchin (Uni)"),
-        (5, "Ikura"),
-        (6, "Amberjack"),
+        (1, "raw Salmon x 3 "),
+        (2, "raw Tuna  x 3 "),
+        (3, "shrimp  x 3 "),
+        (4, "sea urchin (Uni)  x 3 "),
+        (5, "Ikura  x 3 "),
+        (6, "Amberjack  x 3 "),
         (7, "None"),
 
     )
 
     INARI_SUSHI = (
-        (1, "Inari Sushi"),
+        (1, "Inari Sushi  x 3 "),
         (2, "None"),
 
     )
@@ -75,10 +75,10 @@ class Sushi(models.Model):
     )
 
     TEMAKI_SUSHI = (
-        (1, " with Crab Stick, carrot and cucumber"),
-        (2, "With shrimp and cucumber"),
-        (3, "With Ikura, egg, and salad vegetables"),
-        (4, "With salmon"),
+        (1, " with Crab Stick, carrot and cucumber  x 3 "),
+        (2, "With shrimp and cucumber  x 3 "),
+        (3, "With Ikura, egg, and salad vegetables  x 3 "),
+        (4, "With salmon  x 3 "),
         (5, "None")
     )
 
