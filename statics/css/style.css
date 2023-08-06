@@ -2,11 +2,17 @@
     font-family: Noto Sans Japanese;
     color: white;
     text-align: center;
+    padding-top: 10px;
+    font-size: 200%;
 }
 
 .header>img {
-    border: 4px;
+    border-radius: 1px;
     object-fit: scale-down;
+}
+
+.red-cloud {
+    padding-left: 50px;
 }
 
 .header {
