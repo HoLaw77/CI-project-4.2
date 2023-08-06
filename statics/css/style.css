@@ -2,18 +2,17 @@
     font-family: Noto Sans Japanese;
     color: white;
     text-align: center;
-    padding-top: 10px;
-    font-size: 200%;
-}
-
-.header>img {
-    border-radius: 1px;
-    object-fit: scale-down;
+    padding-top: 40px;
+    font-size: 400%;
 }
 
 .red-cloud {
+    border-radius: 1px;
+    padding-bottom: 50px;
     padding-left: 50px;
+
 }
+
 
 .header {
     background-color: black;
