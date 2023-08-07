@@ -6,10 +6,23 @@
     font-size: 400%;
 }
 
-.red-cloud {
-    border-radius: 1px;
+.red-cloud>img {
+    border-radius: 40px;
     padding-bottom: 50px;
     padding-left: 50px;
+    font-size: 400%;
+    width: 300px;
+    height: 100%;
+
+}
+
+button {
+    width: 200px;
+    height: 100px;
+    background-color: black;
+    color: white;
+    border-color: white;
+
 
 }
 
