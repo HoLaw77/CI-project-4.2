@@ -40,13 +40,19 @@
   <body>
     <nav class="header">
       <h1>Sushi and Ramen Bar</h1>
-      <div class="container-sm red-cloud col-5">
-        <img src="/images/japan-red-cloud.png" alt="header photo" />
-
-        <button>
-          <p>confirm order</p>
-          <i class="fa-solid fa-cart-shopping"></i>
-        </button>
+      <div class="container red-cloud">
+        <div class="row">
+          <img
+            src="/images/japan-red-cloud.png"
+            alt="header photo"
+            class="col-sm-3"
+          />
+          <div class="col-md-5"></div>
+          <button class="col-md-3">
+            <p>confirm order</p>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+        </div>
       </div>
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
@@ -54,48 +60,53 @@
         crossorigin="anonymous"
       ></script>
     </nav>
-    <div class="dropdown col-6">
-      <button
-        id="showSushiMenu"
-        class="btn btn-secondary dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        Sushi
-      </button>
-      <div
-        id="ramendropdown-content"
-        class="dropdown-menu"
-        aria-labelledby="dropdownMenuButton"
-      >
-        <a href="#" class="dropdown-item">Nigiri Sushi</a>
-        <a href="#" class="dropdown-item">Inari Sushi</a>
-        <a href="#" class="dropdown-item">Maki Sushi</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button
-        id="showRamenMenu"
-        class="btn btn-secondary dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <p>Ramen</p>
-      </button>
-      <div
-        id="ramendropdown-content"
-        class="dropdown-menu"
-        aria-labelledby="dropdownMenuButton"
-      >
-        <a href="#" class="dropdown-item">Nigiri Sushi</a>
-        <a href="#" class="dropdown-item">Inari Sushi</a>
-        <a href="#" class="dropdown-item">Maki Sushi</a>
+    <div class="dropdown container">
+      <div class="row">
+        <div class="col-md-6">
+          <button
+            id="showSushiMenu"
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Sushi
+          </button>
+
+          <div
+            id="ramendropdown-content"
+            class="dropdown-menu"
+            aria-labelledby="dropdownMenuButton"
+          >
+            <a href="#" class="dropdown-item">Nigiri Sushi</a>
+            <a href="#" class="dropdown-item">Inari Sushi</a>
+            <a href="#" class="dropdown-item">Maki Sushi</a>
+          </div>
+        </div>
+      
+      <div class="dropdown">
+        <button
+          id="showRamenMenu"
+          class="btn btn-secondary dropdown-toggle col-md-5"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <p>Ramen</p>
+        </button>
+        <div
+          id="ramendropdown-content"
+          class="dropdown-menu"
+          aria-labelledby="dropdownMenuButton"
+        >
+          <a href="#" class="dropdown-item">Nigiri Sushi</a>
+          <a href="#" class="dropdown-item">Inari Sushi</a>
+          <a href="#" class="dropdown-item">Maki Sushi</a>
+        </div>
       </div>
     </div>
 
