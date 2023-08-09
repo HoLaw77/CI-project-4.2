@@ -34,27 +34,29 @@
         crossorigin="anonymous"
       ></script>
     </nav>
-    <div class="sushi-drop-down">
-      <label for="Sushi"> Sushi</label>
-      <select name="sushi">
-        <option>Nigiri Sushi</option>
-        <option>Inari Sushi</option>
-        <option>Maki Sushi</option>
-      </select>
+    <div class="dropdown">
+      <button onclick="showSushiMenu()" class="dropbtn">Sushi</button>
+      <div id="sushidropdown-content" class="dropdown-content">
+        <a href="#">Nigiri Sushi</a>
+        <a href="#">Inari Sushi</a>
+        <a href="#">Maki Sushi</a>
+      </div>
     </div>
-    <div class="ramen-drop-down">
-      <label for="ramen"> Ramen</label>
-      <select name="sushi">
-        <option>Nigiri Sushi</option>
-        <option>Inari Sushi</option>
-        <option>Maki Sushi</option>
-      </select>
+    <div class="dropdown">
+      <button onclick="showRamenMenu()" class="dropbtn">Ramen</button>
+      <div id="ramendropdown-content" class="dropdown-content">
+        <a href="#">Nigiri Sushi</a>
+        <a href="#">Inari Sushi</a>
+        <a href="#">Maki Sushi</a>
+      </div>
     </div>
+
     <footer>
       <a>FB</a>
       <a>IG</a>
       <a>Youtube</a>
       <a>Twitter</a>
     </footer>
+    <link rel="script" href="/statics/js/script.js" />
   </body>
 </html>
