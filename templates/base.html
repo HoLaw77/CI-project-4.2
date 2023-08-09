@@ -20,13 +20,17 @@
     />
     <script src="main.js"></script>
   </head>
+
   <body>
     <nav class="header">
       <h1>Sushi and Ramen Bar</h1>
       <div class="container-sm red-cloud col-5">
         <img src="/images/japan-red-cloud.png" alt="header photo" />
 
-        <button>confirm order</button>
+        <button>
+          <p>confirm order</p>
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
       </div>
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
@@ -35,7 +39,7 @@
       ></script>
     </nav>
     <div class="dropdown">
-      <button onclick="showSushiMenu()" class="dropbtn">Sushi</button>
+      <button id="showSushiMenu" class="dropbtn">Sushi</button>
       <div id="sushidropdown-content" class="dropdown-content">
         <a href="#">Nigiri Sushi</a>
         <a href="#">Inari Sushi</a>
@@ -43,7 +47,7 @@
       </div>
     </div>
     <div class="dropdown">
-      <button onclick="showRamenMenu()" class="dropbtn">Ramen</button>
+      <button id="showRamenMenu" class="dropbtn">Ramen</button>
       <div id="ramendropdown-content" class="dropdown-content">
         <a href="#">Nigiri Sushi</a>
         <a href="#">Inari Sushi</a>
@@ -58,5 +62,9 @@
       <a>Twitter</a>
     </footer>
     <link rel="script" href="/statics/js/script.js" />
+    <script
+      src="https://kit.fontawesome.com/086085115e.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

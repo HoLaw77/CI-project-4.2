@@ -1,9 +1,5 @@
-function showSushiMenu() {
-    document.getElementById("sushidropdown-content").classList.toggle("show");
-}
+window.getElementById("showSushiMenu").addEventListener("click",
+    function showSushiMenu() {
 
-
-
-function showRamenMenu() {
-    document.getElementById("ramendropdown-content").classList.toggle("show");
-}
+    }
+);

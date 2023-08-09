@@ -56,3 +56,7 @@ button {
 .show {
     display: block;
 }
+
+i {
+    font-size: 200%;
+}
