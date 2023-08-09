@@ -35,27 +35,7 @@ button {
     background-color: black;
 }
 
-.dropdown-content {
-    display: none;
 
-}
-
-.dropdown-content a {
-    display: block;
-
-}
-
-.dropdown-content {
-    display: none;
-}
-
-.dropdown-content a {
-    display: block;
-}
-
-.show {
-    display: block;
-}
 
 i {
     font-size: 200%;
