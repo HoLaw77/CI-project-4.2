@@ -39,7 +39,9 @@
       ></script>
     </nav>
     <div class="dropdown">
-      <button id="showSushiMenu" class="dropbtn">Sushi</button>
+      <button id="showSushiMenu" class="dropbtn" onclick="showSushiMenu()">
+        Sushi
+      </button>
       <div id="sushidropdown-content" class="dropdown-content">
         <a href="#">Nigiri Sushi</a>
         <a href="#">Inari Sushi</a>
@@ -47,11 +49,25 @@
       </div>
     </div>
     <div class="dropdown">
-      <button id="showRamenMenu" class="dropbtn">Ramen</button>
-      <div id="ramendropdown-content" class="dropdown-content">
-        <a href="#">Nigiri Sushi</a>
-        <a href="#">Inari Sushi</a>
-        <a href="#">Maki Sushi</a>
+      <button
+        id="showRamenMenu"
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Ramen
+      </button>
+      <div
+        id="ramendropdown-content"
+        class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton"
+      >
+        <a href="#" class="dropdown-item">Nigiri Sushi</a>
+        <a href="#" class="dropdown-item">Inari Sushi</a>
+        <a href="#" class="dropdown-item">Maki Sushi</a>
       </div>
     </div>
 
