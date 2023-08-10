@@ -47,3 +47,31 @@ button {
 i {
     font-size: 200%;
 }
+
+.menu-text {
+    font-size: 200%;
+}
+
+/* footer */
+
+footer {
+    background-color: black;
+    height: 200px;
+    width: 100%;
+    padding-top: 50px;
+}
+
+.social-media-text {
+    color: white;
+
+}
+
+.social-media-icon {
+    text-align: center;
+}
+
+.social-media-icon>li {
+    display: inline;
+    padding: 10%;
+    padding-top: 20px;
+}

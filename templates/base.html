@@ -61,44 +61,23 @@
       ></script>
     </nav>
     <div class="dropdown container">
+        <div class="row menu-photo">
+            <img src="/images/sushi.jpg" class="col-lg-6 offset-0">
+            <img src="/images/ramen.jpg" class="col-lg-6 offset-0">
+        </div>
       <div class="row">
-        <div class="col-lg-6 offset-0">
-          <button
-            id="showSushiMenu"
-            class="btn btn-secondary dropdown-toggle"
-            type="button"
-            id="dropdownMenuButton"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Sushi
-          </button>
-
-          <div
-            id="ramendropdown-content"
-            class="dropdown-menu"
-            aria-labelledby="dropdownMenuButton"
-          >
-            <a href="#" class="dropdown-item">Nigiri Sushi</a>
-            <a href="#" class="dropdown-item">Inari Sushi</a>
-            <a href="#" class="dropdown-item">Maki Sushi</a>
-          </div>
-        
-      </div>
-      <div class="col-lg-6 offset-0">
-      <div class="dropdown">
         <button
-          id="showRamenMenu"
-          class="btn btn-secondary dropdown-toggle col-md-5"
+          id="showSushiMenu"
+          class="btn btn-dark dropdown-toggle col-lg-6 offset-0"
           type="button"
           id="dropdownMenuButton"
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
         >
-          <p>Ramen</p>
+         <p class="menu-text"> Sushi </p>
         </button>
+
         <div
           id="ramendropdown-content"
           class="dropdown-menu"
@@ -108,34 +87,65 @@
           <a href="#" class="dropdown-item">Inari Sushi</a>
           <a href="#" class="dropdown-item">Maki Sushi</a>
         </div>
-      </div>
-    </div>
-    </div>
-
-    <div class="dropdown container">
-        <div class="row">
+      
       <button
-        class="btn btn-secondary dropdown-toggle"
+        id="showRamenMenu"
+        class="btn btn-dark dropdown-toggle col-lg-6 offset-0"
         type="button"
         id="dropdownMenuButton"
         data-toggle="dropdown"
         aria-haspopup="true"
         aria-expanded="false"
       >
-        <p>Drink</p>
+        <p class="menu-text">Ramen</p>
       </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
+      <div
+        id="ramendropdown-content"
+        class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton"
+      >
+        <a href="#" class="dropdown-item">Nigiri Sushi</a>
+        <a href="#" class="dropdown-item">Inari Sushi</a>
+        <a href="#" class="dropdown-item">Maki Sushi</a>
       </div>
     </div>
+
+    <div class="dropdown container">
+        <div class="row menu-photo">
+            <img src="/images/sake.jpg" class="col-lg-4 offset-0">
+            <img src="/images/beer.jpg" class="col-lg-4 offset-0">
+            <img src="/images/choya.jpg" class="col-lg-4 offset-0">
+        </div>
+      <div class="row">
+        <button
+          class="btn btn-dark dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <p class="menu-text">Drink</p>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
     </div>
     <footer>
-      <a>FB</a>
-      <a>IG</a>
-      <a>Youtube</a>
-      <a>Twitter</a>
+        <div class="map container">
+            <div class="row">
+                
+            </div>
+        </div>
+    <ul class=" social-media-icon">
+    <li><a href="#" class="social-media-text"><i class="fa-brands fa-facebook"></i></a></li>
+    <li><a href="#" class="social-media-text"><i class="fa-brands fa-instagram"></i></a></li>
+    <li> <a href="#" class="social-media-text"><i class="fa-brands fa-youtube"></i></a></li>
+    <li><a href="#" class="social-media-text"><i class="fa-brands fa-twitter"></i></a></li>
+    </ul>
     </footer>
     <link rel="script" href="/statics/js/script.js" />
     <script
