@@ -1,1 +1,79 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+
+{% block content %}
+
+ <div class="container">
+        <div class="row menu-photo">
+            <img src="/images/sushi.jpg" class="col-lg-6 offset-0" />
+            <img src="/images/ramen.jpg" class="col-lg-6 offset-0" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="dropdown container offset-0">
+            <div class="dropdown container column">
+                <button id="showSushiMenu" class="btn btn-dark dropdown-toggle column offset-0" type="button"
+                    id="sushi-dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <p class="menu-text">Sushi</p>
+                </button>
+
+                <div id="sushidropdown-content" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a href="#" class="dropdown-item">Nigiri Sushi</a>
+                    <a href="#" class="dropdown-item">Inari Sushi</a>
+                    <a href="#" class="dropdown-item">Maki Sushi</a>
+                </div>
+            </div>
+        
+    
+
+
+             <div class="dropdown container offset-0">
+                <div class="dropdown container column">
+                    <button id="showRamenMenu" class="btn btn-dark dropdown-toggle column offset-0" type="button"
+                        id="ramen-dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <p class="menu-text">Ramen</p>
+                    </button>
+                    <div id="ramendropdown-content" class="dropdown-menu"
+                        aria-labelledby="ramen-ramen-dropdownMenuButton">
+                        <a href="#" class="dropdown-item">Toppings</a>
+                        <a href="#" class="dropdown-item">Soup</a>
+                        <a href="#" class="dropdown-item">Side dish</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+        
+    
+
+            <div class="dropdown container">
+                <div class="row menu-photo">
+                    <img src="/images/sake.jpg" class="col-lg-4 offset-0" />
+                    <img src="/images/beer.jpg" class="col-lg-4 offset-0" />
+                    <img src="/images/choya.jpg" class="col-lg-4 offset-0" />
+                </div>
+                <div class="row">
+                    <button class="btn btn-dark dropdown-toggle column" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <p class="menu-text">Drink</p>
+                    </button>
+                    <div class="dropdown-menu" aria-lab="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Beer</a>
+                        <a class="dropdown-item" href="#">choya</a>
+                        <a class="dropdown-item" href="#">Sake</a>
+                        <a class="dropdown-item" href="#">Green Tea</a>
+                        <a class="dropdown-item" href="#">Water</a>
+                    </div>
+                </div>
+            </div>
+            <div class="map container">
+                <div class="row">
+                    <h2 class="map-text">Where to find Us</h2>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d18850.05819363752!2d-1.5648755!3d53.802705599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1szh-TW!2suk!4v1691784957560!5m2!1szh-TW!2suk"
+                        width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+{%endblock%}

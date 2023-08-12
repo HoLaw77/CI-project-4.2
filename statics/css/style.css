@@ -16,6 +16,7 @@
     content: "";
     display: table;
     clear: both;
+    padding: clear;
 }
 
 .red-cloud>img {
