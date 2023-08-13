@@ -6,6 +6,11 @@
     font-size: 400%;
 }
 
+.confirm-text {
+    font-family: "Kanit", sans-serif;
+    font-size: 200%;
+}
+
 .column {
     float: left;
     width: 50%;
@@ -54,6 +59,7 @@ i {
 
 .menu-text {
     font-size: 200%;
+    font-family: "Kanit", sans-serif;
 }
 
 .btn .btn-dark .dropdown-toggle {
