@@ -1,9 +1,8 @@
-{% extends "base.html" %} {% block content %}
-
+{% extends "base.html" %} {% block content %} {% load static %}
 <div class="container">
   <div class="row menu-photo">
-    <img src="/images/sushi.jpg" class="col-lg-6 offset-0" />
-    <img src="/images/ramen.jpg" class="col-lg-6 offset-0" />
+    <img src="{% static 'images/sushi.jpg'%}" class="col-lg-6 offset-0" />
+    <img src="{% static 'images/ramen.jpg'%}" class="col-lg-6 offset-0" />
   </div>
 </div>
 <div class="row">
@@ -61,9 +60,9 @@
 
 <div class="dropdown container">
   <div class="row menu-photo">
-    <img src="/images/sake.jpg" class="col-lg-4 offset-0" />
-    <img src="/images/beer.jpg" class="col-lg-4 offset-0" />
-    <img src="/images/choya.jpg" class="col-lg-4 offset-0" />
+    <img src="{% static '/images/sake.jpg' %}" class="col-lg-4 offset-0" />
+    <img src="{% static '/images/beer.jpg' %}" class="col-lg-4 offset-0" />
+    <img src="{% static 'images/choya.jpg' %}" class="col-lg-4 offset-0" />
   </div>
   <div class="row">
     <button

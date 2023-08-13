@@ -9,8 +9,7 @@ def HttpResponde(request):
     return render(request, 'templates/index.html')
 
 
-class SushiList (generic.ListView):
+class SushiList(generic.ListView):
     model = Sushi
-    queryset = Sushi.object.filter(status=1).order_by('-created_on')
     template_name = "index.html"
     paginated_by = 3
