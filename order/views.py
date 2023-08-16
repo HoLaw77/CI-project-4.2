@@ -6,7 +6,7 @@ from django.views import generic
 
 
 def HttpResponde(request):
-    return render(request, 'templates/index.html')
+    return render(request, 'templates/order.html')
 
 
 class SushiList(generic.ListView):
