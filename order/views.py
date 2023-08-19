@@ -2,11 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Ramen, Sushi, Drink, Order
 from django.views import generic
+from django.views.generic.base import TemplateView
 # Create your views here.
-
-
-def HttpResponde(request):
-    return render(request, 'templates/order.html')
 
 
 class SushiList(generic.ListView):

@@ -8,8 +8,14 @@
 
 .confirm-text {
     font-family: "Kanit", sans-serif;
-    font-size: 200%;
+    font-size: 150%;
+    color: white;
 }
+
+a:link {
+    text-decoration: none;
+}
+
 
 .column {
     float: left;
@@ -95,5 +101,11 @@ footer {
     background-color: black;
     color: white;
     font-family: "Kanit", sans-serif;
+    text-align: center;
+}
+
+.order-list {
+    background-color: black;
+    color: white;
     text-align: center;
 }
