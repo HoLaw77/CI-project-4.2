@@ -2,4 +2,8 @@
 
 <h1 class="order-list">Here is your Order:</h1>
 
+<form action="/book-time/" method="post">
+  {% csrf_token %} {{ form }}
+  <input type="submit" value="Submit" />
+</form>
 {% endblock content %}
