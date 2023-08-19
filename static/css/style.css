@@ -6,6 +6,12 @@
     font-size: 400%;
 }
 
+.title {
+    text-align: center;
+    color: white;
+    font-size: 400%;
+}
+
 .confirm-text {
     font-family: "Kanit", sans-serif;
     font-size: 150%;
