@@ -3,6 +3,8 @@ from django.shortcuts import render
 from .models import Ramen, Sushi, Drink, Order
 from django.views import generic
 from django.views.generic.base import TemplateView
+
+from .forms import BookTimeForm
 # Create your views here.
 
 
