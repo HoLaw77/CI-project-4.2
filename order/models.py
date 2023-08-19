@@ -191,7 +191,3 @@ class Order(models.Model):
         Drink, related_name="orders", on_delete=models.CASCADE)
     total_price = models.DecimalField(
         max_digits=6, decimal_places=2, default=0.00)
-
-
-class BookTime(models.Model):
-    book_time = models.TimeField(default=dt.time(00, 00))

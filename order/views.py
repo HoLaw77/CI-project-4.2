@@ -1,9 +1,8 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from .models import Ramen, Sushi, Drink, Order
 from django.views import generic
 from django.views.generic.base import TemplateView
-from .forms import BookTimeForm
 # Create your views here.
 
 
@@ -23,7 +22,7 @@ def get_form(request):
     if request.method == "POST":
         form = BookTimeForm(request.POST)
         if form.is_valid():
-             return HttpResponseRedirect("Your order has been confirmed.")
+            return HttpResponseRedirect("Your order has been confirmed.")
         else:
             form = BookTimeForm()
 

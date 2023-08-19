@@ -1,5 +1,8 @@
 from django import forms
+import datetime as dt
 
-
-class BookTimeForm(forms.Form):
-    book_time = forms.CharField(label="Book Time", max_length=100)
+class ReservationForm(forms.Form):
+    Time = forms.CharField(max_length=100)
+    Date = forms.CharField(widget=forms.Textarea)
+    Number of people = forms.CharField(widget=forms.Textarea)
+    
