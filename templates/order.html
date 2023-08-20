@@ -3,15 +3,23 @@
 <h1 class="order-list">Here is your Order:</h1>
 
 <form action="/book-time/" method="post">
-  <table>
-    {% for order in orders %}
+  <table class="order-table">
     <tr>
-      <td>{{ order.name }}</td>
-      <td>{{ order.done }}</td>
+      <td>Sushi:{sushi}</td>
+      <td></td>
     </tr>
-    {% endfor %}
+    <tr>
+      <td>Ramen:{ramen}</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Drink:{drink}</td>
+    </tr>
+    <tr>
+      <td>Total Price: {}</td>
+    </tr>
   </table>
   {% csrf_token %} {{ form }}
-  <input type="submit" value="Submit" />
+  <input type="submit" value="Submit" class="submit-button" />
 </form>
 {% endblock content %}
