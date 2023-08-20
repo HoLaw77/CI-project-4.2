@@ -29,3 +29,11 @@ def get_form(request):
             form = BookTimeForm()
 
     return render(request, "order.html", {"form": form})
+
+
+def get_task_list(request):
+    order = Order.objects.all()
+    context = {
+        'order': order
+    }
+    return render(request, 'templates/order.html', context)

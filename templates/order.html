@@ -3,6 +3,14 @@
 <h1 class="order-list">Here is your Order:</h1>
 
 <form action="/book-time/" method="post">
+  <table>
+    {% for order in orders %}
+    <tr>
+      <td>{{ order.name }}</td>
+      <td>{{ order.done }}</td>
+    </tr>
+    {% endfor %}
+  </table>
   {% csrf_token %} {{ form }}
   <input type="submit" value="Submit" />
 </form>
