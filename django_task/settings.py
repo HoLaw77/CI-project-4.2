@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-1gbt&m(0njm=ubi)8@7wbfww7wx+z8)rnjb^vklv6m6hm0dp!w
 DEBUG = True
 
 ALLOWED_HOSTS = ['8001-holaw77-ci-project-42-2pj6n0j8ch.us2.codeanyapp.com',
-                 '8000-holaw77-ci-project-42-2pj6n0j8ch.us2.codeanyapp.com']
+                 '8000-holaw77-ci-project-42-2pj6n0j8ch.us2.codeanyapp.com',
+                 '8005-holaw77-ci-project-42-2pj6n0j8ch.us2.codeanyapp.com']
 
 
 # Application definition
