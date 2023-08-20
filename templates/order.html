@@ -2,21 +2,16 @@
 
 <h1 class="order-list">Here is your Order:</h1>
 
-<table class="order-table">
-  <tr>
-    <td>Sushi:{{ order.sushis }}</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Ramen:{{ramen}}</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Drink:{{drink}}</td>
-  </tr>
-  <tr>
-    <td>Total Price: {}</td>
-  </tr>
-</table>
+<div class="order">
+  {% for sushi in sushis %}
+  <p>Sushi:{{ sushi }}</p>
+
+  {% endfor %}
+  <p>Ramen:{{ramen}}</p>
+
+  <p>Drink:{{drink}}</p>
+
+  <p>Total Price: {}</p>
+</div>
 
 {% endblock content %}

@@ -21,10 +21,10 @@ class OrderDetail(generic.DetailView):
 
     template_name = "order.html"
 
-    def get_sushi(request):
-        sushi = SUSHI.objects.all()
-        print(sushi)
-        return render(request, "order.html", {"sushi": sushi})
+
+def get_sushi(request):
+    sushi = Sushi.objects.all()
+    return render(request, "order.html", {"sushi": sushi})
 
 
 class OrderList(generic.ListView):
