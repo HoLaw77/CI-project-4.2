@@ -27,13 +27,6 @@ class OrderList(generic.ListView):
     template_name = "order.html"
     paginated_by = 1
 
-# sushi link
-
-
-class InariSushiView(generic.View):
-    model = Sushi
-    template_name = "inari_sushi.html"
-
 
 def get_form(request):
     if request.method == "POST":

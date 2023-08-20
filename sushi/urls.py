@@ -16,11 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from order.views import Order
-from sushi.views import Sushi
+from sushi import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('order.urls'), name='order-urls'),
-    path('', include('sushi.urls'), name='sushi-urls'),
-
+    path('sushi/', views.InariSushiList.as_view(), name='inari'),
 ]
