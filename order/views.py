@@ -31,13 +31,3 @@ class OrderList(generic.ListView):
     model = Order
     template_name = "order.html"
     paginated_by = 1
-
-    def get_form(request):
-        if request.method == "POST":
-            form = BookTimeForm(request.POST)
-        if form.is_valid():
-            return HttpResponseRedirect("Your order has been confirmed.")
-        else:
-            form = BookTimeForm()
-
-        return render(request, "order.html", {"form": form})
