@@ -191,3 +191,10 @@ class Order(models.Model):
         Drink, related_name="orders", on_delete=models.CASCADE)
     total_price = models.DecimalField(
         max_digits=6, decimal_places=2, default=0.00)
+
+    def __str__(self) -> str:
+        return "ORDER"
+
+    def save(self, *args, **kwargs):
+        return order.objects.all()
+        super(Order, self).save(*args, **kwargs)

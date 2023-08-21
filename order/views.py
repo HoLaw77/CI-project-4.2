@@ -26,3 +26,8 @@ class OrderList(generic.ListView):
     model = Order
     template_name = "order.html"
     paginated_by = 1
+
+
+def show_order(request):
+    order = Order.objects.all()
+    return render(request, "order.html", context=context)
