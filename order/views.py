@@ -22,11 +22,6 @@ class OrderDetail(generic.DetailView):
     template_name = "order.html"
 
 
-def get_sushi(request):
-    sushi = Sushi.objects.all()
-    return render(request, "order.html", {"sushi": sushi})
-
-
 class OrderList(generic.ListView):
     model = Order
     template_name = "order.html"
