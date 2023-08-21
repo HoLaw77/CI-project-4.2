@@ -1,5 +1,6 @@
 from django.urls import path, include
 from order import views
+from order.views import show_order
 
 urlpatterns = [
     path('', views.SushiList.as_view(), name='home'),
