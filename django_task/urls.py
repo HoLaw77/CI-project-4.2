@@ -21,6 +21,6 @@ from sushi.views import Sushi
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('order.urls'), name='order-urls'),
-    path('', include('sushi.urls'), name='sushi-urls'),
+
 
 ]

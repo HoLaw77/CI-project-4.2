@@ -10,6 +10,10 @@ from .forms import BookTimeForm
 # Create your views here.
 
 
+def inari(request):
+    return render(request, 'sushi/inari_sushi.html')
+
+
 class SushiList(generic.ListView):
     model = Sushi
     template_name = "index.html"
@@ -31,7 +35,8 @@ class OrderList(generic.ListView):
 def show_order(request):
     order = Order.objects.all()
 
-    context: {
+    context = {
         "order": order
     }
+    print(order)
     return render(request, "order.html", context=context)
