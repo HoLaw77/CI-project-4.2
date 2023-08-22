@@ -14,6 +14,12 @@ def inari(request):
     return render(request, 'sushi/inari_sushi.html')
 
 
+def maki(request):
+    return render(request, 'sushi/maki_sushi.html')
+
+def nigiri(request):
+    return render(request, 'sushi/nigiri_sushi.html')
+
 class SushiList(generic.ListView):
     model = Sushi
     template_name = "index.html"
