@@ -17,8 +17,21 @@ def inari(request):
 def maki(request):
     return render(request, 'sushi/maki_sushi.html')
 
+
 def nigiri(request):
     return render(request, 'sushi/nigiri_sushi.html')
+
+
+def topping(request):
+    return render(request, 'ramen/topping.html')
+
+
+def soup(request):
+    return render(request, 'ramen/soup.html')
+
+def side_dish(request):
+    return render(request, 'ramen/side_dish.html')
+
 
 class SushiList(generic.ListView):
     model = Sushi

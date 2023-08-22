@@ -8,5 +8,8 @@ urlpatterns = [
     path('order/<int:order_id>', views.OrderDetail.as_view(), name='order_detail'),
     path('inari/', views.inari, name='inari'),
     path('maki/', views.maki, name='maki'),
-    path('nigiri/', views.nigiri, name='nigiri',)
+    path('nigiri/', views.nigiri, name='nigiri',),
+    path('topping/', views.topping, name='topping'),
+    path('soup/', views.soup, name='soup'),
+    path('side_dish/', views.side_dish, name='side_dish'),
 ]
