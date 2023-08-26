@@ -3,7 +3,7 @@
 <h1 class="order-list">Here is your Order:</h1>
 
 <div class="order">
-  {{ order }}
+  {% if orders %} {% for order in orders %}{{ orders }}{% endfor %} {% endif %}
   <!-- {% for item in order %}
     {{item}}
     {% endfor %} -->

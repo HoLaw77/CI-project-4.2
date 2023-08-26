@@ -29,6 +29,7 @@ def topping(request):
 def soup(request):
     return render(request, 'ramen/soup.html')
 
+
 def side_dish(request):
     return render(request, 'ramen/side_dish.html')
 
@@ -52,10 +53,10 @@ class OrderList(generic.ListView):
 
 
 def show_order(request):
-    order = Order.objects.all()
+    orders = Order.objects.all()
 
     context = {
-        "order": order
+        "orders": orders
     }
-    print(order)
+
     return render(request, "order.html", context=context)
