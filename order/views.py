@@ -55,7 +55,7 @@ class OrderList(generic.ListView):
 def show_order(request):
     orders = Order.objects.all()
 
-    context = {
+     context = {
         "orders": orders
     }
 
