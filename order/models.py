@@ -35,7 +35,8 @@ class Ramen(models.Model):
     toppings_choice = models.IntegerField(
         choices=TOPPINGS_CHOICES, default=3)
     side_dish = models.IntegerField(choices=SIDE_DISH_CHOICES, default=1)
-    soup_choice = models.IntegerField(choices=SOUP_CHOICES, default=1)
+    soup_choice = models.IntegerField(
+        choices=SOUP_CHOICES, default=1)
 
     def __str__(self) -> str:
         return "RAMEN"
