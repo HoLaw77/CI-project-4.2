@@ -55,8 +55,8 @@ class OrderList(generic.ListView):
 def show_order(request):
     orders = Order.objects.all()
 
-     context = {
+    context = {
         "orders": orders
     }
 
-    return render(request, "order.html", context=context)
+    return render(request, "templates/order.html", {"orders": orders})

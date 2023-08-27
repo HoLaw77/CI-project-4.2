@@ -1,5 +1,6 @@
 from django.urls import path, include
 from order import views
+
 # from order.views import show_order
 
 urlpatterns = [
@@ -12,5 +13,5 @@ urlpatterns = [
     path('topping/', views.topping, name='topping'),
     path('soup/', views.soup, name='soup'),
     path('side_dish/', views.side_dish, name='side_dish'),
-    # path('order/', views.show_order, name='show_order'),
+    path('order/', views.show_order, name='show_order'),
 ]

@@ -193,4 +193,4 @@ class Order(models.Model):
         max_digits=6, decimal_places=2, default=0.00)
 
     def __str__(self):
-        return (f"{self.ramen} {self.sushi} {self.drink} {self.total_price}")
+        return ("ORDER")
