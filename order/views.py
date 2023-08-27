@@ -2,7 +2,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from .models import Ramen, Sushi, Drink, Order
 from django.views import generic
-from django.views.generic.base import TemplateView
+from django.views.generic import TemplateView, DetailView
 from django.contrib import admin
 
 
@@ -54,9 +54,9 @@ class OrderList(generic.ListView):
 
 def show_order(request):
     orders = Order.objects.all()
-
+    print(orders)
     context = {
         "orders": orders
     }
 
-    return render(request, "templates/order.html", {"orders": orders})
+    return render(request, "order.html", context)

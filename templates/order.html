@@ -1,9 +1,84 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
 <h1 class="order-list">Here is your Order:</h1>
-
 <div class="order">
-  {% if orders %} {% for order in orders %}{{ orders }}{% endfor %} {% endif %}
+  <!-- test -->
+  {% for order in order_list %}
+  {{order.ramen}}
+  <table>
+    <tr>
+      <td>{{ order.ramen.toppings_choice }}</td>
+    </tr>
+    <tr>
+      <td>{{ order.ramen.soup_choice }}</td>
+    </tr>
+    <tr>
+      <td>{{ order.ramen.side_dish }}</td>
+    </tr>
+    <tr>
+        <td>{{order.ramen.price}}</td>
+    </tr>
+  </table>
+
+  {% empty %} {% endfor %} 
+  </br>
+  {% for order in order_list %}
+  {{ order.sushi }}
+  <table>
+    <tr>
+      <td>{{order.sushi.NIGIRI_SUSHI}}</td>
+    </tr>
+    <tr>
+      <td>{{order.sushi.INARI_SUSHI}}</td>
+    </tr>
+    <tr>
+      <td>{{order.sushi.MAKI_SUSHI}}</td>
+    </tr>
+    <tr>
+      <td>{{order.sushi.TEMAKI_SUSHI}}</td>
+    </tr>
+    <tr>
+      <td>{{order.sushi.SOY_OIL}}</td>
+    </tr>
+    <tr>
+      <td>{{order.sushi.WASABI}}</td>
+    </tr>
+    <tr>
+        <td>{{order.sushi.price}}</td>
+    </tr>
+  </table>
+  {% endfor %} {% for order in order_list %}
+</br>
+  {{ order.drink }}
+  <table>
+    <tr>
+      <td>{{ order.drink.SAKE }}</td>
+    </tr>
+    <tr>
+      <td>{{ order.drink.BEER }}</td>
+    </tr>
+    <tr>
+      <td>{{ order.drink.CHOYA }}</td>
+    </tr>
+    <tr>
+      <td>{{ order.drink.GREEN_TEA }}</td>
+    </tr>
+    <tr>
+      <td>{{ order.drink.WATER }}</td>
+    </tr>
+    <tr>
+        <td>{{order.drink.price}}</td>
+    </tr>
+  </table>
+
+ {% empty %}
+  <p>no orders</p>
+  {% endfor %}
+{% for order in order_list %}
+  <p>Total Price: {{order.total_price}}</p>
+{% endfor %}
+  <!-- end test-->
+  {% if orders %} {% for order in orders %}{{ order }}{% endfor %} {% endif %}
   <!-- {% for item in order %}
     {{item}}
     {% endfor %} -->
