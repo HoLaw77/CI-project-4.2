@@ -136,6 +136,10 @@ footer {
     margin-right: auto;
 }
 
+#sushi_table {
+    padding-left: 60px;
+}
+
 .total-price {
     text-align: center;
     font-size: 200%;

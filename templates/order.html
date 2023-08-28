@@ -3,6 +3,7 @@
 <h1 class="order-list">Here is your Order:</h1>
 <div class="order">
   <!-- test -->
+
   {% for order in order_list %}
   
   <table class="order-table">
@@ -78,7 +79,7 @@
   </br>
   {% for order in order_list %}
   
-  <table class="order-table">
+  <table class="order-table" id="sushi_table">
     <tr>
         <td>{{ order.sushi }}</td>
     </tr>
@@ -122,10 +123,10 @@
         Salmon, tuna, amberjack</td>
         {% endif %}
         {% if order.sushi.MAKI_SUSHI == 2 %}
-        Cucumber, carrot and egg</td>
+        Cucumber, carrot, egg</td>
         {% endif %}
         {% if order.sushi.MAKI_SUSHI == 3 %}
-        Cucumber, egg and crab</td>
+        Cucumber, egg, crab</td>
         {% endif %}
         {% if order.sushi.MAKI_SUSHI == 4 %}
         </td>
@@ -245,6 +246,21 @@
   <!-- {% for item in order %}
     {{item}}
     {% endfor %} -->
+</div>
+
+<div class="booking-area">
+    <form action="/your-name/" method="post">
+        <label for="your_name">Your name: </label>
+        <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+       
+        <label for="arriving_time">Arriving time:</label>
+        <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Submit">
+    </form>
+
+
 </div>
 
 {% endblock %}
