@@ -4,70 +4,231 @@
 <div class="order">
   <!-- test -->
   {% for order in order_list %}
-  {{order.ramen}}
-  <table>
+  
+  <table class="order-table">
     <tr>
-      <td>{{ order.ramen.toppings_choice }}</td>
+        <td>{{order.ramen}}</td>
+
     </tr>
     <tr>
-      <td>{{ order.ramen.soup_choice }}</td>
+      <td>
+        {% if order.ramen.toppings_choice == 1 %}
+
+        Egg </td>
+        {% endif %}
+
+        {% if order.ramen.toppings_choice == 2 %}
+        
+        Sea weed </td>
+        {% endif %}
+        {% if order.ramen.toppings_choice == 3 %}
+        
+        Pork </td>
+        {% endif %}
+        {% if order.ramen.toppings_choice == 4 %}
+        
+        Garlic </td>
+        {% endif %}
     </tr>
     <tr>
-      <td>{{ order.ramen.side_dish }}</td>
+      <td>
+        {% if order.ramen.soup_choice == 1 %}
+        Pork bones soup</td>
+        {% endif %}
+        {% if order.ramen.soup_choice == 2 %}
+        Salt soup</td>
+        {% endif %}
+        {% if order.ramen.soup_choice == 3 %}
+        miso soup</td>
+        {% endif %}
+        {% if order.ramen.soup_choice == 4 %}
+        soy sauce soup</td>
+        {% endif %}
     </tr>
     <tr>
-        <td>Price: {{order.ramen.price}}</td>
+    <td>
+    {% if order.ramen.side_dish == 1 %}
+    Gyoza dumpling</td>
+    {% endif %}
+    {% if order.ramen.side_dish == 2 %}
+    Edamame beans</td>
+    {% endif %}
+    {% if order.ramen.side_dish == 3 %}
+    Yakitori skewers (chicken, beef)</td>
+    {% endif %}
+    {% if order.ramen.side_dish == 4 %}
+    Tempura (Chilli squid )</td>
+    {% endif %}
+    {% if order.ramen.side_dish == 5 %}
+    Kimchi</td>
+    {% endif %}
+    {% if order.ramen.side_dish == 6 %}
+    Fried chicken</td>
+    {% endif %}
+    {% if order.ramen.side_dish == 7 %}
+    None</td>
+    {% endif %}
+    </tr>
+    <tr>
+        <td>Price: £ {{order.ramen.price}}</td>
     </tr>
   </table>
 
   {% empty %} {% endfor %} 
   </br>
   {% for order in order_list %}
-  {{ order.sushi }}
-  <table>
+  
+  <table class="order-table">
     <tr>
-      <td>{{order.sushi.NIGIRI_SUSHI}}</td>
+        <td>{{ order.sushi }}</td>
     </tr>
     <tr>
-      <td>{{order.sushi.INARI_SUSHI}}</td>
+      <td>
+        {% if order.sushi.NIGIRI_SUSHI == 1 %}
+        raw Salmon x 3</td>
+        {% endif %}
+        {% if order.sushi.NIGIRI_SUSHI == 2 %}
+        raw Tuna x 3</td>
+        {% endif %}
+        {% if order.sushi.NIGIRI_SUSHI == 3 %}
+        shrimp x 3</td>
+        {% endif %}
+        {% if order.sushi.NIGIRI_SUSHI == 4 %}
+        sea urchin (Uni) x 3</td>
+        {% endif %}
+        {% if order.sushi.NIGIRI_SUSHI == 5 %}
+        Ikura x 3</td>
+        {% endif %}
+        {% if order.sushi.NIGIRI_SUSHI == 6 %}
+        Amberjack x 3</td>
+        {% endif %}
+        {% if order.sushi.NIGIRI_SUSHI == 7 %}
+        None</td>
+        {% endif %}
     </tr>
     <tr>
-      <td>{{order.sushi.MAKI_SUSHI}}</td>
+      <td>
+        {% if order.sushi.INARI_SUSHI == 1 %}
+        Inari Sushi x 3</tr>
+        {% endif %}
+        {% if order.sushi.INARI_SUSHI == 2 %}
+        None</tr>
+        {% endif %}
     </tr>
     <tr>
-      <td>{{order.sushi.TEMAKI_SUSHI}}</td>
+      <td>
+        
+        {% if order.sushi.MAKI_SUSHI == 1 %}
+        Salmon, tuna, amberjack</td>
+        {% endif %}
+        {% if order.sushi.MAKI_SUSHI == 2 %}
+        Cucumber, carrot and egg</td>
+        {% endif %}
+        {% if order.sushi.MAKI_SUSHI == 3 %}
+        Cucumber, egg and crab</td>
+        {% endif %}
+        {% if order.sushi.MAKI_SUSHI == 4 %}
+        </td>
+        {% endif %}
+
     </tr>
     <tr>
-      <td>{{order.sushi.SOY_OIL}}</td>
+      <td>
+        {% if order.sushi.TEMAKI_SUSHI == 1 %}
+        Crab Stick, carrot and cucumber x 3</td>
+        {% endif %}
+        {% if order.sushi.TEMAKI_SUSHI == 2 %}
+        shrimp and cucumber x 3</td>
+        {% endif %}
+        {% if order.sushi.TEMAKI_SUSHI == 3 %}
+        Ikura, egg, and salad vegetables x 3</td>
+        {% endif %}
+        {% if order.sushi.TEMAKI_SUSHI == 4 %}
+        Salmon x 3</td>
+        {% endif %}
+        {% if order.sushi.TEMAKI_SUSHI == 5 %}
+        </td>
+        {% endif %}
+        
     </tr>
     <tr>
-      <td>{{order.sushi.WASABI}}</td>
+        <td>
+        {% if order.sushi.SOY_OIL == 1 %}
+        Soy Oil </td>
+        {% endif %}
+        {% if order.sushi.SOY_OIL == 2 %}
+        {% endif %}
     </tr>
     <tr>
-        <td>Price: {{order.sushi.price}}</td>
+      <td>
+        {% if order.sushi.WASABI == 1 %}
+        Wasabi</td>
+        {% endif %}
+        {% if order.sushi.WASABI == 2 %}
+        {% endif %}
+
     </tr>
-  </table>
+    <tr>
+        <td>Price: £ {{order.sushi.price}}</td>
+    </tr>
+  </table >
   {% endfor %} {% for order in order_list %}
 </br>
-  {{ order.drink }}
-  <table>
+  
+  <table class="order-table">
     <tr>
-      <td>{{ order.drink.SAKE }}</td>
+        <td>{{ order.drink }}</td>
     </tr>
     <tr>
-      <td>{{ order.drink.BEER }}</td>
+      <td>
+        {% if order.drink.SAKE == 1 %}
+        1 bottle Sake</td>
+        {% endif %}
+        {% if order.drink.SAKE == 2 %}
+        No </td>
+        {% endif %}
     </tr>
     <tr>
-      <td>{{ order.drink.CHOYA }}</td>
+      <td>
+        {% if order.drink.BEER == 1 %}
+        1 bottle Beer</td>
+        {% endif %}
+        {% if order.drink.BEER == 2 %}
+        1 can Beer</td>
+        {% endif %}
+        {% if order.drink.BEER == 3 %}
+        </td>
+        {% endif %}
     </tr>
     <tr>
-      <td>{{ order.drink.GREEN_TEA }}</td>
+      <td>
+        {% if order.drink.CHOYA == 1 %}
+        1 bottle Choya</td>
+        {% endif %}
+        {% if order.drink.CHOYA == 2 %}
+        </td>
+        {% endif %}
     </tr>
     <tr>
-      <td>{{ order.drink.WATER }}</td>
+      <td>
+        {% if order.drink.GREEN_TEA == 1 %}
+        1 cup of Green Tea</td>
+        {% endif %}
+        {% if order.drink.GREEN_TEA == 2 %}
+        </td>
+        {% endif %}
     </tr>
     <tr>
-        <td>Price: {{order.drink.price}}</td>
+      <td>
+        {% if order.drink.WATER == 1 %}
+        1 cup of Water</td>
+        {% endif %}
+        {% if order.drink.WATER == 2 %}
+        </td>
+        {% endif %}
+    </tr>
+    <tr>
+        <td>Price: £ {{order.drink.price}}</td>
     </tr>
   </table>
 
@@ -77,7 +238,7 @@
   <br>
   <br>
 {% for order in order_list %}
-  <p>Total Price: {{order.total_price}}</p>
+  <p class="total-price">Total Price: £ {{order.total_price}}</p>
 {% endfor %}
   <!-- end test-->
   {% if orders %} {% for order in orders %}{{ order }}{% endfor %} {% endif %}

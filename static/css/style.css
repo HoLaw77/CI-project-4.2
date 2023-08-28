@@ -118,12 +118,27 @@ footer {
 
 /* table */
 
+.order {
+    background-color: black;
+}
+
 .order-table {
     margin-left: auto;
     margin-right: auto;
+    font-size: 200%;
+    font-family: "Kanit", sans-serif;
+    color: white;
+
 }
 
 .submit-button {
     margin-left: auto;
     margin-right: auto;
+}
+
+.total-price {
+    text-align: center;
+    font-size: 200%;
+    font-family: "Kanit", sans-serif;
+    color: white;
 }
