@@ -63,12 +63,7 @@ def show_order(request):
 
 
 def book_time(request):
-    if request.method == "POST":
-        form = BookTimeForm(request.POST)
-        if form.is_valid():
+    context = {}
+    context['form'] = BookTimeForm()
 
-            return HttpResponseRedirect("Thanks for your order. Your booking is confirmed")
-        else:
-            form = BookTimeForm()
-
-    return render(request, "order.html", {"form": form})
+    return render(request, "templates/form.html", context)
