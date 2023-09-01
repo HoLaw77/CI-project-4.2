@@ -35,7 +35,7 @@ def side_dish(request):
 
 
 def form(request):
-    return render(request, 'templates/form.html')
+    return render(request, 'form.html')
 
 
 class SushiList(generic.ListView):
@@ -44,10 +44,10 @@ class SushiList(generic.ListView):
     paginated_by = 3
 
 
-class OrderDetail(generic.DetailView):
+class OrderDetail(generic.ListView):
     model = Order
 
-    template_name = "order.html"
+    template_name = "form.html"
 
 
 class OrderList(generic.ListView):
@@ -67,7 +67,11 @@ def show_order(request):
 
 
 def book_time(request):
-    context = {}
-    context['form'] = BookTimeForm()
+    if request.method == 'POST':
+        form = BookTimeForm(request)
+        form.name = request.POST.get('your-name')
+        form.time = request.POST.get('arriving_time')
+        form.people = request.POST.get('number_of_people')
+        form.email = request.POST.get('email')
 
-    return render(request, "templates/form.html", context)
+    return render(request, "form.html", form=form)

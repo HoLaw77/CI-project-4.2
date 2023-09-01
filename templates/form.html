@@ -1,1 +1,9 @@
-<form>{% csrf_token %} {{form}}</form>
+{% extends "base.html" %}{% block content%} {% load static %}
+<form method="POST" action="{% url 'form' %}">
+  {% csrf_token %} {{form}} {% for form in book_time %} {form.name} {form.time}
+  {form.people} {form.email} {% endfor %}
+
+  <input type="submit" class="submit-button" value="Submit" />
+</form>
+
+{% endblock %}

@@ -247,14 +247,16 @@
 
 <div class="booking-area">
     <h2 class="confirm-text">Confirm your booking</h2>
-    <form action="book_time" method="post">
+    <form action="{% url 'form' %}" method="POST">
         <label for="your_name">Your name: </label>
         <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
        
         <label for="arriving_time">Arriving time:</label>
         <input type="date" id="arriving_time" name="arriving_time">
+        <label for="dinning_time">Dinning time:</label>
+        <input type="time" id="dinning_time" name="dinning_time">
         <label for="number_of_people">Number of people:</label>
-        <input type="number" id="quantity" name="quantity" min="1" max="5">
+        <input type="number" id="quantity" name="number_of_people" min="1" max="5">
         <br>
         <br>
         <label for="email">Email:</label>
