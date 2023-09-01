@@ -34,6 +34,10 @@ def side_dish(request):
     return render(request, 'ramen/side_dish.html')
 
 
+def form(request):
+    return render(request, 'templates/form.html')
+
+
 class SushiList(generic.ListView):
     model = Sushi
     template_name = "index.html"
