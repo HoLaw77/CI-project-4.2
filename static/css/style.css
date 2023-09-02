@@ -173,6 +173,7 @@ form {
     padding: none;
 }
 
-.tuna_photo>img {
-    max-width: 50%;
+img {
+    width: 50%;
+    height: auto;
 }
