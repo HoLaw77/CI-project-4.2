@@ -152,7 +152,9 @@ footer {
 
 .booking-area {
     background-color: black;
+
 }
+
 
 label {
     color: white;
@@ -160,5 +162,17 @@ label {
 }
 
 form {
-    padding-left: 300px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+
+/*sushi image*/
+
+.salmon_sushi {
+    padding: none;
+}
+
+.tuna_photo>img {
+    max-width: 50%;
 }
