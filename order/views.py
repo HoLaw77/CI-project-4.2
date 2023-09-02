@@ -1,6 +1,6 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
-from .models import Ramen, Sushi, Drink, Order
+from .models import Ramen, Sushi, Drink, Order, Confirm
 from django.views import generic
 from django.views.generic import TemplateView, DetailView
 from django.contrib import admin
@@ -66,12 +66,6 @@ def show_order(request):
     return render(request, "order.html", context)
 
 
-def book_time(request):
-    if request.method == 'POST':
-        form = BookTimeForm(request)
-        form.name = request.POST.get('your-name')
-        form.time = request.POST.get('arriving_time')
-        form.people = request.POST.get('number_of_people')
-        form.email = request.POST.get('email')
-
-    return render(request, "form.html", form=form)
+class ConfirmList(generic.ListView):
+    model = Confirm
+    template_name = "form.html"

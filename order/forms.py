@@ -1,10 +1,9 @@
 from django import forms
 from django.forms import ModelForm
+from .models import Confirm
 
 
-class BookTimeForm(forms.Form):
-    Name = forms.CharField(max_length=100)
-    Time = forms.TimeField()
-    Date = forms.DateField()
-    People = forms.IntegerField()
-    Email = forms.EmailField(max_length=100)
+class BookTimeForm(ModelForm):
+    class Meta:
+        model = Confirm
+        fields = "__all__"

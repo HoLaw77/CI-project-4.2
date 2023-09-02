@@ -17,5 +17,5 @@ urlpatterns = [
     path('side_dish/', views.side_dish, name='side_dish'),
     path('order/', views.show_order, name='show_order'),
     path('form/', views.form, name='form'),
-    path('form/', views.book_time, name='book_time')
+    path('form/', views.ConfirmList.as_view(), name='form')
 ]

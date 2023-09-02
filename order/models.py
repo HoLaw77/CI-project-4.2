@@ -195,3 +195,15 @@ class Order(models.Model):
 
     def __str__(self):
         return ("ORDER")
+
+
+class Confirm(models.Model):
+    name = models.CharField(max_length=100)
+    Time = models.TimeField(auto_now=False, auto_now_add=False)
+    Date = models.DateField(auto_now=False, auto_now_add=False)
+    People = models.DecimalField(max_digits=5, decimal_places=2, default=0.00)
+    Email = models.EmailField(max_length=100)
+
+    def save(self, *args, **kwargs):
+
+        super(Confirm, self).save(*args, **kwargs)
