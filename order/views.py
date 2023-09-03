@@ -71,9 +71,11 @@ class ConfirmList(generic.ListView):
     template_name = "order/form.html"
 
     def confirm_order(request):
+        confirm_instance = get_object_or_404(Confirm, pk=pk)
         if request.method == "POST":
             form = BookTimeForm(request)
             if form.is_valid():
+                confirm_instance.save()
                 return HttpResponseRedirect("Thanks! Your booking at f'forms.date' f'forms.time' has been confirmed.")
             else:
                 form = BookTimeForm()
