@@ -247,7 +247,7 @@
 
 <div class="booking-area">
     <h2 class="confirm-text">Confirm your booking</h2>
-    <form action="form" method="POST"> {% csrf_token %}
+    <form action="{% url 'form' %}" method="POST"> {% csrf_token %}
         <div>
             <p><label for="your_name">Your name: </label>
             <input id="your_name" type="text" name="your_name" value="{{ current_name }}"></p>

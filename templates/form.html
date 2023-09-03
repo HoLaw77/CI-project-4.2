@@ -1,6 +1,6 @@
 {% extends "base.html" %}{% block content%} {% load static %}
 <form method="POST" action="{% url 'form' %}">
-  {{form}}{% csrf_token %} {% for form in confirm_list %} {{form}} {% endfor %}
+  <!-- {{form}}{% csrf_token %} {% for form in confirm_list %} {{form}} {% endfor %} -->
 
   <input type="submit" class="submit-button" value="Submit" />
 </form>
