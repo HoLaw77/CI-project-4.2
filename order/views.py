@@ -68,7 +68,7 @@ def show_order(request):
 
 class ConfirmList(generic.ListView):
     model = Confirm
-    template_name = "form.html"
+    template_name = "order/form.html"
 
     def confirm_order(request):
         if request.method == "POST":
@@ -77,4 +77,4 @@ class ConfirmList(generic.ListView):
                 return HttpResponseRedirect("Thanks! Your booking at f'forms.date' f'forms.time' has been confirmed.")
             else:
                 form = BookTimeForm()
-        return render(request, "form.html", {"form": form})
+        return render(request, "order/form.html", {"form": form})
