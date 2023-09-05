@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Ramen, Sushi, Drink, Order, Confirm
 from django.views import generic
 from django.views.generic import TemplateView, DetailView
@@ -70,13 +70,16 @@ class ConfirmList(generic.ListView):
     model = Confirm
     template_name = "form.html"
 
-    # def confirm_order(request):
-    #     confirm_instance = get_object_or_404(Confirm, pk=pk)
-    #     if request.method == "POST":
-    #         form = BookTimeForm(request)
-    #         if form.is_valid():
-    #             confirm_instance.save()
-    #             return HttpResponseRedirect("Thanks! Your booking at f'forms.date' f'forms.time' has been confirmed.")
-    #         else:
-    #             form = BookTimeForm()
-    #     return render(request, "form.html", {"form": form})
+    def confirm_order(request):
+        if request.method == "POST":
+            form = BookTimeForm(data = request.POST)
+     
+
+        if form.is_valid():
+            form.save(commit = True)
+            return HttpResponseRedirect("Thanks! Your booking at f'forms.date' f'forms.time' has been confirmed.")
+        else:
+            form = BookTimeForm()
+
+            
+            return render(request, "form.html", {"form": form})

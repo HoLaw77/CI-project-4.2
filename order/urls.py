@@ -1,5 +1,6 @@
 from django.urls import path, include
 from order import views
+from order.views import ConfirmList
 
 
 from .forms import BookTimeForm
@@ -16,5 +17,6 @@ urlpatterns = [
     path('soup/', views.soup, name='soup'),
     path('side_dish/', views.side_dish, name='side_dish'),
     path('form/', views.show_order, name='show_order'),
-    path('form/', views.ConfirmList.as_view(), name='form')
+    path('form/', views.ConfirmList.as_view(), name='form'),
+    # path('form/', views.confirm_order, name='confirm_orders')
 ]
