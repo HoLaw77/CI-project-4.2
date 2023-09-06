@@ -249,7 +249,8 @@
     <h2 class="confirm-text">Confirm your booking</h2>
     <form action="confirm" method="POST">
         {% csrf_token %}
-        <div>
+        {{form}}
+        <!-- <div>
             <p><label for="your_name">Your name: </label>
             <input id="your_name" type="text" name="your_name" value="{{ current_name }}"></p>
         </div>
@@ -272,8 +273,8 @@
         <input type="email" id="email" name="email">
     
     <br>
-    <br>
-    <input type="submit" class= "submit-button" value="Submit">
+    <br>-->
+    <input type="submit" class= "submit-button" value="Submit"> 
     </form>
 
 

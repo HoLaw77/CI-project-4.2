@@ -199,10 +199,10 @@ class Order(models.Model):
 
 class Confirm(models.Model):
     name = models.CharField(max_length=100)
-    Time = models.TimeField(auto_now=False, auto_now_add=False)
-    Date = models.DateField(auto_now=False, auto_now_add=False)
-    People = models.DecimalField(max_digits=5, decimal_places=2, default=0.00)
-    Email = models.EmailField(max_length=100)
+    time = models.TimeField(auto_now=False, auto_now_add=False)
+    date = models.DateField(auto_now=False, auto_now_add=False)
+    people = models.DecimalField(max_digits=5, decimal_places=2, default=0.00)
+    email = models.EmailField(max_length=100)
 
     def save(self, *args, **kwargs):
 
