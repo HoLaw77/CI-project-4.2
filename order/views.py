@@ -5,8 +5,6 @@ from django.views import generic
 from django.views.generic import TemplateView, DetailView
 from django.contrib import admin
 
-
-from .forms import BookTimeForm
 # Create your views here.
 
 
@@ -55,31 +53,19 @@ class OrderList(generic.ListView):
     template_name = "order.html"
     paginated_by = 1
 
-
-def show_order(request):
-    orders = Order.objects.all()
-    print(orders)
-    context = {
-        "orders": orders
-    }
-
-    return render(request, "order.html", context)
-
-
 class ConfirmList(generic.ListView):
     model = Confirm
     template_name = "form.html"
 
-    def confirm_order(request):
-        if request.method == "POST":
-            form = BookTimeForm(data = request.POST)
-     
+def confirm_order(request):
+    if request.method == "POST":
+        name = request.POST.get('your_name')
+        time = request.POST.get('dinning_time')
+        date = request.POST.get('arriving_date')
+        people = request.POST.get('number_of_people')
+        email = request.POST.get('email')
+        Confirm.objects.create(name=name, time=time, date=date, people=people, email=email)
 
-        if form.is_valid():
-            form.save(commit = True)
-            return HttpResponseRedirect("Thanks! Your booking at f'forms.date' f'forms.time' has been confirmed.")
-        else:
-            form = BookTimeForm()
-
+        return redirect(confirm_order)
             
-            return render(request, "form.html", {"form": form})
+    return render(request, "form.html")
