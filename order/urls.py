@@ -15,6 +15,6 @@ urlpatterns = [
     path('topping/', views.topping, name='topping'),
     path('soup/', views.soup, name='soup'),
     path('side_dish/', views.side_dish, name='side_dish'),
-    path('form/', views.ConfirmList.as_view(), name='form'),
+    path('order/', views.ConfirmList.as_view(), name='form'),
     path('form/', views.confirm_order, name='confirm')
 ]
