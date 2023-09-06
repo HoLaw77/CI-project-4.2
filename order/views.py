@@ -70,8 +70,9 @@ def confirm_order(request):
         if form.is_valid():
             form.save()
         # Confirm.objects.create(name=name, time=time, date=date, people=people, email=email)
-        
-    form = BookTimeForm()
+        else:
+            print('form invalid')
+            form = BookTimeForm()
     context = {
         'form': form
     }

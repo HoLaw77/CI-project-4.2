@@ -16,5 +16,5 @@ urlpatterns = [
     path('soup/', views.soup, name='soup'),
     path('side_dish/', views.side_dish, name='side_dish'),
     path('form/', views.ConfirmList.as_view(), name='form'),
-    path('order/', views.confirm_order, name='confirm')
+    path('form/', views.confirm_order, name='confirm')
 ]
