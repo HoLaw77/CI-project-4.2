@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% block content%} {% load static %}
+
+{% for confirm in confirm_order %}
+
+    {{confirm.your_name}}
+    {{confirm.dinning_time}}
+    {{confirm.arriving_date}}
+    {{confirm.number_of_people}}
+    {{confirm.email}}
+
+
+{% endfor %}
+
+{% endblock %}
