@@ -6,20 +6,11 @@ from django.views.generic import TemplateView, DetailView
 from django.contrib import admin
 
 
-from .forms import BookTimeForm
+from .forms import BookTimeForm, SushiOrder
 # Create your views here.
 
-
-def inari(request):
-    return render(request, 'sushi/inari_sushi.html')
-
-
-def maki(request):
-    return render(request, 'sushi/maki_sushi.html')
-
-
-def nigiri(request):
-    return render(request, 'sushi/nigiri_sushi.html')
+def sushi(request):
+    return render(request, 'sushi/sushi.html')
 
 
 def topping(request):
@@ -32,10 +23,6 @@ def soup(request):
 
 def side_dish(request):
     return render(request, 'ramen/side_dish.html')
-
-
-def confirm(request):
-    return render(request, 'confirm.html')
 
 
 class SushiList(generic.ListView):
@@ -53,20 +40,29 @@ class OrderList(generic.ListView):
 def confirm_order(request):
     if request.method == "POST":
         form = BookTimeForm(request.POST)
-        # name = request.POST.get('your_name')
-        # time = request.POST.get('dinning_time')
-        # date = request.POST.get('arriving_date')
-        # people = request.POST.get('number_of_people')
-        # email = request.POST.get('email')
+       
         if form.is_valid():
             form.save(commit = False)
             form.save()
-            # Confirm.objects.create(name=name, time=time, date=date, people=people, email=email)
+          
         else:
             print('form invalid')
 
     form = BookTimeForm()    
     return render(request, "confirm.html", {'form': form})
 
+def sushi_order(request):
+    if request.method == "POST":
+        form = SushiOrder(request.POST)
 
+        if form.is_valid():
+            form.save(commit=False)
+            form.save()
+        else:
+            print('form invalid')
+    form = SushiOrder()
+    return render(request, "sushi/sushi.html", {'form':form})
 
+class ConfirmList(generic.ListView):
+    model = Confirm
+    template_name = "confirm_order.html" 

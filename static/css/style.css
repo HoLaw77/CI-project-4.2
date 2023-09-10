@@ -169,11 +169,27 @@ form {
 
 /*sushi image*/
 
-.salmon_sushi {
-    padding: none;
+.sushi {
+    display: inline;
 }
 
 img {
     width: 25%;
     height: auto;
+}
+
+.nigiri{
+    font-family: "Kanit", sans-serif;
+    text-align: center;
+    font-size: 400%;
+}
+
+.menu{
+    font-family: "Kanit", sans-serif;
+    text-align: center;
+    font-size: 200%; 
+}
+
+input{
+    display: inline;
 }

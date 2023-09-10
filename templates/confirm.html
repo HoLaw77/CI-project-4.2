@@ -1,6 +1,7 @@
 {% extends "base.html" %}{% block content%} {% load static %}
 
-{% for confirm in confirm_order %}
+<div>
+{% for confirm in confirm %}
 
     {{confirm.your_name}}
     {{confirm.dinning_time}}
@@ -8,7 +9,7 @@
     {{confirm.number_of_people}}
     {{confirm.email}}
 
-
+</div>
 {% endfor %}
 
 {% endblock %}

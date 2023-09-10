@@ -1,0 +1,75 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+<h1 class="nigiri">Nigiri Sushi</h1>
+
+<p class="menu">Menu</p>
+
+<form method="POST" action="{% url 'sushi_order' %}">
+    {% csrf_token %}
+<div class="container">
+    <div class="row">
+  <div class="sushi col-xs-2">
+    <p>Raw Salmon x 3</p>
+    <img src="{% static '/images/salmon_sushi.jpeg' %}" />
+    <input type="checkbox" name='1, "raw salmon x 3 "' id="raw_salmon" />
+  </div>
+  <div class="sushi col-xs-2">
+    <p>Raw Tuna x 3</p>
+    <img src="{% static 'images/tuna_sushi.jpeg' %}" class="tuna_photo" />
+    <input type="checkbox" name='2, "raw tune x 3"' id="raw_tune" />
+  </div>
+  <div class="sushi col-xs-2">
+    <p>Shrimp x 3</p>
+    <img src="{% static 'images/shrimp_sushi.jpg' %}" class="shrimp_photo" />
+    <input type="checkbox" name='3, "shrimp x 3 " ' id="shrimp" />
+  </div>
+  <div class="sushi col-xs-2">
+    <p>Sea Urchin x 3</p>
+    <img
+      src="{% static 'images/seaurchin_sushi.jpeg' %}"
+      class="seaurchin_sushi"
+    />
+    <input type="checkbox" name='4, "sea urchin x 3"' id="seaurchin_sushi" />
+  </div>
+  <div class="sushi col-xs-2">
+    <p>Ikura x 3</p>
+    <img src="{% static 'images/Ikura_sushi.jpg' %}" class="Ikura_sushi" />
+    <input type="checkbox" name='5, "ikura x 3"' id="ikura" />
+  </div>
+  <div class="sushi col-xs-2">
+    <p>Amberjack x 3</p>
+    <img
+      src="{% static 'images/amberjack_sushi.jpeg' %}"
+      class="amberjack_sushi"
+    />
+    <input type="checkbox" name='6, "amberjack x 3"' id="amberjack" />
+  </div>
+  <div class="sushi col-xs-2">
+    <p>None</p>
+    <input type="checkbox" name='7, "None"' id="None" />
+  </div>
+</div>
+</div> 
+  <input type="submit" />
+</form>
+
+
+<h1 class="nigiri">Inari Sushi</h1>
+
+<p class="menu">Menu</p>
+
+<form method="POST" action="{% url 'sushi_order' %}">
+    {% csrf_token %}
+    <input type="submit" />
+</form>
+
+<h1 class="nigiri">Maki Sushi</h1>
+
+<p class="menu">Menu</p>
+
+<form method="POST" action="{% url 'sushi_order' %}">
+    {% csrf_token %}
+    <input type="submit" />
+</form>
+
+{% endblock %}

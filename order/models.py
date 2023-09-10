@@ -53,12 +53,12 @@ class Ramen(models.Model):
 
 class Sushi(models.Model):
     NIGIRI_SUSHI = (
-        (1, "raw Salmon x 3 "),
-        (2, "raw Tuna  x 3 "),
+        (1, "raw salmon x 3 "),
+        (2, "raw tuna  x 3 "),
         (3, "shrimp  x 3 "),
-        (4, "sea urchin (Uni)  x 3 "),
-        (5, "Ikura  x 3 "),
-        (6, "Amberjack  x 3 "),
+        (4, "sea urchin  x 3 "),
+        (5, "ikura  x 3 "),
+        (6, "amberjack  x 3 "),
         (7, "None"),
 
     )
