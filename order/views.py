@@ -13,17 +13,8 @@ def sushi(request):
     return render(request, 'sushi/sushi.html')
 
 
-def topping(request):
-    return render(request, 'ramen/topping.html')
-
-
-def soup(request):
-    return render(request, 'ramen/soup.html')
-
-
-def side_dish(request):
-    return render(request, 'ramen/side_dish.html')
-
+def ramen(request):
+    return render(request, 'ramen/ramen.html')
 
 class SushiList(generic.ListView):
     model = Sushi
