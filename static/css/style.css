@@ -193,3 +193,9 @@ img {
 input{
     display: inline;
 }
+
+.ramen{
+    font-family: "Kanit", sans-serif;
+    text-align: center;
+    font-size: 400%;
+}
