@@ -9,6 +9,7 @@ urlpatterns = [
     path('order/', views.OrderList.as_view(), name='order'),
     path('sushi/', views.sushi, name='sushi',),
     path('ramen/', views.ramen, name='ramen'),
+    path('drink/', views.drink, name='drink'),
     path('confirm/', views.ConfirmList.as_view(), name='confirmlist'),
     path('confirm_order/', views.confirm_order, name='confirm_order'),
     path('sushi_order/', views.sushi_order, name='sushi_order')

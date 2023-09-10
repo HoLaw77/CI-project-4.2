@@ -16,6 +16,9 @@ def sushi(request):
 def ramen(request):
     return render(request, 'ramen/ramen.html')
 
+def drink(request):
+    return render(request, 'drink/drink.html')
+
 class SushiList(generic.ListView):
     model = Sushi
     template_name = "index.html"
