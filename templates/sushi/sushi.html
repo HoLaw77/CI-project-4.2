@@ -8,22 +8,22 @@
     {% csrf_token %}
 <div class="container">
     <div class="row">
-  <div class="sushi col-xs-2">
+  <div class="sushi col-lg-2">
     <p>Raw Salmon x 3</p>
     <img src="{% static '/images/salmon_sushi.jpeg' %}" />
     <input type="checkbox" name='1, "raw salmon x 3 "' id="raw_salmon" />
   </div>
-  <div class="sushi col-xs-2">
+  <div class="sushi col-lg-2">
     <p>Raw Tuna x 3</p>
     <img src="{% static 'images/tuna_sushi.jpeg' %}" class="tuna_photo" />
     <input type="checkbox" name='2, "raw tune x 3"' id="raw_tune" />
   </div>
-  <div class="sushi col-xs-2">
+  <div class="sushi col-lg-2">
     <p>Shrimp x 3</p>
     <img src="{% static 'images/shrimp_sushi.jpg' %}" class="shrimp_photo" />
     <input type="checkbox" name='3, "shrimp x 3 " ' id="shrimp" />
   </div>
-  <div class="sushi col-xs-2">
+  <div class="sushi col-lg-2">
     <p>Sea Urchin x 3</p>
     <img
       src="{% static 'images/seaurchin_sushi.jpeg' %}"
@@ -31,12 +31,12 @@
     />
     <input type="checkbox" name='4, "sea urchin x 3"' id="seaurchin_sushi" />
   </div>
-  <div class="sushi col-xs-2">
+  <div class="sushi col-lg-2">
     <p>Ikura x 3</p>
     <img src="{% static 'images/Ikura_sushi.jpg' %}" class="Ikura_sushi" />
     <input type="checkbox" name='5, "ikura x 3"' id="ikura" />
   </div>
-  <div class="sushi col-xs-2">
+  <div class="sushi col-lg-2">
     <p>Amberjack x 3</p>
     <img
       src="{% static 'images/amberjack_sushi.jpeg' %}"
@@ -44,7 +44,7 @@
     />
     <input type="checkbox" name='6, "amberjack x 3"' id="amberjack" />
   </div>
-  <div class="sushi col-xs-2">
+  <div class="sushi col-lg-2">
     <p>None</p>
     <input type="checkbox" name='7, "None"' id="None" />
   </div>
@@ -60,6 +60,21 @@
 
 <form method="POST" action="{% url 'sushi_order' %}">
     {% csrf_token %}
+    <div class="container">
+        <div class="row">
+      <div class="sushi col-lg-6">
+        <p>Inari Sushi x 3</p>
+        <img src="{% static '/images/inari_sushi.jpeg' %}" />
+        <input type="checkbox" name='1, "Inai x 3 "' id="raw_salmon" />
+      </div>
+      
+      <div class="sushi col-lg-6">
+        <p>None</p>
+        <input type="checkbox" name='2, "None"' id="None" />
+      </div>
+    </div>
+    </div> 
+    
     <input type="submit" />
 </form>
 
@@ -69,7 +84,105 @@
 
 <form method="POST" action="{% url 'sushi_order' %}">
     {% csrf_token %}
+    <div class="container">
+        <div class="row">
+      <div class="sushi col-lg-6">
+        <p>6 with 3 kinds of fish salmon, tuna, amberjack</p>
+        <img src="{% static '/images/maki_sushi_1.jpeg' %}" />
+        <input type="checkbox" name='1, "6 with 3 kinds of fish salmon, tuna, amberjack "' id="raw_salmon" />
+      </div>
+      <div class="sushi col-lg-6">
+        <p>6 with cucumber, carrot and egg</p>
+        <img src="{% static '/images/maki_sushi_2.jpg' %}" />
+        <input type="checkbox" name='2, "6 with cucumber, carrot and egg"' id="raw_salmon" />
+      </div>
+      <div class="sushi col-lg-6">
+        <p>6 with sesame topping, cucumber, egg and crab stick inside</p>
+        <img src="{% static '/images/maki_sushi_3.webp' %}" />
+        <input type="checkbox" name='1, "6 with sesame topping, cucumber, egg and crab stick inside "' id="raw_salmon" />
+      </div>
+      
+      <div class="sushi col-lg-6">
+        <p>None</p>
+        <input type="checkbox" name='2, "None"' id="None" />
+      </div>
+    </div>
+    </div> 
     <input type="submit" />
 </form>
 
+
+<h1 class="nigiri">Temaki Sushi</h1>
+
+<p class="menu">Menu</p>
+
+<form method="POST" action="{% url 'sushi_order' %}">
+    {% csrf_token %}
+    <div class="container">
+        <div class="row">
+      <div class="sushi col-lg-2">
+        <p>Crab Stick, carrot and cucumber  x 3</p>
+        <img src="{% static '/images/inari_sushi.jpeg' %}" />
+        <input type="checkbox" name='1, "Inai x 3 "' id="raw_salmon" />
+      </div>
+      
+      <div class="sushi col-lg-2">
+        <p>shrimp and cucumber  x 3</p>
+        <img src="{% static '/images/inari_sushi.jpeg' %}" />
+        <input type="checkbox" name='1, "Inai x 3 "' id="raw_salmon" />
+      </div>
+
+      <div class="sushi col-lg-2">
+        <p>Ikura, egg, and salad vegetables  x 3</p>
+        <img src="{% static '/images/inari_sushi.jpeg' %}" />
+        <input type="checkbox" name='1, "Inai x 3 "' id="raw_salmon" />
+      </div>
+
+      <div class="sushi col-lg-2">
+        <p>Salmon x 3</p>
+        <img src="{% static '/images/inari_sushi.jpeg' %}" />
+        <input type="checkbox" name='1, "Inai x 3 "' id="raw_salmon" />
+      </div>
+
+      <div class="sushi col-lg-2">
+        <p>None</p>
+        <input type="checkbox" name='2, "None"' id="None" />
+      </div>
+    </div>
+    </div> 
+    
+    <input type="submit" />
+</form>
+
+<h1 class="nigiri">Soy Oil</h1>
+<form>
+<div class="sushi col-lg-6">
+    <p>Yes</p>
+    <img src="{% static '/images/soy_sauce.png' %}" />
+    <input type="checkbox" name='1, "Yes "' id="raw_salmon" />
+  </div>
+
+  <div class="sushi col-lg-6">
+    <p>None</p>
+    <input type="checkbox" name='2, "None"' id="None" />
+  </div>
+  <input type="submit" />
+
+</form>
+
+<h1 class="nigiri">Wasabi</h1>
+<form>
+    <div class="sushi col-lg-6">
+        <p>Yes</p>
+        <img src="{% static '/images/wasabi.png' %}" />
+        <input type="checkbox" name='1, "Yes "' id="raw_salmon" />
+      </div>
+    
+      <div class="sushi col-lg-6">
+        <p>None</p>
+        <input type="checkbox" name='2, "None"' id="None" />
+      </div>
+      <input type="submit" />
+    
+    </form>
 {% endblock %}
