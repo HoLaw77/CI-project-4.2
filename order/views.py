@@ -6,7 +6,7 @@ from django.views.generic import TemplateView, DetailView
 from django.contrib import admin
 
 
-from .forms import BookTimeForm, SushiOrder
+from .forms import BookTimeForm, SushiOrder, RamenOrder
 # Create your views here.
 
 def sushi(request):
@@ -60,3 +60,15 @@ def sushi_order(request):
 class ConfirmList(generic.ListView):
     model = Confirm
     template_name = "confirm_order.html" 
+
+def ramen_order(request):
+    if request.method == "POST":
+        form = RamenOrder(request.POST)
+
+        if form.is_valid():
+            form.save(commit=False)
+            form.save()
+        else:
+            print('form invalid')
+    form = SushiOrder()
+    return render(request, "ramen/ramen.html", {'form':form})

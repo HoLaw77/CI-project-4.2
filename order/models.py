@@ -11,6 +11,7 @@ class Ramen(models.Model):
         (2, "Sea weed"),
         (3, "Pork"),
         (4, "Garlic"),
+        (5, "None")
     )
 
     SIDE_DISH_CHOICES = (

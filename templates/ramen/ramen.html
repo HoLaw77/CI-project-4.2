@@ -3,6 +3,44 @@
 <h1 class="ramen">Toppings</h1>
 
 <p class="menu">menu</p>
+
+<form method="POST" action="{% url 'sushi_order' %}">
+    {% csrf_token %}
+    <div class="container">
+        <div class="row">
+      <div class="sushi col-lg-2">
+        <p>Egg</p>
+        <img src="{% static '/images/inari_sushi.jpeg' %}" />
+        <input type="checkbox" name='1, "Egg"' id="egg" />
+      </div>
+      
+      <div class="sushi col-lg-2">
+        <p>Sea weed</p>
+        <img src="{% static '/images/inari_sushi.jpeg' %}" />
+        <input type="checkbox" name='2, "Sea weed "' id="sea_weed" />
+      </div>
+
+      <div class="sushi col-lg-2">
+        <p>Pork</p>
+        <img src="{% static '/images/inari_sushi.jpeg' %}" />
+        <input type="checkbox" name='3, "Pork"' id="Pork" />
+      </div>
+
+      <div class="sushi col-lg-2">
+        <p>Garlic</p>
+        <img src="{% static '/images/inari_sushi.jpeg' %}" />
+        <input type="checkbox" name='4, "Garlic"' id="Garlic" />
+      </div>
+
+      <div class="sushi col-lg-2">
+        <p>None</p>
+        <input type="checkbox" name='5, "None"' id="None" />
+      </div>
+    </div>
+    </div> 
+    
+    <input type="submit" />
+</form>d
 </div>
 <div>
 <h1 class="ramen">Soup</h1>
