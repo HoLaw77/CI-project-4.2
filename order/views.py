@@ -70,5 +70,5 @@ def ramen_order(request):
             form.save()
         else:
             print('form invalid')
-    form = SushiOrder()
+    form = RamenOrder()
     return render(request, "ramen/ramen.html", {'form':form})

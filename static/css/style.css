@@ -199,3 +199,13 @@ input{
     text-align: center;
     font-size: 400%;
 }
+
+.ramen-text{
+    color: black;
+}
+
+.order_text{
+    font-family: "Kanit", sans-serif;
+    text-align: center;
+    font-size: 200%; 
+}

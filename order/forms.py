@@ -16,4 +16,4 @@ class SushiOrder(forms.ModelForm):
 class RamenOrder(forms.ModelForm):
     class Meta:
         model = Ramen
-        fields = ['toppings_choice', 'side_dish', 'soup_choice']
+        fields = "__all__"
