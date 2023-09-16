@@ -28,7 +28,8 @@ class Ramen(models.Model):
         (1, "pork bones soup"),
         (2, "Salt soup"),
         (3, "miso soup"),
-        (4, "soy sauce soup")
+        (4, "soy sauce soup"),
+        (5, "None"),
     )
 
     price = models.DecimalField(
