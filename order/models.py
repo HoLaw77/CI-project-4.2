@@ -31,8 +31,8 @@ class Ramen(models.Model):
         (4, "soy sauce soup")
     )
 
-    # price = models.DecimalField(
-    #     max_digits=5, decimal_places=2, default=10.00)  # 22.12
+    price = models.DecimalField(
+         max_digits=5, decimal_places=2, default=10.00)  # 22.12
     toppings_choice = models.IntegerField(
         choices=TOPPINGS_CHOICES, default=3)
     side_dish = models.IntegerField(choices=SIDE_DISH_CHOICES, default=1)
