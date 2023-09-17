@@ -73,6 +73,14 @@
     <tr>
         <td>Price: £ {{order.ramen.price}}</td>
     </tr>
+
+    <tr>
+        <td>
+            
+<button><a href="/">Edit your order</a></button>
+<button><a href="/">Cancel order</a></button>
+        </td>
+    </tr>
   </table>
 
   {% empty %} {% endfor %} 
@@ -172,6 +180,14 @@
     <tr>
         <td>Price: £ {{order.sushi.price}}</td>
     </tr>
+
+    <tr>
+        <td>
+            
+        <button><a href="/">Edit your order</a></button>
+        <button><a href="/">Cancel order</a></button>
+        </td>
+    </tr>
   </table >
   {% endfor %} {% for order in order_list %}
 </br>
@@ -231,6 +247,14 @@
     <tr>
         <td>Price: £ {{order.drink.price}}</td>
     </tr>
+
+    <tr>
+        <td>
+            
+<button><a href="/">Edit your order</a></button>
+<button><a href="/delete_drink_order/{{order.drink.id}}">Cancel order</a></button>
+        </td>
+    </tr>
   </table>
 
  {% empty %}
@@ -241,7 +265,6 @@
 {% for order in order_list %}
   <p class="total-price">Total Price: £ {{order.total_price}}</p>
 {% endfor %}
-
 
 </div>
 

@@ -15,5 +15,7 @@ urlpatterns = [
     path('sushi_order/', views.sushi_order, name='sushi_order'),
     path('ramen_order/', views.ramen_order, name='ramen_order'),
     path('drink_order/', views.drink_order, name='drink_order'),
+    # path('delete_drink_order/<drink_order_id>', views.delete_drink_order, name='delete_drink_order'),
+
 
 ]

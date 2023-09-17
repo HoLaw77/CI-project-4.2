@@ -40,8 +40,8 @@ class Ramen(models.Model):
     soup_choice = models.IntegerField(
         choices=SOUP_CHOICES, default=1)
 
-    def __str__(self) -> str:
-        return "RAMEN"
+    # def __str__(self) -> str:
+    #     return "RAMEN"
 
     def save(self, *args, **kwargs):
         if self.toppings_choice == 1:
@@ -111,8 +111,8 @@ class Sushi(models.Model):
     WASABI = models.IntegerField(
         choices=WASABI, default=1)
 
-    def __str__(self) -> str:
-        return "SUSHI"
+    # def __str__(self) -> str:
+    #     return "SUSHI"
 
     def save(self, *args, **kwargs):
         if self.NIGIRI_SUSHI <= 3:
@@ -173,8 +173,8 @@ class Drink(models.Model):
     GREEN_TEA = models.IntegerField(choices=GREEN_TEA, default=1)
     WATER = models.IntegerField(choices=WATER, default=1)
 
-    def __str__(self) -> str:
-        return "DRINK"
+    # def __str__(self) -> str:      
+    #     return "DRINK"
 
     def save(self, *args, **kwargs):
         if self.SAKE == 1:
@@ -202,8 +202,7 @@ class Order(models.Model):
     total_price = models.DecimalField(
         max_digits=6, decimal_places=2, default=0.00)
 
-    def __str__(self):
-        return ("ORDER")
+    
 
 
 class Confirm(models.Model):
