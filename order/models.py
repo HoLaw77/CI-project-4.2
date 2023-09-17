@@ -181,7 +181,7 @@ class Drink(models.Model):
             self.price = decimal.Decimal(12)
         if self.BEER == 1:
             self.price = decimal.Decimal(5)
-        if self.BEER == 1:
+        if self.BEER == 2:
             self.price = decimal.Decimal(3)
         if self.CHOYA == 1:
             self.price = decimal.Decimal(12)

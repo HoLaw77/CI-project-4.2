@@ -11,14 +11,14 @@ class BookTimeForm(forms.ModelForm):
 class SushiOrder(forms.ModelForm):
     class Meta:
         model = Sushi
-        fields = "__all__"
+        fields = ["NIGIRI_SUSHI", "INARI_SUSHI", "MAKI_SUSHI", "TEMAKI_SUSHI", "SOY_OIL", "WASABI"]
 
 class RamenOrder(forms.ModelForm):
     class Meta:
         model = Ramen
-        fields = "__all__"
+        fields = ["toppings_choice", "side_dish", "soup_choice"]
 
 class DrinkOrder(forms.ModelForm):
     class Meta:
         model = Drink
-        fields = "__all__"
+        fields = ["SAKE", "BEER", "CHOYA", "GREEN_TEA", "WATER" ]
