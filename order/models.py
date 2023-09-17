@@ -136,17 +136,24 @@ class Sushi(models.Model):
 
 class Drink(models.Model):
     SAKE = (
-        (1, "1 bottle"),
-        (2, "None"),
+        (1, "1 bottle Dassai Sake"),
+        (2, "1 bottle Kubota Sake"),
+        (3, "1 bottle Yamamoto Sake"),
+        (4, "1 bottle Juyondai Sake"),
+        (5, "None"),
     )
     BEER = (
-        (1, "1 bottle"),
-        (2, "1 can"),
-        (3, "None"),
+        (1, "1 bottle Asahi Super Dry"),
+        (2, "1 bottle Saporro Premium"),
+        (3, "1 bottle Echigo Koshihikari"),
+        (4, "1 bottle Orion Premium Draft Beer"),
+        (5, "None"),
     )
     CHOYA = (
-        (1, "1 bottle"),
-        (2, "None"),
+        (1, "1 bottle original favor"),
+        (2, "1 bottle hoeny favor"),
+        (3, "1 bottle peach favor"),
+        (4, "None"),
     )
     GREEN_TEA = (
         (1, "1 cup"),
@@ -170,17 +177,17 @@ class Drink(models.Model):
         return "DRINK"
 
     def save(self, *args, **kwargs):
-        if self.SAKE == "1 bottle":
+        if self.SAKE == 1:
             self.price = decimal.Decimal(12)
-        if self.BEER == "1 bottle":
+        if self.BEER == 1:
             self.price = decimal.Decimal(5)
-        if self.BEER == "1 can":
+        if self.BEER == 1:
             self.price = decimal.Decimal(3)
-        if self.CHOYA == "1 bottle":
+        if self.CHOYA == 1:
             self.price = decimal.Decimal(12)
-        if self.GREEN_TEA == "1 cup":
+        if self.GREEN_TEA == 1:
             self.price = decimal.Decimal(5)
-        if self.WATER == "1 cup":
+        if self.WATER == 1:
             self.price = decimal.Decimal(0)
         super(Drink, self).save(*args, **kwargs)
 

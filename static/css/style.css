@@ -213,3 +213,13 @@ input{
 .sushi-text{
     color: black;
 }
+
+.beer{
+    font-family: "Kanit", sans-serif;
+    text-align: center;
+    font-size: 400%;
+}
+
+.drink-text{
+    color: black;
+}

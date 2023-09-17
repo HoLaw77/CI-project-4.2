@@ -150,13 +150,13 @@
 
 <h1 class="nigiri">Soy Oil</h1>
 
-<div class="sushi col-lg-6">
+<div class="sushi col-lg-12 center">
     <p>Yes</p>
     <img src="{% static '/images/soy_sauce.png' %}" />
     
   </div>
 
-  <div class="sushi col-lg-6">
+  <div class="sushi col-lg-12 center">
     <p>None</p>
     
   </div>
@@ -166,19 +166,19 @@
 
 <h1 class="nigiri">Wasabi</h1>
 
-    <div class="sushi col-lg-6">
+    <div class="sushi col-lg-12 center">
         <p>Yes</p>
         <img src="{% static '/images/wasabi.png' %}" />
         
       </div>
     
-      <div class="sushi col-lg-6">
+      <div class="sushi col-lg-12 center">
         <p>None</p>
         
       </div>
       
     
-    
+      <h2 class="order_text">Make your order</h2>
 
     <form method="POST" action="{% url 'sushi_order' %}">
         {% csrf_token %}

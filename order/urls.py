@@ -13,6 +13,7 @@ urlpatterns = [
     path('confirm/', views.ConfirmList.as_view(), name='confirmlist'),
     path('confirm_order/', views.confirm_order, name='confirm_order'),
     path('sushi_order/', views.sushi_order, name='sushi_order'),
-    path('ramen_order/', views.ramen_order, name='ramen_order')
+    path('ramen_order/', views.ramen_order, name='ramen_order'),
+    path('drink_order/', views.drink_order, name='drink_order'),
 
 ]

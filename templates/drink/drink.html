@@ -1,18 +1,79 @@
 {% extends "base.html" %} {% load static %} {% block content %} 
 
 <div>
-    <h1>Beer</h1>
+    <h1 class="beer">Beer</h1>
     
-    <p>menu</p>
+    <p class="menu">menu</p>
 </div>
 <div>
-    <h1>Soup</h1>
+    <h1 class="beer">Choya</h1>
     
-    <p>menu</p>
+    <p class="menu">menu</p>
 </div>
 <div>
-    <h1>Side Dish</h1>
-    <p>menu</p>
+    <h1 class="beer">Sake</h1>
+    <p class="menu">menu</p>
 </div>
+
+<div>
+    <h1 class="beer">Green Tea</h1>
+    <p class="menu">menu</p>
+</div>
+
+<div>
+    <h1 class="beer">Water</h1>
+    <p class="menu">menu</p>
+</div>
+
+<h2 class="order_text">Make your order</h2>
+
+<form method="POST" action="{% url 'drink_order' %}">
+    {% csrf_token %}
+    
+    <label for="sake"><p class="drink-text">Sake:</p></label>
+    <select name="SAKE" id="SAKE">
+      <option value= 1>1 bottle Dassai Sake</option>
+      <option value= 2>1 bottle Kubota Sake</option>
+      <option value= 3>1 bottle Yamamoto Sake</option>
+      <option value= 4>1 bottle Juyondai Sake</option>
+      <option value= 5>None</option>
+    </select>
+    <br><br>
+
+    <label for="beer"><p class="drink-text">Beer:</p></label>
+    <select name="BEER" id="BEER">
+      <option value= 1>1 bottle Asahi Super Dry</option>
+      <option value= 2>1 bottle Saporro Premium</option>
+      <option value= 3>1 bottle Echigo Koshihikari</option>
+      <option value= 4>1 bottle Orion Premium Draft Beer</option>
+      <option value= 5>None</option>
+    </select>
+    <br><br>
+
+    <label for="choya"><p class="drink-text">Choya:</p></label>
+    <select name="CHOYA" id="CHOYA">
+      <option value=1>1 bottle original favor</option>
+      <option value=2>1 bottle hoeny favor</option>
+      <option value=3>1 bottle peach favor</option>
+      <option value=4>None</option>
+
+    </select>
+    <br><br>
+
+    <label for="green_tea"><p class="drink-text">Green Tea:</p></label>
+    <select name="GREEN_TEA" id="GREEN_TEA">
+        <option value=1>1 cup</option>
+        <option value=2>None</option>
+    </select>
+    <br><br>
+
+    <label for="water"><p class="drink-text">Water:</p></label>
+    <select name="WATER" id="WATER">
+        <option value=1>1 cup</option>
+        <option value=2>None</option>
+    </select>
+    <br><br>
+    <input type="submit" />
+</form>
 
 {% endblock %}
