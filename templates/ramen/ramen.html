@@ -113,34 +113,36 @@
 
 <form method="POST" action="{% url 'ramen_order' %}">
     {% csrf_token %}
-
+    
     <label for="toppings"><p class="ramen-text">Toppings:</p></label>
     <select name="toppings_choice" id="toppings">
-      <option value='(1, "Egg")'>Egg</option>
-      <option value='(2, "Sea Weed")'>Sea Weed</option>
-      <option value='(3, "Pork")'>Pork</option>
-      <option value='(4, "Garlic")'>Garlic</option>
+      <option value= 1>Egg</option>
+      <option value= 2>Sea Weed</option>
+      <option value= 3>Pork</option>
+      <option value= 4>Garlic</option>
+      <option value= 5>None</option>
     </select>
     <br><br>
 
     <label for="soup"><p class="ramen-text">Soup:</p></label>
     <select name="soup_choice" id="soup_choice">
-      <option value='(1, "pork bones soup")'>Pork-Bone-Soup</option>
-      <option value='(2, "Salt soup")'>Salt Soup</option>
-      <option value='(3, "miso soup")'>Miso Soup</option>
-      <option value='(4, "soy sauce soup")'>Soy Sauce Soup</option>
+      <option value= 1>Pork-Bone-Soup</option>
+      <option value= 2>Salt Soup</option>
+      <option value= 3>Miso Soup</option>
+      <option value= 4>Soy Sauce Soup</option>
+      <option value= 5>None</option>
     </select>
     <br><br>
 
     <label for="side_dish"><p class="ramen-text">side_dish:</p></label>
     <select name="side_dish" id="side_dish">
-      <option value='(1, "Gyoza dumpling")'>Gyoza dumpling</option>
-      <option value='(2, "Edamame beans")'>Edamame beans</option>
-      <option value='(3, "Yakitori skewers (chicken, beef)")'>Yakitori skewers (chicken, beef)</option>
-      <option value='(4, "Tempura (Chilli squid )")'>Tempura (Chilli squid )</option>
-      <option value='(5, "kimchi")'>Kimchi</option>
-      <option value='(6, "fried chicken"),'>fried chicken</option>
-      <option value='(7, "None")'>None</option>
+      <option value=1>Gyoza dumpling</option>
+      <option value=2>Edamame beans</option>
+      <option value=3>Yakitori skewers (chicken, beef)</option>
+      <option value=4>Tempura (Chilli squid )</option>
+      <option value=5>Kimchi</option>
+      <option value=6>fried chicken</option>
+      <option value=7>None</option>
 
     </select>
     <br><br>
