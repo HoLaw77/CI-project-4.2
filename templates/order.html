@@ -13,6 +13,7 @@
     </tr>
     <tr>
       <td>
+        Topping:
         {% if order.ramen.toppings_choice == 1 %}
 
         Egg </td>
@@ -33,6 +34,7 @@
     </tr>
     <tr>
       <td>
+        Soup:
         {% if order.ramen.soup_choice == 1 %}
         Pork bones soup</td>
         {% endif %}
@@ -48,6 +50,7 @@
     </tr>
     <tr>
     <td>
+        Side Dish:
     {% if order.ramen.side_dish == 1 %}
     Gyoza dumpling</td>
     {% endif %}
@@ -93,6 +96,7 @@
     </tr>
     <tr>
       <td>
+        Nigiri Sushi:
         {% if order.sushi.NIGIRI_SUSHI == 1 %}
         raw Salmon x 3</td>
         {% endif %}
@@ -117,6 +121,7 @@
     </tr>
     <tr>
       <td>
+        Inari Sushi: 
         {% if order.sushi.INARI_SUSHI == 1 %}
         Inari Sushi x 3</tr>
         {% endif %}
@@ -126,7 +131,7 @@
     </tr>
     <tr>
       <td>
-        
+        Maki Sushi:
         {% if order.sushi.MAKI_SUSHI == 1 %}
         Salmon, tuna, amberjack</td>
         {% endif %}
@@ -143,6 +148,7 @@
     </tr>
     <tr>
       <td>
+        Temaki Sushi:
         {% if order.sushi.TEMAKI_SUSHI == 1 %}
         Crab Stick, carrot and cucumber x 3</td>
         {% endif %}
@@ -198,36 +204,52 @@
     </tr>
     <tr>
       <td>
+        Sake:
         {% if order.drink.SAKE == 1 %}
-        1 bottle Sake</td>
+        1 bottle Dassai Sake</td>
         {% endif %}
         {% if order.drink.SAKE == 2 %}
-        No </td>
+        1 bottle Kubota Sake </td>
+        {% endif %}
+        {% if order.drink.SAKE == 3 %}
+        1 bottle Yamamoto Sake
+        {% endif %}
+        {% if order.drink.SAKE == 4 %}
+        1 bottle Juyondai Sake
         {% endif %}
     </tr>
     <tr>
       <td>
+        Beer:
         {% if order.drink.BEER == 1 %}
-        1 bottle Beer</td>
+        1 bottle Asahi Super Dry</td>
         {% endif %}
         {% if order.drink.BEER == 2 %}
-        1 can Beer</td>
+        1 bottle Saporro Premium</td>
         {% endif %}
         {% if order.drink.BEER == 3 %}
-        </td>
+        1 bottle Echigo Koshihikari</td>
+        {% endif %}
+        {% if order.drink.BEER == 4 %}
+        1 bottle Orion Premium Draft Beer</td>
         {% endif %}
     </tr>
     <tr>
       <td>
+        Choya:
         {% if order.drink.CHOYA == 1 %}
-        1 bottle Choya</td>
+        1 bottle original favor</td>
         {% endif %}
         {% if order.drink.CHOYA == 2 %}
-        </td>
+        1 bottle of honey favor</td>
+        {% endif %}
+        {% if order.drink.CHOYA == 3 %}
+        1 bottle of peach favor</td>
         {% endif %}
     </tr>
     <tr>
       <td>
+        Green Tea:
         {% if order.drink.GREEN_TEA == 1 %}
         1 cup of Green Tea</td>
         {% endif %}
@@ -237,6 +259,7 @@
     </tr>
     <tr>
       <td>
+        Water:
         {% if order.drink.WATER == 1 %}
         1 cup of Water</td>
         {% endif %}
@@ -252,7 +275,7 @@
         <td>
             
 <button><a href="/">Edit your order</a></button>
-<button><a href="/delete_drink_order/{{order.drink.id}}">Cancel order</a></button>
+<button><a href="/delete_drink_order/{{delete_drink_order.id}}">Cancel order</a></button>
         </td>
     </tr>
   </table>
