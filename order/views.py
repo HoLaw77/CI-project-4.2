@@ -85,7 +85,7 @@ def drink_order(request):
     form = DrinkOrder()
     return render(request, "drink/drink.html", {'form':form})
 
-# def delete_drink_order(request, drink_order_id):
-#         order = get_object_or_404(order, id=drink_order_id)
-#         order.delete()
-#         return redirect(drink_order)
+def delete_drink_order(request, drink_order_id):
+    order = get_object_or_404(order, id=drink_order_id)
+    order.delete()
+    return redirect(drink_order)
