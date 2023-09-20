@@ -10,7 +10,7 @@ class Ramen(models.Model):
         (1, "Egg"),
         (2, "Sea weed"),
         (3, "Pork"),
-        (4, "Garlic"),
+        (4, "Corn"),
         (5, "None")
     )
 
