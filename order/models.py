@@ -45,11 +45,89 @@ class Ramen(models.Model):
 
     def save(self, *args, **kwargs):
         if self.toppings_choice == 1:
-            self.price = decimal.Decimal(12)
+            if self.soup_choice == 1:
+                if self.side_dish == 7:
+                    self.price = decimal.Decimal(6)
+                else:
+                    self.price = decimal.Decimal(10)
+            if self.soup_choice == 2:
+                if self.side_dish == 7:
+                    self.price = decimal.Decimal(5)
+                else:
+                    self.price = decimal.Decimal(9)
+            if self.soup_choice == 3:
+                if self.side_dish == 7:
+                    self.price = decimal.Decimal(6)
+                else:
+                    self.price = decimal.Decimal(10)
+            if self.soup_choice == 4:
+                if self.side_dish == 7:
+                    self.price = decimal.Decimal(5)
+                else:
+                    self.price = decimal.Decimal(9)
         if self.toppings_choice == 2:
-            self.price = decimal.Decimal(13)
+            if self.soup_choice == 1:
+                if self.side_dish == 7:
+                    self.price = decimal.Decimal(6)
+                else:
+                    self.price = decimal.Decimal(10)
+            if self.soup_choice == 2:
+                if self.side_dish == 7:
+                    self.price = decimal.Decimal(5)
+                else:
+                    self.price = decimal.Decimal(9)
+            if self.soup_choice == 3:
+                if self.side_dish == 7:
+                    self.price = decimal.Decimal(6)
+                else:
+                    self.price = decimal.Decimal(10)
+            if self.soup_choice == 4:
+                if self.side_dish == 7:
+                    self.price = decimal.Decimal(5)
+                else:
+                    self.price = decimal.Decimal(10)
         if self.toppings_choice == 3:
-            self.price = decimal.Decimal(14)
+            if self.soup_choice == 1:
+                if self.side_dish == 7:
+                    self.price = decimal.Decimal(6)
+                else:
+                    self.price = decimal.Decimal(10)
+            if self.soup_choice == 2:
+                if self.side_dish == 7:
+                    self.price = decimal.Decimal(5)
+                else:
+                    self.price = decimal.Decimal(9)
+            if self.soup_choice == 3:
+                if self.side_dish == 7:
+                    self.price = decimal.Decimal(6)
+                else:
+                    self.price = decimal.Decimal(10)
+            if self.soup_choice == 4:
+                if self.side_dish == 7:
+                    self.price = decimal.Decimal(5)
+                else:
+                    self.price = decimal.Decimal(10)
+        if self.toppings_choice == 4:
+            if self.soup_choice == 1:
+                if self.side_dish == 7:
+                    self.price = decimal.Decimal(6)
+                else:
+                    self.price = decimal.Decimal(10)
+            if self.soup_choice == 2:
+                if self.side_dish == 7:
+                    self.price = decimal.Decimal(5)
+                else:
+                    self.price = decimal.Decimal(9)
+            if self.soup_choice == 3:
+                if self.side_dish == 7:
+                    self.price = decimal.Decimal(6)
+                else:
+                    self.price = decimal.Decimal(10)
+            if self.soup_choice == 4:
+                if self.side_dish == 7:
+                    self.price = decimal.Decimal(5)
+                else:
+                    self.price = decimal.Decimal(10)
         super(Ramen, self).save(*args, **kwargs)
 
 
