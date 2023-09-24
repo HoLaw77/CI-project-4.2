@@ -517,7 +517,7 @@ class Drink(models.Model):
     )
 
     price = models.DecimalField(
-        max_digits=5, decimal_places=2, default=10.00)  # 22.12
+        max_digits=100, decimal_places=2, default=00.00)  # 22.12
     SAKE = models.IntegerField(
         choices=SAKE, default=1)
     BEER = models.IntegerField(choices=BEER, default=1)
