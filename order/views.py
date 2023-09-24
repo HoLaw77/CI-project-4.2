@@ -20,10 +20,10 @@ def drink(request):
     return render(request, 'drink/drink.html')
 
 def login(request):
-    return render(request, 'account/account/login.html')
+    return render(request, 'account/login.html')
 
 def logout(request):
-    return render(request, 'account/account/logout.html')
+    return render(request, 'account/logout.html')
 
 class SushiList(generic.ListView):
     model = Sushi
