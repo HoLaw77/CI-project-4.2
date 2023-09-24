@@ -3,7 +3,12 @@
 {% load static %}
 
 {% block content %}
-<h1>You have successfully logged out.</h1>
+<h1 class="logout_head">You have successfully logged out.</h1>
 
 <a href="{% url 'home' %}">Back to Menu</a>
+
+<div class="drink col-lg-12 logout_tea">
+    <img src="{% static '/images/green_tea.jpg' %}" />
+    <br>
+  </div>
 {% endblock %}

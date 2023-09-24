@@ -248,4 +248,22 @@ input{
 
 .login {
     color: black;
+    font-family: "Kanit", sans-serif;
+    font-size: 100%;
+}
+
+.login_head {
+    font-family: "Kanit", sans-serif;
+    text-align: center;
+    font-size: 400%;
+}
+
+.logout_head {
+    font-family: "Kanit", sans-serif;
+    text-align: center;
+    font-size: 400%;
+}
+
+.logout_tea {
+    text-align: center;
 }
