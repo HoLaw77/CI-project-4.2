@@ -243,3 +243,9 @@ input{
 .inari{
     text-align: center;
 }
+
+/* login */
+
+.login {
+    color: black;
+}

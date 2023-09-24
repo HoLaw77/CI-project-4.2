@@ -19,11 +19,11 @@ def ramen(request):
 def drink(request):
     return render(request, 'drink/drink.html')
 
-def login(request):
-    return render(request, 'account/login.html')
+def login_user(request):
+    return render(request, 'account/login_user.html')
 
-def logout(request):
-    return render(request, 'account/logout.html')
+def logout_user(request):
+    return render(request, 'account/logout_user.html')
 
 class SushiList(generic.ListView):
     model = Sushi
