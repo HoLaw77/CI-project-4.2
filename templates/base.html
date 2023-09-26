@@ -52,8 +52,8 @@
           <div class="col-md-1"></div>
 
           <button class="col-md-3">
-            <a href="{% url 'login' %}"
-              ><p class="confirm-text">Sign in/Sign up</p></a
+            <a href="{% url 'account_login' %}"
+              ><p class="confirm-text">Sign in</p></a
             >
             <i class="fa-solid fa-right-to-bracket"></i>
           </button>
@@ -64,6 +64,7 @@
             >
             <i class="fa-solid fa-cart-shopping"></i>
           </button>
+          <a href="{% url 'account_logout' %}" class="confirm-text">Sign out</a>
         </div>
       </div>
      
