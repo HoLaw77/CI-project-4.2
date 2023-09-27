@@ -157,7 +157,7 @@ footer {
 }
 
 
-label {
+.order-text {
     color: white;
 
 }
@@ -266,5 +266,14 @@ input{
 }
 
 .logout_tea {
+    text-align: center;
+}
+
+.login{
+    font-family: "Kanit", sans-serif ;
+    color: black;
+}
+
+.sign-up-text{
     text-align: center;
 }
