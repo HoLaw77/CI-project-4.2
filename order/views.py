@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Ramen, Sushi, Drink, Order, Confirm
 from django.views import generic
 from django.views.generic import TemplateView, DetailView
@@ -91,7 +91,20 @@ def drink_order(request):
     form = DrinkOrder()
     return render(request, "drink/drink.html", {'form':form})
 
+def delete_ramen_order(request, order_id):
+    order = get_object_or_404(Order, id=order_id)
+    order.ramen= None
+    order.save()
+    return redirect(ramen_order)
+
+def delete_sushi_order(request, order_id):
+    order = get_object_or_404(Order, id=order_id)
+    order.sushi= None
+    order.save()
+    return redirect(sushi_order)
+
 def delete_drink_order(request, order_id):
-    order = get_object_or_404(order, id=order_id)
-    order.delete()
+    order = get_object_or_404(Order, id=order_id)
+    order.drink= None
+    order.save()
     return redirect(drink_order)

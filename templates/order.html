@@ -7,6 +7,7 @@
   {% for order in order_list %}
   
   <table class="order-table">
+    {% if order.ramen %}
     <tr>
         <td>{{order.ramen}}</td>
 
@@ -76,14 +77,18 @@
     <tr>
         <td>Price: £ {{order.ramen.price}}</td>
     </tr>
-
     <tr>
         <td>
             
-<button><a href="/">Edit your order</a></button>
-<button><a href="/">Cancel order</a></button>
+            <button><a href="/">Edit your order</a></button>
+            <button><a href="/delete_ramen_order/{{order.id}}">Remove Ramen</a></button>
         </td>
     </tr>
+    {% else %}
+    <tr>
+        <td>No Ramen</td>
+    </tr>
+    {% endif %}
   </table>
 
   {% empty %} {% endfor %} 
@@ -91,6 +96,7 @@
   {% for order in order_list %}
   
   <table class="order-table" id="sushi_table">
+    {% if order.sushi %}
     <tr>
         <td>{{ order.sushi }}</td>
     </tr>
@@ -191,14 +197,20 @@
         <td>
             
         <button><a href="/">Edit your order</a></button>
-        <button><a href="/">Cancel order</a></button>
+        <button><a href="/delete_sushi_order/{{order.id}}">Remove Sushi</a></button>
         </td>
     </tr>
+    {% else %}
+    <tr>
+        <td>No Sushi</td>
+    </tr>
+    {% endif %}
   </table >
   {% endfor %} {% for order in order_list %}
 </br>
   
   <table class="order-table">
+    {% if order.drink %}
     <tr>
         <td>{{ order.drink }}</td>
     </tr>
@@ -270,14 +282,20 @@
     <tr>
         <td>Price: £ {{order.drink.price}}</td>
     </tr>
-
+    
     <tr>
         <td>
             
-<button><a href="/">Edit your order</a></button>
-<button><a href="/delete_drink_order/{{order.id}}">Cancel order</a></button>
+            <button><a href="/">Edit your order</a></button>
+            <button><a href="/delete_drink_order/{{order.id}}">Remove Drink</a></button>
         </td>
     </tr>
+    {% else %}
+    <tr> 
+        <td>No drink</td>
+
+        </tr>
+    {% endif %}
   </table>
 
  {% empty %}

@@ -762,14 +762,22 @@ class Drink(models.Model):
 
 class Order(models.Model):
     ramen = models.ForeignKey(
-        Ramen, related_name="orders", on_delete=models.CASCADE)
+        Ramen, related_name="orders", on_delete=models.CASCADE, null=True, blank=True)
     sushi = models.ForeignKey(
-        Sushi, related_name="orders", on_delete=models.CASCADE)
+        Sushi, related_name="orders", on_delete=models.CASCADE, null=True, blank=True)
     drink = models.ForeignKey(
-        Drink, related_name="orders", on_delete=models.CASCADE)
+        Drink, related_name="orders", on_delete=models.CASCADE, null=True, blank=True)
     total_price = models.DecimalField(
-        max_digits=6, decimal_places=2, default=0.00)
-
+        max_digits=6, decimal_places=2, default=0.00, null=True, blank=True)
+    def save(self, *args, **kwargs):
+        self.total_price = 0
+        if self.sushi:
+            self.total_price += self.sushi.price
+        if self.drink:
+            self.total_price += self.drink.price
+        if self.ramen:
+            self.total_price += self.ramen.price
+        super().save(*args, **kwargs)
     
 
 
