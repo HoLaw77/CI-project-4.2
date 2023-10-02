@@ -33,7 +33,7 @@ class Ramen(models.Model):
     )
 
     price = models.DecimalField(
-         max_digits=5, decimal_places=2, default=10.00)  # 22.12
+         max_digits=5, decimal_places=2, default=10.00, null=True, blank=True)  # 22.12
     toppings_choice = models.IntegerField(
         choices=TOPPINGS_CHOICES, default=3)
     side_dish = models.IntegerField(choices=SIDE_DISH_CHOICES, default=1)
@@ -44,6 +44,7 @@ class Ramen(models.Model):
     #     return "RAMEN"
 
     def save(self, *args, **kwargs):
+        self.price = 0
         if self.toppings_choice == 1:
             if self.soup_choice == 1:
                 if self.side_dish == 7:
@@ -185,7 +186,7 @@ class Sushi(models.Model):
     )
 
     price = models.DecimalField(
-        max_digits=5, decimal_places=2, default=10.00)  # 22.12
+        max_digits=5, decimal_places=2, default=10.00, null=True, blank=True)  # 22.12
     NIGIRI_SUSHI = models.IntegerField(
         choices=NIGIRI_SUSHI, default=6)
     INARI_SUSHI = models.IntegerField(
@@ -203,6 +204,7 @@ class Sushi(models.Model):
     #     return "SUSHI"
 
     def save(self, *args, **kwargs):
+        self.price = 0
         if self.NIGIRI_SUSHI == 1:
             if self.INARI_SUSHI == 1:
                 if self.MAKI_SUSHI == 4:
@@ -517,7 +519,7 @@ class Drink(models.Model):
     )
 
     price = models.DecimalField(
-        max_digits=100, decimal_places=2, default=00.00)  # 22.12
+        max_digits=100, decimal_places=2, default=00.00, null=True, blank=True)  # 22.12
     SAKE = models.IntegerField(
         choices=SAKE, default=1)
     BEER = models.IntegerField(choices=BEER, default=1)
@@ -529,6 +531,7 @@ class Drink(models.Model):
     #     return "DRINK"
 
     def save(self, *args, **kwargs):
+        self.price = 0
         if self.SAKE == 1:
             if self.CHOYA == 4:
                 if self.GREEN_TEA == 2:
