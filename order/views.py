@@ -111,18 +111,18 @@ def delete_drink_order(request, order_id):
 
 def edit_ramen_order(request, order_id):
     order = get_object_or_404(Order, id=order_id)
-    order.ramen= None
+    form = RamenOrder(instance=order)
     order.save()
     return redirect(ramen_order)
 
 def edit_sushi_order(request, order_id):
     order = get_object_or_404(Order, id=order_id)
-    order.sushi= None
+    form = SushiOrder(instance=order)
     order.save()
-    return redirect(ramen_order)
+    return redirect(sushi_order)
 
 def edit_drink_order(request, order_id):
     order = get_object_or_404(Order, id=order_id)
-    order.drink= None
+    form = SushiOrder(instance=order)
     order.save()
-    return redirect(ramen_order)
+    return redirect(drink_order)
