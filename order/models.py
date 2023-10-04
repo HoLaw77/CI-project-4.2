@@ -1,7 +1,8 @@
 from django.db import models
 from django.db.models import Sum
+from django.contrib.auth.models import User
 import decimal
-import datetime as dt
+from datetime import datetime
 # Create your models here.
 
 
@@ -39,6 +40,9 @@ class Ramen(models.Model):
     side_dish = models.IntegerField(choices=SIDE_DISH_CHOICES, default=1)
     soup_choice = models.IntegerField(
         choices=SOUP_CHOICES, default=1)
+    customer = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    order_time = models.DateTimeField(auto_now_add=True, null=True)
+
 
     # def __str__(self) -> str:
     #     return "RAMEN"
@@ -199,6 +203,8 @@ class Sushi(models.Model):
         choices=SOY_OIL, default=1)
     WASABI = models.IntegerField(
         choices=WASABI, default=1)
+    customer = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    order_time = models.DateTimeField(auto_now_add=True, null=True)
 
     # def __str__(self) -> str:
     #     return "SUSHI"
@@ -526,6 +532,8 @@ class Drink(models.Model):
     CHOYA = models.IntegerField(choices=CHOYA, default=1)
     GREEN_TEA = models.IntegerField(choices=GREEN_TEA, default=1)
     WATER = models.IntegerField(choices=WATER, default=1)
+    customer = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    order_time = models.DateTimeField(auto_now_add=True, null=True)
 
     # def __str__(self) -> str:      
     #     return "DRINK"
