@@ -123,6 +123,6 @@ def edit_sushi_order(request, order_id):
 
 def edit_drink_order(request, order_id):
     order = get_object_or_404(Order, id=order_id)
-    form = SushiOrder(instance=order)
+    form = DrinkOrder(instance=order)
     order.save()
     return redirect(drink_order)
