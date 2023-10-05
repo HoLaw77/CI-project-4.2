@@ -44,8 +44,8 @@ class Ramen(models.Model):
     order_time = models.DateTimeField(auto_now_add=True, null=True)
 
 
-    # def __str__(self) -> str:
-    #     return "RAMEN"
+    def __str__(self) -> str:
+        return "RAMEN"
 
     def save(self, *args, **kwargs):
         self.price = 0
@@ -206,8 +206,8 @@ class Sushi(models.Model):
     customer = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     order_time = models.DateTimeField(auto_now_add=True, null=True)
 
-    # def __str__(self) -> str:
-    #     return "SUSHI"
+    def __str__(self) -> str:
+        return "SUSHI"
 
     def save(self, *args, **kwargs):
         self.price = 0
@@ -535,8 +535,8 @@ class Drink(models.Model):
     customer = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     order_time = models.DateTimeField(auto_now_add=True, null=True)
 
-    # def __str__(self) -> str:      
-    #     return "DRINK"
+    def __str__(self) -> str:      
+        return "DRINK"
 
     def save(self, *args, **kwargs):
         self.price = 0
@@ -790,6 +790,18 @@ class Order(models.Model):
             self.total_price += self.ramen.price
         super().save(*args, **kwargs)
     
+    ramen_order = Ramen.objects.latest("order_time")
+    sushi_order = Sushi.objects.latest("order_time")
+    drink_order = Drink.objects.latest("order_time")
+    
+    def save_order(self, *args, **kwargs):
+        if ramen_order:
+            self.ramen = ramen_order
+        if sushi_order:
+            self.sushi = sushi_order
+        if drink_order:
+            self.drink = drink_order  
+        super().save(*args, **kwargs)  
 
 
 class Confirm(models.Model):
