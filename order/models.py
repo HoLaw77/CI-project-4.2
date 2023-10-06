@@ -44,8 +44,8 @@ class Ramen(models.Model):
     order_time = models.DateTimeField(auto_now_add=True, null=True)
 
 
-    def __str__(self) -> str:
-        return "RAMEN"
+    # def __str__(self) -> str:
+    #     return "RAMEN"
 
     def save(self, *args, **kwargs):
         self.price = 0
@@ -206,8 +206,8 @@ class Sushi(models.Model):
     customer = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     order_time = models.DateTimeField(auto_now_add=True, null=True)
 
-    def __str__(self) -> str:
-        return "SUSHI"
+    # def __str__(self) -> str:
+    #     return "SUSHI"
 
     def save(self, *args, **kwargs):
         self.price = 0
@@ -535,8 +535,8 @@ class Drink(models.Model):
     customer = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     order_time = models.DateTimeField(auto_now_add=True, null=True)
 
-    def __str__(self) -> str:      
-        return "DRINK"
+    # def __str__(self) -> str:      
+    #     return "DRINK"
 
     def save(self, *args, **kwargs):
         self.price = 0
@@ -772,12 +772,12 @@ class Drink(models.Model):
 
 
 class Order(models.Model):
-    ramen = models.ManyToManyField(
-        Ramen, related_name="orders")
-    sushi = models.ManyToManyField(
-        Sushi, related_name="orders")
-    drink = models.ManyToManyField(
-        Drink, related_name="orders")
+    ramen = models.ForeignKey(
+        Ramen, related_name="orders", on_delete=models.CASCADE, null=True, blank=True)
+    sushi = models.ForeignKey(
+        Sushi, related_name="orders", on_delete=models.CASCADE, null=True, blank=True)
+    drink = models.ForeignKey(
+        Drink, related_name="orders", on_delete=models.CASCADE, null=True, blank=True)
     total_price = models.DecimalField(
         max_digits=6, decimal_places=2, default=0.00, null=True, blank=True)
     def save(self, *args, **kwargs):
