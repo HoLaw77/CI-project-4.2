@@ -772,12 +772,12 @@ class Drink(models.Model):
 
 
 class Order(models.Model):
-    ramen = models.ForeignKey(
-        Ramen, related_name="orders", on_delete=models.CASCADE, null=True, blank=True)
-    sushi = models.ForeignKey(
-        Sushi, related_name="orders", on_delete=models.CASCADE, null=True, blank=True)
-    drink = models.ForeignKey(
-        Drink, related_name="orders", on_delete=models.CASCADE, null=True, blank=True)
+    ramen = models.ManyToManyField(
+        Ramen, related_name="orders")
+    sushi = models.ManyToManyField(
+        Sushi, related_name="orders")
+    drink = models.ManyToManyField(
+        Drink, related_name="orders")
     total_price = models.DecimalField(
         max_digits=6, decimal_places=2, default=0.00, null=True, blank=True)
     def save(self, *args, **kwargs):
@@ -796,10 +796,13 @@ class Order(models.Model):
     
     def save_order(self, *args, **kwargs):
         if ramen_order:
+            self.ramen.create()
             self.ramen = ramen_order
         if sushi_order:
+            self.sushi.create()
             self.sushi = sushi_order
         if drink_order:
+            self.drink.create()
             self.drink = drink_order  
         super().save(*args, **kwargs)  
 
