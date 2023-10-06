@@ -6,7 +6,7 @@ from django.views.generic import TemplateView, DetailView
 from django.contrib import admin
 
 
-from .forms import BookTimeForm, SushiOrder, RamenOrder, DrinkOrder
+from .forms import BookTimeForm, SushiOrder, RamenOrder, DrinkOrder, AddSushiOrder, AddRamenOrder, AddDrinkOrder
 # Create your views here.
 
 def sushi(request):
@@ -40,7 +40,7 @@ class OrderList(generic.ListView):
 def confirm_order(request):
     if request.method == "POST":
         form = BookTimeForm(request.POST)
-       
+        
         if form.is_valid():
             form.save(commit = False)
             form.save()
@@ -54,10 +54,12 @@ def confirm_order(request):
 def sushi_order(request):
     if request.method == "POST":
         form = SushiOrder(request.POST)
+        form = AddSushiOrder(request.POST)
 
         if form.is_valid():
             form.save(commit=False)
             form.save()
+            
         else:
             print('form invalid')
     form = SushiOrder()
@@ -70,10 +72,12 @@ class ConfirmList(generic.ListView):
 def ramen_order(request):
     if request.method == "POST":
         form = RamenOrder(request.POST)
+        form = AddRamenOrder(request.POST)
 
         if form.is_valid():
             form.save(commit=False)
             form.save()
+            
         else:
             print('form invalid')
     form = RamenOrder()
@@ -82,10 +86,12 @@ def ramen_order(request):
 def drink_order(request):
     if request.method == "POST":
         form = DrinkOrder(request.POST)
+        form = AddDrinkOrder(request.POST)
 
         if form.is_valid():
             form.save(commit=False)
             form.save()
+            
         else:
             print('form invalid')
     form = DrinkOrder()

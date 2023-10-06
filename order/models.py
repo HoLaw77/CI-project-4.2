@@ -795,16 +795,17 @@ class Order(models.Model):
     drink_order = Drink.objects.latest("order_time")
     
     def save_order(self, *args, **kwargs):
-        if ramen_order:
-            self.ramen.create()
-            self.ramen = ramen_order
-        if sushi_order:
-            self.sushi.create()
-            self.sushi = sushi_order
-        if drink_order:
-            self.drink.create()
-            self.drink = drink_order  
-        super().save(*args, **kwargs)  
+        if order:
+            if ramen_order:
+                self.ramen.create()
+                self.ramen = ramen_order
+            if sushi_order:
+                self.sushi.create()
+                self.sushi = sushi_order
+            if drink_order:
+                self.drink.create()
+                self.drink = drink_order  
+            super().save(*args, **kwargs)  
 
 
 class Confirm(models.Model):
