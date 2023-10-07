@@ -54,7 +54,7 @@ def confirm_order(request):
 def sushi_order(request):
     if request.method == "POST":
         form = SushiOrder(request.POST)
-        form = AddSushiOrder(request.POST)
+        # form = AddSushiOrder(request.POST)
 
         if form.is_valid():
             form.save(commit=False)
@@ -72,7 +72,7 @@ class ConfirmList(generic.ListView):
 def ramen_order(request):
     if request.method == "POST":
         form = RamenOrder(request.POST)
-        form = AddRamenOrder(request.POST)
+        # form = AddRamenOrder(request.POST)
 
         if form.is_valid():
             form.save(commit=False)
@@ -86,7 +86,7 @@ def ramen_order(request):
 def drink_order(request):
     if request.method == "POST":
         form = DrinkOrder(request.POST)
-        form = AddDrinkOrder(request.POST)
+        # form = AddDrinkOrder(request.POST)
 
         if form.is_valid():
             form.save(commit=False)
