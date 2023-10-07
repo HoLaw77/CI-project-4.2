@@ -790,11 +790,11 @@ class Order(models.Model):
             self.total_price += self.ramen.price
         super().save(*args, **kwargs)
     
-    ramen_order = Ramen.objects.latest("order_time")
-    sushi_order = Sushi.objects.latest("order_time")
-    drink_order = Drink.objects.latest("order_time")
-    
     def save_order(self, *args, **kwargs):
+        ramen_order = Ramen.objects.latest("order_time")
+        sushi_order = Sushi.objects.latest("order_time")
+        drink_order = Drink.objects.latest("order_time")
+    
         if ramen_order:
             self.ramen.create()
             self.ramen = ramen_order
