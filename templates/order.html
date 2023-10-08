@@ -4,8 +4,6 @@
 <div class="order">
   <!-- test -->
 
-  {% for order in order_list %}
-  
   <table class="order-table">
     {% if order.ramen %}
     <tr>
@@ -15,64 +13,20 @@
     <tr>
       <td>
         Topping:
-        {% if order.ramen.toppings_choice == 1 %}
-
-        Egg </td>
-        {% endif %}
-
-        {% if order.ramen.toppings_choice == 2 %}
-        
-        Sea weed </td>
-        {% endif %}
-        {% if order.ramen.toppings_choice == 3 %}
-        
-        Pork </td>
-        {% endif %}
-        {% if order.ramen.toppings_choice == 4 %}
-        
-        Garlic </td>
-        {% endif %}
+        {{ order.ramen.topping }}
+      </td>
     </tr>
     <tr>
       <td>
         Soup:
-        {% if order.ramen.soup_choice == 1 %}
-        Pork bones soup</td>
-        {% endif %}
-        {% if order.ramen.soup_choice == 2 %}
-        Salt soup</td>
-        {% endif %}
-        {% if order.ramen.soup_choice == 3 %}
-        miso soup</td>
-        {% endif %}
-        {% if order.ramen.soup_choice == 4 %}
-        soy sauce soup</td>
-        {% endif %}
+        {{ order.ramen.soup }}
+      </td>
     </tr>
     <tr>
-    <td>
+      <td>
         Side Dish:
-    {% if order.ramen.side_dish == 1 %}
-    Gyoza dumpling</td>
-    {% endif %}
-    {% if order.ramen.side_dish == 2 %}
-    Edamame beans</td>
-    {% endif %}
-    {% if order.ramen.side_dish == 3 %}
-    Yakitori skewers (chicken, beef)</td>
-    {% endif %}
-    {% if order.ramen.side_dish == 4 %}
-    Tempura (Chilli squid )</td>
-    {% endif %}
-    {% if order.ramen.side_dish == 5 %}
-    Kimchi</td>
-    {% endif %}
-    {% if order.ramen.side_dish == 6 %}
-    Fried chicken</td>
-    {% endif %}
-    {% if order.ramen.side_dish == 7 %}
-    None</td>
-    {% endif %}
+        {{ order.ramen.side }}
+      </td>
     </tr>
     <tr>
         <td>Price: £ {{order.ramen.price}}</td>
@@ -90,11 +44,6 @@
     </tr>
     {% endif %}
   </table>
-
-  {% empty %} {% endfor %} 
-  </br>
-  {% for order in order_list %}
-  
   <table class="order-table" id="sushi_table">
     {% if order.sushi %}
     <tr>
@@ -103,91 +52,40 @@
     <tr>
       <td>
         Nigiri Sushi:
-        {% if order.sushi.NIGIRI_SUSHI == 1 %}
-        raw Salmon x 3</td>
-        {% endif %}
-        {% if order.sushi.NIGIRI_SUSHI == 2 %}
-        raw Tuna x 3</td>
-        {% endif %}
-        {% if order.sushi.NIGIRI_SUSHI == 3 %}
-        shrimp x 3</td>
-        {% endif %}
-        {% if order.sushi.NIGIRI_SUSHI == 4 %}
-        sea urchin (Uni) x 3</td>
-        {% endif %}
-        {% if order.sushi.NIGIRI_SUSHI == 5 %}
-        Ikura x 3</td>
-        {% endif %}
-        {% if order.sushi.NIGIRI_SUSHI == 6 %}
-        Amberjack x 3</td>
-        {% endif %}
-        {% if order.sushi.NIGIRI_SUSHI == 7 %}
-        None</td>
-        {% endif %}
+        {{ order.sushi.nigiri }}
+      </td>
     </tr>
     <tr>
       <td>
         Inari Sushi: 
-        {% if order.sushi.INARI_SUSHI == 1 %}
-        Inari Sushi x 3</tr>
-        {% endif %}
-        {% if order.sushi.INARI_SUSHI == 2 %}
-        None</tr>
-        {% endif %}
+        {{ order.sushi.inari }}
+      </td>
     </tr>
     <tr>
       <td>
         Maki Sushi:
-        {% if order.sushi.MAKI_SUSHI == 1 %}
-        Salmon, tuna, amberjack</td>
-        {% endif %}
-        {% if order.sushi.MAKI_SUSHI == 2 %}
-        Cucumber, carrot, egg</td>
-        {% endif %}
-        {% if order.sushi.MAKI_SUSHI == 3 %}
-        Cucumber, egg, crab</td>
-        {% endif %}
-        {% if order.sushi.MAKI_SUSHI == 4 %}
-        </td>
-        {% endif %}
+        {{ order.sushi.maki }}
 
+      </td>
     </tr>
     <tr>
       <td>
         Temaki Sushi:
-        {% if order.sushi.TEMAKI_SUSHI == 1 %}
-        Crab Stick, carrot and cucumber x 3</td>
-        {% endif %}
-        {% if order.sushi.TEMAKI_SUSHI == 2 %}
-        shrimp and cucumber x 3</td>
-        {% endif %}
-        {% if order.sushi.TEMAKI_SUSHI == 3 %}
-        Ikura, egg, and salad vegetables x 3</td>
-        {% endif %}
-        {% if order.sushi.TEMAKI_SUSHI == 4 %}
-        Salmon x 3</td>
-        {% endif %}
-        {% if order.sushi.TEMAKI_SUSHI == 5 %}
-        </td>
-        {% endif %}
+        {{ order.sushi.temaki }}
         
-    </tr>
-    <tr>
-        <td>
-        {% if order.sushi.SOY_OIL == 1 %}
-        Soy Oil </td>
-        {% endif %}
-        {% if order.sushi.SOY_OIL == 2 %}
-        {% endif %}
+      </td>
     </tr>
     <tr>
       <td>
-        {% if order.sushi.WASABI == 1 %}
-        Wasabi</td>
-        {% endif %}
-        {% if order.sushi.WASABI == 2 %}
-        {% endif %}
-
+        Soy Oil:
+        {{ order.sushi.soy }}
+      </td>
+    </tr>
+    <tr>
+      <td>        
+        Wasabi:
+        {{ order.sushi.wasabi_choice }}
+      </td>
     </tr>
     <tr>
         <td>Price: £ {{order.sushi.price}}</td>
@@ -206,9 +104,6 @@
     </tr>
     {% endif %}
   </table >
-  {% endfor %} {% for order in order_list %}
-</br>
-  
   <table class="order-table">
     {% if order.drink %}
     <tr>
@@ -217,67 +112,32 @@
     <tr>
       <td>
         Sake:
-        {% if order.drink.SAKE == 1 %}
-        1 bottle Dassai Sake</td>
-        {% endif %}
-        {% if order.drink.SAKE == 2 %}
-        1 bottle Kubota Sake </td>
-        {% endif %}
-        {% if order.drink.SAKE == 3 %}
-        1 bottle Yamamoto Sake
-        {% endif %}
-        {% if order.drink.SAKE == 4 %}
-        1 bottle Juyondai Sake
-        {% endif %}
+        {{ order.drink.sake_choice }}
+      </td>
     </tr>
     <tr>
       <td>
         Beer:
-        {% if order.drink.BEER == 1 %}
-        1 bottle Asahi Super Dry</td>
-        {% endif %}
-        {% if order.drink.BEER == 2 %}
-        1 bottle Saporro Premium</td>
-        {% endif %}
-        {% if order.drink.BEER == 3 %}
-        1 bottle Echigo Koshihikari</td>
-        {% endif %}
-        {% if order.drink.BEER == 4 %}
-        1 bottle Orion Premium Draft Beer</td>
-        {% endif %}
+        {{ order.drink.beer_choice }}
+      </td>
     </tr>
     <tr>
       <td>
         Choya:
-        {% if order.drink.CHOYA == 1 %}
-        1 bottle original favor</td>
-        {% endif %}
-        {% if order.drink.CHOYA == 2 %}
-        1 bottle of honey favor</td>
-        {% endif %}
-        {% if order.drink.CHOYA == 3 %}
-        1 bottle of peach favor</td>
-        {% endif %}
+        {{ order.drink.choya_choice }}
+      </td>
     </tr>
     <tr>
       <td>
         Green Tea:
-        {% if order.drink.GREEN_TEA == 1 %}
-        1 cup of Green Tea</td>
-        {% endif %}
-        {% if order.drink.GREEN_TEA == 2 %}
-        </td>
-        {% endif %}
+        {{ order.drink.green_tea_choice }}
+      </td>
     </tr>
     <tr>
       <td>
         Water:
-        {% if order.drink.WATER == 1 %}
-        1 cup of Water</td>
-        {% endif %}
-        {% if order.drink.WATER == 2 %}
-        </td>
-        {% endif %}
+        {{ order.drink.water_choice }}
+      </td>
     </tr>
     <tr>
         <td>Price: £ {{order.drink.price}}</td>
@@ -293,54 +153,45 @@
     {% else %}
     <tr> 
         <td>No drink</td>
-
+  
         </tr>
     {% endif %}
   </table>
-
- {% empty %}
-  <p>no orders</p>
-  {% endfor %}
-  <br>
-  <br>
-{% for order in order_list %}
   <p class="total-price">Total Price: £ {{order.total_price}}</p>
-{% endfor %}
-
-</div>
-
-<div class="booking-area">
-    <h2 class="confirm-text">Confirm your booking</h2>
-    <form action="{% url 'confirm_order' %}" method="POST">
-        {% csrf_token %}
-        {{form}}
-        <div>
-            <p><label for="your_name" class="order-text">Your name: </label>
-            <input id="your_name" type="text" name="your_name" value="{{ current_name }}"></p>
-        </div>
-        <div>
-            <p><label for="arriving_date" class="order-text">Arriving date:</label>
-            <input type="date" id="arriving_date" name="arriving_date"></p>
-        </div>
-        <div>
-            <p><label for="dinning_time" class="order-text">Dinning time:</label>
-            <input type="time" id="dinning_time" name="dinning_time"></p>
-        </div>
-        <div>
-            <p><label for="number_of_people" class="order-text">Number of people:</label>
-            <input type="number" id="quantity" name="number_of_people" min="1" max="5"></p>
-        </div>
-        
-        <br>
-        <br>
-        <label for="email" class="order-text">Email:</label>
-        <input type="email" id="email" name="email">
-    
-    <br>
-    <br>
-    <input type="submit" class= "submit-button" value="Submit"> 
-    </form>
-
+  <div class="booking-area">
+      <h2 class="confirm-text">Confirm your booking</h2>
+      <form action="{% url 'confirm_order' %}" method="POST">
+          {% csrf_token %}
+          {{form}}
+          <div>
+              <p><label for="your_name" class="order-text">Your name: </label>
+              <input id="your_name" type="text" name="your_name" value="{{ current_name }}"></p>
+          </div>
+          <div>
+              <p><label for="arriving_date" class="order-text">Arriving date:</label>
+              <input type="date" id="arriving_date" name="arriving_date"></p>
+          </div>
+          <div>
+              <p><label for="dinning_time" class="order-text">Dinning time:</label>
+              <input type="time" id="dinning_time" name="dinning_time"></p>
+          </div>
+          <div>
+              <p><label for="number_of_people" class="order-text">Number of people:</label>
+              <input type="number" id="quantity" name="number_of_people" min="1" max="5"></p>
+          </div>
+          
+          <br>
+          <br>
+          <label for="email" class="order-text">Email:</label>
+          <input type="email" id="email" name="email">
+      
+      <br>
+      <br>
+      <input type="submit" class= "submit-button" value="Submit"> 
+      </form>
+  
+  
+  </div>
 
 </div>
 

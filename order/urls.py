@@ -6,7 +6,7 @@ from order.views import confirm_order
 
 urlpatterns = [
     path('', views.SushiList.as_view(), name='home'),
-    path('order/', views.OrderList.as_view(), name='order'),
+    path('order/', views.order, name='order'),
     path('sushi/', views.sushi, name='sushi',),
     path('ramen/', views.ramen, name='ramen'),
     path('drink/', views.drink, name='drink'),
