@@ -83,7 +83,7 @@ class Ramen(models.Model):
         return self.SOUP_CHOICES[self.soup_choice-1][1]
     
     def save(self, *args, **kwargs):
-        price = self.TOPPING_CHOICES_PRICE[self.topping_choice-1][1] + self.SIDE_DISH_PRICE[self.side_dish-1][1] + self.SOUP_PRICE[self.soup_choice-1][1] 
+        price = self.TOPPING_CHOICES_PRICE[self.toppings_choice-1][1] + self.SIDE_DISH_PRICE[self.side_dish-1][1] + self.SOUP_PRICE[self.soup_choice-1][1] 
         self.price = decimal.Decimal(price)
 
         super(Ramen, self).save(*args, **kwargs)
