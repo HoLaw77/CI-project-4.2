@@ -77,7 +77,7 @@ def sushi_order(request):
                 return redirect(drink_order)
             else:
                 return redirect(reverse('order'))
-            # form.save()
+            
             
         else:
             print('form invalid')
