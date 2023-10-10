@@ -6,7 +6,7 @@ from django.views.generic import TemplateView, DetailView
 from django.contrib import admin
 
 
-from .forms import BookTimeForm, SushiOrder, RamenOrder, DrinkOrder, AddSushiOrder, AddRamenOrder, AddDrinkOrder
+from .forms import BookTimeForm, SushiOrder, RamenOrder, DrinkOrder
 # Create your views here.
 
 def sushi(request):
