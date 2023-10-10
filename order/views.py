@@ -6,21 +6,19 @@ from django.views.generic import TemplateView, DetailView
 from django.contrib import admin
 
 
-from .forms import BookTimeForm, SushiOrder, RamenOrder, DrinkOrder
+from .forms import BookTimeForm, SushiOrder, RamenOrder, DrinkOrder, AddSushiOrder, AddRamenOrder, AddDrinkOrder
 # Create your views here.
-
+# ​
 def sushi(request):
     return render(request, 'sushi/sushi.html')
 
-
 def ramen(request):
     return render(request, 'ramen/ramen.html')
+
 def drink(request):
     return render(request, 'drink/drink.html')
-
 def login_user(request):
     return render(request, 'account/login_user.html')
-    
 def logout_user(request):
     return render(request, 'account/logout_user.html')
 
@@ -28,6 +26,7 @@ class SushiList(generic.ListView):
     model = Sushi
     template_name = "index.html"
     paginated_by = 3
+
 # class OrderList(generic.ListView):
 #     model = Order
 #     template_name = "order.html"
@@ -52,15 +51,14 @@ def confirm_order(request):
           
         else:
             print('form invalid')
-            
+
     form = BookTimeForm()    
     return render(request, "confirm.html", {'form': form})
-
 def sushi_order(request):
     if request.method == "POST":
         form = SushiOrder(request.POST)
         # form = AddSushiOrder(request.POST)
-        #​
+
         if form.is_valid():
             form.save(commit=False)
             order = Order.objects.filter(customer=request.user, confirmed=False).last()
@@ -77,13 +75,12 @@ def sushi_order(request):
                 return redirect(drink_order)
             else:
                 return redirect(reverse('order'))
-            
+            # form.save()
             
         else:
             print('form invalid')
     form = SushiOrder()
     return render(request, "sushi/sushi.html", {'form':form})
-
 class ConfirmList(generic.ListView):
     model = Confirm
     template_name = "confirm_order.html" 
@@ -92,7 +89,7 @@ def ramen_order(request):
     if request.method == "POST":
         form = RamenOrder(request.POST)
         # form = AddRamenOrder(request.POST)
-
+        # ​
         if form.is_valid():
             form.save(commit=False)
             order = Order.objects.filter(customer=request.user, confirmed=False).last()
@@ -118,8 +115,7 @@ def ramen_order(request):
 def drink_order(request):
     if request.method == "POST":
         form = DrinkOrder(request.POST)
-        # form = AddDrinkOrder(request.POST)
-
+        # form = AddDrinkOrder(request.POST)​
         if form.is_valid():
             form.save(commit=False)
             order = Order.objects.filter(customer=request.user, confirmed=False).last()
@@ -172,7 +168,7 @@ def edit_sushi_order(request, order_id):
     form = SushiOrder(instance=order)
     order.save()
     return redirect(sushi_order)
-
+    
 def edit_drink_order(request, order_id):
     order = get_object_or_404(Order, id=order_id)
     form = DrinkOrder(instance=order)

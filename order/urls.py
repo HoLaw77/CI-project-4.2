@@ -3,7 +3,7 @@ from order import views
 from order.views import confirm_order
 
 # from order.views import show_order
-
+# ​
 urlpatterns = [
     path('', views.SushiList.as_view(), name='home'),
     path('order/', views.order, name='order'),

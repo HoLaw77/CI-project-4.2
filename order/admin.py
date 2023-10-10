@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Ramen, Sushi, Drink, Order, Confirm
 # Register your models here.
-# ​
+
 class RamenAdmin (admin.ModelAdmin):
     list_display = ("toppings_choice", "side_dish", "soup_choice", "order_time") 
     list_filter = ("order_time", "toppings_choice", "side_dish", "soup_choice")
