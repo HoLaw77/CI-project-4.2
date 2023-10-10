@@ -2,7 +2,6 @@ from django import forms
 from django.forms import ModelForm
 from .models import Sushi, Confirm, Ramen, Drink, Order
 
-
 class BookTimeForm(forms.ModelForm):
      class Meta:
         model = Confirm

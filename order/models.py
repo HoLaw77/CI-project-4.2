@@ -12,7 +12,16 @@ class Ramen(models.Model):
         (2, "Sea weed"),
         (3, "Pork"),
         (4, "Corn"),
-        (5, "None")
+        (5, "None"),
+    )
+
+    TOPPING_CHOICES_PRICE = (
+        (1, 3),
+        (2, 3),
+        (3, 3),
+        (4, 3),
+        (5, 0),
+
     )
 
     SIDE_DISH_CHOICES = (
@@ -25,12 +34,30 @@ class Ramen(models.Model):
         (7, "None"),
     )
 
+    SIDE_DISH_PRICE = (
+        (1, 4),
+        (2, 4),
+        (3, 4),
+        (4, 4),
+        (5, 4),
+        (6, 4),
+        (7, 0),
+    )
+
     SOUP_CHOICES = (
         (1, "pork bones soup"),
         (2, "Salt soup"),
         (3, "miso soup"),
         (4, "soy sauce soup"),
         (5, "None"),
+    )
+
+    SOUP_PRICE = (
+        (1, 3),
+        (2, 2),
+        (3, 3),
+        (4, 2),
+        (5, 0),
     )
 
     price = models.DecimalField(
@@ -55,107 +82,10 @@ class Ramen(models.Model):
     def soup(self):
         return self.SOUP_CHOICES[self.soup_choice-1][1]
     
-    
-
-    # def __str__(self) -> str:
-    #     return "RAMEN"
-
     def save(self, *args, **kwargs):
-        self.price = 0
-        if self.toppings_choice == 1:
-            if self.soup_choice == 1:
-                if self.side_dish == 7:
-                    self.price = decimal.Decimal(6)
-                else:
-                    self.price = decimal.Decimal(10)
-            if self.soup_choice == 2:
-                if self.side_dish == 7:
-                    self.price = decimal.Decimal(5)
-                else:
-                    self.price = decimal.Decimal(9)
-            if self.soup_choice == 3:
-                if self.side_dish == 7:
-                    self.price = decimal.Decimal(6)
-                else:
-                    self.price = decimal.Decimal(10)
-            if self.soup_choice == 4:
-                if self.side_dish == 7:
-                    self.price = decimal.Decimal(5)
-                else:
-                    self.price = decimal.Decimal(9)
-            if self.soup_choice == 5:
-                self.price = decimal.Decimal(0)
-        if self.toppings_choice == 2:
-            if self.soup_choice == 1:
-                if self.side_dish == 7:
-                    self.price = decimal.Decimal(6)
-                else:
-                    self.price = decimal.Decimal(10)
-            if self.soup_choice == 2:
-                if self.side_dish == 7:
-                    self.price = decimal.Decimal(5)
-                else:
-                    self.price = decimal.Decimal(9)
-            if self.soup_choice == 3:
-                if self.side_dish == 7:
-                    self.price = decimal.Decimal(6)
-                else:
-                    self.price = decimal.Decimal(10)
-            if self.soup_choice == 4:
-                if self.side_dish == 7:
-                    self.price = decimal.Decimal(5)
-                else:
-                    self.price = decimal.Decimal(10)
-            if self.soup_choice == 5:
-                self.price = decimal.Decimal(0)
-        if self.toppings_choice == 3:
-            if self.soup_choice == 1:
-                if self.side_dish == 7:
-                    self.price = decimal.Decimal(6)
-                else:
-                    self.price = decimal.Decimal(10)
-            if self.soup_choice == 2:
-                if self.side_dish == 7:
-                    self.price = decimal.Decimal(5)
-                else:
-                    self.price = decimal.Decimal(9)
-            if self.soup_choice == 3:
-                if self.side_dish == 7:
-                    self.price = decimal.Decimal(6)
-                else:
-                    self.price = decimal.Decimal(10)
-            if self.soup_choice == 4:
-                if self.side_dish == 7:
-                    self.price = decimal.Decimal(5)
-                else:
-                    self.price = decimal.Decimal(10)
-            if self.soup_choice == 5:
-                self.price = decimal.Decimal(0)
-        if self.toppings_choice == 4:
-            if self.soup_choice == 1:
-                if self.side_dish == 7:
-                    self.price = decimal.Decimal(6)
-                else:
-                    self.price = decimal.Decimal(10)
-            if self.soup_choice == 2:
-                if self.side_dish == 7:
-                    self.price = decimal.Decimal(5)
-                else:
-                    self.price = decimal.Decimal(9)
-            if self.soup_choice == 3:
-                if self.side_dish == 7:
-                    self.price = decimal.Decimal(6)
-                else:
-                    self.price = decimal.Decimal(10)
-            if self.soup_choice == 4:
-                if self.side_dish == 7:
-                    self.price = decimal.Decimal(5)
-                else:
-                    self.price = decimal.Decimal(10)
-            if self.soup_choice == 5:
-                self.price = decimal.Decimal(0)
-        if self.toppings_choice == 5:
-            self.price = decimal.Decimal(0)
+        price = self.TOPPING_CHOICES_PRICE[self.toppings_choice-1][1] + self.SIDE_DISH_PRICE[self.side_dish-1][1] + self.SOUP_PRICE[self.soup_choice-1][1] 
+        self.price = decimal.Decimal(price)
+
         super(Ramen, self).save(*args, **kwargs)
 
 
@@ -193,9 +123,9 @@ class Sushi(models.Model):
     )
 
     MAKI_SUSHI = (
-        (1, "6 with 3 kinds of fish salmon, tuna, amberjack"),
-        (2, "6 with cucumber, carrot and egg"),
-        (3, "6 with sesame topping, cucumber, egg and crab stick inside"),
+        (1, "salmon, tuna, amberjack x 6"),
+        (2, "cucumber, carrot and egg x 6"),
+        (3, "sesame, cucumber, egg, crab stick x 6"),
         (4, "None")
     )
     
@@ -207,10 +137,10 @@ class Sushi(models.Model):
     )
 
     TEMAKI_SUSHI = (
-        (1, " with Crab Stick, carrot and cucumber  x 3 "),
-        (2, "With shrimp and cucumber  x 3 "),
-        (3, "With Ikura, egg, and salad vegetables  x 3 "),
-        (4, "With salmon  x 3 "),
+        (1, "Crab, cucumber x 3 "),
+        (2, "shrimp, cucumber  x 3 "),
+        (3, "Ikura, egg, salad  x 3 "),
+        (4, "Salmon  x 3 "),
         (5, "None")
     )
     
@@ -289,285 +219,7 @@ class Sushi(models.Model):
     def save(self, *args, **kwargs):
         price = self.NIGIRI_SUSHI_PRICE[self.nigiri_sushi-1][1] + self.INARI_SUSHI_PRICE[self.inari_sushi-1][1] + self.MAKI_SUSHI_PRICE[self.maki_sushi-1][1] + self.TEMAKI_SUSHI_PRICE[self.temaki_sushi-1][1] + self.SOY_OIL_PRICE[self.soy_oil-1][1] + self.WASABI_PRICE[self.wasabi-1][1]
         self.price = decimal.Decimal(price)
-        # if self.nigiri_sushi == 1:
-        #     if self.inari_sushi == 1:
-        #         if self.maki_sushi == 4:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(11)
-        #         elif self.maki_sushi == 1:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(20)
-        #             else:
-        #                 self.price = decimal.Decimal(26)
-        #         elif self.maki_sushi == 2:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(20)
-        #             else:
-        #                 self.price = decimal.Decimal(26)
-        #         elif self.maki_sushi == 3:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(20)
-        #             else:
-        #                 self.price = decimal.Decimal(26)
-        #     if self.inari_sushi == 2:
-        #         if self.maki_sushi == 4:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(5)
-        #         elif self.maki_sushi == 1:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(14)
-        #             else: 
-        #                 self.price = decimal.Decimal(20)
-        #         elif self.maki_sushi == 2:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(14)
-        #             else: 
-        #                 self.price = decimal.Decimal(20)
-        #         elif self.maki_sushi == 3:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(14)
-        #             else: 
-        #                 self.price = decimal.Decimal(20)
-                    
-        # if self.nigiri_sushi == 2:
-        #     if self.inari_sushi == 1:
-        #         if self.maki_sushi == 4:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(11)
-        #         elif self.maki_sushi == 1:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(20)
-        #             else:
-        #                 self.price = decimal.Decimal(26)
-        #         elif self.maki_sushi == 2:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(20)
-        #             else:
-        #                 self.price = decimal.Decimal(26)
-        #         elif self.maki_sushi == 3:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(20)
-        #             else:
-        #                 self.price = decimal.Decimal(26)
-        #     if self.inari_sushi == 2:
-        #         if self.maki_sushi == 4:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(5)
-        #         elif self.maki_sushi == 1:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(14)
-        #             else: 
-        #                 self.price = decimal.Decimal(20)
-        #         elif self.maki_sushi == 2:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(14)
-        #             else: 
-        #                 self.price = decimal.Decimal(20)
-        #         elif self.maki_sushi == 3:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(14)
-        #             else: 
-        #                 self.price = decimal.Decimal(20)
-                    
-        # if self.nigiri_sushi == 3:
-        #     if self.inari_sushi == 1:
-        #         if self.maki_sushi == 4:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(12)
-        #         elif self.maki_sushi == 1:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(21)
-        #             else:
-        #                 self.price = decimal.Decimal(27)
-        #         elif self.maki_sushi == 2:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(21)
-        #             else:
-        #                 self.price = decimal.Decimal(27)
-        #         elif self.maki_sushi == 3:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(21)
-        #             else:
-        #                 self.price = decimal.Decimal(27)
-        #     if self.inari_sushi == 2:
-        #         if self.maki_sushi == 4:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(6)
-        #         elif self.maki_sushi == 1:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(15)
-        #             else: 
-        #                 self.price = decimal.Decimal(21)
-        #         elif self.maki_sushi == 2:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(15)
-        #             else: 
-        #                 self.price = decimal.Decimal(21)
-        #         elif self.maki_sushi == 3:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(15)
-        #             else: 
-        #                 self.price = decimal.Decimal(21)
-                    
-        # if self.nigiri_sushi == 4:
-        #     if self.inari_sushi == 1:
-        #         if self.maki_sushi == 4:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(13)
-        #         elif self.maki_sushi == 1:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(22)
-        #             else:
-        #                 self.price = decimal.Decimal(28)
-        #         elif self.maki_sushi == 2:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(22)
-        #             else:
-        #                 self.price = decimal.Decimal(28)
-        #         elif self.maki_sushi == 3:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(22)
-        #             else:
-        #                 self.price = decimal.Decimal(28)
-        #     if self.inari_sushi == 2:
-        #         if self.maki_sushi == 4:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(7)
-        #         elif self.maki_sushi == 1:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(16)
-        #             else: 
-        #                 self.price = decimal.Decimal(22)
-        #         elif self.maki_sushi == 2:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(16)
-        #             else: 
-        #                 self.price = decimal.Decimal(22)
-        #         elif self.maki_sushi == 3:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(16)
-        #             else: 
-        #                 self.price = decimal.Decimal(22)
-                    
-        # if self.nigiri_sushi == 5:
-        #     if self.inari_sushi == 1:
-        #         if self.maki_sushi == 4:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(11)
-        #         elif self.maki_sushi == 1:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(20)
-        #             else:
-        #                 self.price = decimal.Decimal(26)
-        #         elif self.maki_sushi == 2:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(20)
-        #             else:
-        #                 self.price = decimal.Decimal(26)
-        #         elif self.maki_sushi == 3:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(20)
-        #             else:
-        #                 self.price = decimal.Decimal(26)
-        #     if self.inari_sushi == 2:
-        #         if self.maki_sushi == 4:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(5)
-        #         elif self.maki_sushi == 1:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(14)
-        #             else: 
-        #                 self.price = decimal.Decimal(20)
-        #         elif self.maki_sushi == 2:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(14)
-        #             else: 
-        #                 self.price = decimal.Decimal(20)
-        #         elif self.maki_sushi == 3:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(14)
-        #             else: 
-        #                 self.price = decimal.Decimal(20)
-                    
-        # if self.nigiri_sushi == 6:
-        #     if self.inari_sushi == 1:
-        #         if self.maki_sushi == 4:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(12)
-        #         elif self.maki_sushi == 1:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(21)
-        #             else:
-        #                 self.price = decimal.Decimal(27)
-        #         elif self.maki_sushi == 2:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(21)
-        #             else:
-        #                 self.price = decimal.Decimal(27)
-        #         elif self.maki_sushi == 3:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(21)
-        #             else:
-        #                 self.price = decimal.Decimal(27)
-        #     if self.inari_sushi == 2:
-        #         if self.maki_sushi == 4:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(6)
-        #         elif self.maki_sushi == 1:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(15)
-        #             else: 
-        #                 self.price = decimal.Decimal(21)
-        #         elif self.maki_sushi == 2:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(15)
-        #             else: 
-        #                 self.price = decimal.Decimal(21)
-        #         elif self.maki_sushi == 3:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(15)
-        #             else: 
-        #                 self.price = decimal.Decimal(21)
-                    
-        # if self.nigiri_sushi == 7:
-        #     if self.inari_sushi == 1:
-        #         if self.maki_sushi == 4:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(6)
-        #         elif self.maki_sushi == 1:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(15)
-        #             else:
-        #                 self.price = decimal.Decimal(21)
-        #         elif self.maki_sushi == 2:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(15)
-        #             else:
-        #                 self.price = decimal.Decimal(21)
-        #         elif self.maki_sushi == 3:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(15)
-        #             else:
-        #                 self.price = decimal.Decimal(21)
-        #     if self.inari_sushi == 2:
-        #         if self.maki_sushi == 4:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(0)
-        #         elif self.maki_sushi == 1:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(9)
-        #             else: 
-        #                 self.price = decimal.Decimal(15)
-        #         elif self.maki_sushi == 2:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(9)
-        #             else: 
-        #                 self.price = decimal.Decimal(15)
-        #         elif self.maki_sushi == 3:
-        #             if self.temaki_sushi == 5:
-        #                 self.price = decimal.Decimal(9)
-        #             else: 
-        #                 self.price = decimal.Decimal(15)
+       
                     
         super(Sushi, self).save(*args, **kwargs)
 
@@ -580,6 +232,14 @@ class Drink(models.Model):
         (4, "1 bottle Juyondai Sake"),
         (5, "None"),
     )
+
+    SAKE_PRICE = (
+        (1, 15),
+        (2, 12),
+        (3, 12),
+        (4, 13),
+        (5, 0),
+    )
     BEER = (
         (1, "1 bottle Asahi Super Dry"),
         (2, "1 bottle Saporro Premium"),
@@ -587,21 +247,46 @@ class Drink(models.Model):
         (4, "1 bottle Orion Premium Draft Beer"),
         (5, "None"),
     )
+
+    BEER_PRICE = (
+        (1, 7),
+        (2, 7),
+        (3, 7),
+        (4, 7),
+        (5, 0),
+        
+    )
     CHOYA = (
         (1, "1 bottle original favor"),
         (2, "1 bottle hoeny favor"),
         (3, "1 bottle peach favor"),
         (4, "None"),
     )
+
+    CHOYA_PRICE = (
+        (1, 9),
+        (2, 9),
+        (3, 9),
+        (4, 0),
+    )
     GREEN_TEA = (
         (1, "1 cup"),
         (2, "None"),
+    )
+
+    GREREN_TEA_PRICE = (
+        (1, 3),
+        (2, 0)
     )
     WATER = (
         (1, "1 cup"),
         (2, "None"),
     )
 
+    WATER_PRICE =(
+        (1, 0),
+        (2, 0),
+    )
     price = models.DecimalField(
         max_digits=100, decimal_places=2, default=00.00, null=True, blank=True)  # 22.12
     sake = models.IntegerField(
@@ -634,246 +319,16 @@ class Drink(models.Model):
     def water_choice(self):
         return self.WATER[self.water-1][1]
     
-    
-    # def __str__(self) -> str:      
-    #     return "DRINK"
-
     def save(self, *args, **kwargs):
-        self.price = 0
-        if self.sake == 1:
-            if self.choya == 4:
-                if self.green_tea == 2:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(15)
-                    else:
-                        self.price = decimal.Decimal(22)
-                elif self.green_tea == 1:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(18)
-                    else:
-                        self.price = decimal.Decimal(25)
-            elif self.choya == 1:
-                if self.green_tea == 2:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(24)
-                    else:
-                        self.price = decimal.Decimal(31)
-                elif self.green_tea == 1:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(27)
-                    else:
-                        self.price = decimal.Decimal(34)
-            elif self.choya == 2:
-                if self.green_tea == 2:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(24)
-                    else:
-                        self.price = decimal.Decimal(31)
-                elif self.green_tea == 1:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(27)
-                    else:
-                        self.price = decimal.Decimal(34)
-            elif self.choya == 3:
-                if self.green_tea == 2:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(24)
-                    else:
-                        self.price = decimal.Decimal(31)
-                elif self.green_tea == 1:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(27)
-                    else:
-                        self.price = decimal.Decimal(34)
+        price = self.SAKE_PRICE[self.sake-1][1] + self.BEER_PRICE[self.beer-1][1] + self.CHOYA_PRICE[self.choya-1][1] + self.GREEN_TEA_PRICE[self.green_tea-1][1] + self.WATER_PRICE[self.water-1][1]
+        self.price = decimal.Decimal(price)
 
-        if self.sake == 2:
-            if self.choya == 4:
-                if self.green_tea == 2:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(12)
-                    else:
-                        self.price = decimal.Decimal(19)
-                elif self.green_tea == 1:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(15)
-                    else:
-                        self.price = decimal.Decimal(22)
-            elif self.choya == 1:
-                if self.green_tea == 2:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(21)
-                    else:
-                        self.price = decimal.Decimal(28)
-                elif self.green_tea == 1:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(24)
-                    else:
-                        self.price = decimal.Decimal(31)
-            elif self.choya == 2:
-                if self.green_tea == 2:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(21)
-                    else:
-                        self.price = decimal.Decimal(28)
-                elif self.green_tea == 1:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(24)
-                    else:
-                        self.price = decimal.Decimal(31)
-            elif self.choya == 3:
-                if self.green_tea == 2:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(21)
-                    else:
-                        self.price = decimal.Decimal(28)
-                elif self.green_tea == 1:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(24)
-                    else:
-                        self.price = decimal.Decimal(31)
-        
-        if self.sake == 3:
-            if self.choya == 4:
-                if self.green_tea == 2:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(12)
-                    else:
-                        self.price = decimal.Decimal(19)
-                elif self.green_tea == 1:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(15)
-                    else:
-                        self.price = decimal.Decimal(22)
-            elif self.choya == 1:
-                if self.green_tea == 2:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(21)
-                    else:
-                        self.price = decimal.Decimal(28)
-                elif self.green_tea == 1:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(24)
-                    else:
-                        self.price = decimal.Decimal(31)
-            elif self.choya == 2:
-                if self.green_tea == 2:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(21)
-                    else:
-                        self.price = decimal.Decimal(28)
-                elif self.green_tea == 1:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(24)
-                    else:
-                        self.price = decimal.Decimal(31)
-            elif self.choya == 3:
-                if self.green_tea == 2:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(21)
-                    else:
-                        self.price = decimal.Decimal(28)
-                elif self.green_tea == 1:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(24)
-                    else:
-                        self.price = decimal.Decimal(31)
-        if self.sake == 4:
-            if self.choya == 4:
-                if self.green_tea == 2:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(13)
-                    else:
-                        self.price = decimal.Decimal(20)
-                elif self.green_tea == 1:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(16)
-                    else:
-                        self.price = decimal.Decimal(23)
-            elif self.choya == 1:
-                if self.green_tea == 2:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(22)
-                    else:
-                        self.price = decimal.Decimal(29)
-                elif self.green_tea == 1:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(25)
-                    else:
-                        self.price = decimal.Decimal(32)
-            elif self.choya == 2:
-                if self.green_tea == 2:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(22)
-                    else:
-                        self.price = decimal.Decimal(29)
-                elif self.green_tea == 1:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(25)
-                    else:
-                        self.price = decimal.Decimal(32)
-            elif self.choya == 3:
-                if self.green_tea == 2:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(22)
-                    else:
-                        self.price = decimal.Decimal(29)
-                elif self.green_tea == 1:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(25)
-                    else:
-                        self.price = decimal.Decimal(32)
-        
-        if self.sake == 5:
-            if self.choya == 4:
-                if self.green_tea == 2:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(0)
-                    else:
-                        self.price = decimal.Decimal(7)
-                elif self.green_tea == 1:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(3)
-                    else:
-                        self.price = decimal.Decimal(10)
-            elif self.choya == 1:
-                if self.green_tea == 2:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(9)
-                    else:
-                        self.price = decimal.Decimal(16)
-                elif self.green_tea == 1:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(12)
-                    else:
-                        self.price = decimal.Decimal(19)
-            elif self.choya == 2:
-                if self.green_tea == 2:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(9)
-                    else:
-                        self.price = decimal.Decimal(16)
-                elif self.green_tea == 1:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(12)
-                    else:
-                        self.price = decimal.Decimal(19)
-            elif self.choya == 3:
-                if self.green_tea == 2:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(9)
-                    else:
-                        self.price = decimal.Decimal(16)
-                elif self.green_tea == 1:
-                    if self.beer == 5:
-                        self.price = decimal.Decimal(12)
-                    else:
-                        self.price = decimal.Decimal(19)
         super(Drink, self).save(*args, **kwargs)
 
 
 class Order(models.Model):
     customer = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    ramen = models.ForeignKey(
+    ramen =models.ForeignKey(
         Ramen, related_name="orders", on_delete=models.CASCADE, null=True, blank=True)
     sushi = models.ForeignKey(
         Sushi, related_name="orders", on_delete=models.CASCADE, null=True, blank=True)
@@ -893,21 +348,7 @@ class Order(models.Model):
             self.total_price += self.ramen.price
         super().save(*args, **kwargs)
     
-    # def save_order(self, *args, **kwargs):
-    #     ramen_order = Ramen.objects.latest("order_time")
-    #     sushi_order = Sushi.objects.latest("order_time")
-    #     drink_order = Drink.objects.latest("order_time")
-    
-    #     if ramen_order:
-    #         self.ramen.create()
-    #         self.ramen = ramen_order
-    #     if sushi_order:
-    #         self.sushi.create()
-    #         self.sushi = sushi_order
-    #     if drink_order:
-    #         self.drink.create()
-    #         self.drink = drink_order  
-    #     super().save(*args, **kwargs)  
+      
 
 
 class Confirm(models.Model):
