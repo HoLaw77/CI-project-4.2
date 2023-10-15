@@ -1,15 +1,53 @@
 {% extends "base.html" %}{% block content%} {% load static %}
 
-<div>
-{% for Confirm in confirm_list %}
-<div>
-    {{confirm.your_name}}
-    {{confirm.dinning_time}}
-    {{confirm.arriving_date}}
-    {{confirm.number_of_people}}
-    {{confirm.email}}
 
+
+<div>
+    <table>
+        
+    <tr>
+        {% if confirm.your_name %}
+        <td>
+            <p> Your Name:{{confirm.your_name}}</p>
+        </td>
+        {% endif %}
+    </tr>  
+    
+    <tr>
+        <td>
+            <p>
+                Dinning Time: {{confirm.dinning_time}}
+
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <p>
+                Arriving Date:{{confirm.arriving_date}}
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <p>
+                Number of people: {{confirm.number_of_people}}
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <p>
+                Your email: {{confirm.email}}
+            </p>
+        </td>
+    </tr>
+    </table>
 </div>
-{% endfor %}
+
+
 
 {% endblock %}

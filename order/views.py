@@ -27,11 +27,6 @@ class SushiList(generic.ListView):
     template_name = "index.html"
     paginated_by = 3
 
-# class OrderList(generic.ListView):
-#     model = Order
-#     template_name = "order.html"
-#     paginated_by = 1
-
 def order(request):
     order = Order.objects.filter(customer=request.user, confirmed=False).last()
     if order is not None:
@@ -53,7 +48,8 @@ def confirm_order(request):
             print('form invalid')
 
     form = BookTimeForm()    
-    return render(request, "confirm.html", {'form': form})
+    return render(request, "confirm_order.html", {'form': form})
+
 def sushi_order(request):
     if request.method == "POST":
         form = SushiOrder(request.POST)
@@ -81,9 +77,6 @@ def sushi_order(request):
             print('form invalid')
     form = SushiOrder()
     return render(request, "sushi/sushi.html", {'form':form})
-class ConfirmList(generic.ListView):
-    model = Confirm
-    template_name = "confirm_order.html" 
 
 def ramen_order(request):
     if request.method == "POST":
