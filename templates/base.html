@@ -51,12 +51,14 @@
 
           <div class="col-md-1"></div>
 
+        {% if not request.user.is_authenticated %}
           <button class="col-md-3">
             <a href="{% url 'account_login' %}"
               ><p class="confirm-text">Sign in</p></a
             >
             <i class="fa-solid fa-right-to-bracket"></i>
           </button>
+        {% else %}
           <div class="col-md-2"></div>
           <button class="col-md-3">
             <a href="{% url 'order' %}"
@@ -65,6 +67,7 @@
             <i class="fa-solid fa-cart-shopping"></i>
           </button>
           <a href="{% url 'account_logout' %}" class="confirm-text">Sign out</a>
+        {% endif %}
         </div>
       </div>
      

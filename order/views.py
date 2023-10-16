@@ -41,14 +41,40 @@ def confirm_order(request):
         form = BookTimeForm(request.POST)
         
         if form.is_valid():
-            form.save(commit = False)
-            form.save()
+
+            order_id = request.POST.get('id')
+            order = Order.objects.get(id=order_id)
+
+            confirm = form.save(commit = False)
+            confirm.order = order
+            confirm.save()
           
         else:
             print('form invalid')
+    
 
-    form = BookTimeForm()    
-    return render(request, "confirm_order.html", {'form': form})
+    order = Order.objects.filter(customer=request.user, confirmed=False).last()
+    if order is not None:
+        if confirm is not None:
+            print(confirm.your_name)
+            return render(
+                request,
+                "confirm_order.html",
+                {"confirm":confirm}
+                )
+
+    print("NOTHING FOUND!!!!!!!!!!")
+    
+     
+    # if confirm already exist then:
+    # confirm = blahblahblahh from the database
+    # else:
+    # form = BookTimeForm() 
+    return render(
+        request,
+        "confirm_order.html",
+        # {'form': form}
+        )
 
 def sushi_order(request):
     if request.method == "POST":

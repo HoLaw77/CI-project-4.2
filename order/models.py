@@ -274,7 +274,7 @@ class Drink(models.Model):
         (2, "None"),
     )
 
-    GREREN_TEA_PRICE = (
+    GREEN_TEA_PRICE = (
         (1, 3),
         (2, 0)
     )
@@ -352,12 +352,13 @@ class Order(models.Model):
 
 
 class Confirm(models.Model):
+    NUM_CHOICES = zip( range(1,6), range(1,6) )
     your_name = models.CharField(max_length=100)
     dinning_time = models.TimeField(auto_now=False, auto_now_add=False)
     arriving_date = models.DateField(auto_now=False, auto_now_add=False)
-    number_of_people = models.DecimalField(max_digits=5, decimal_places=2, default=0.00)
+    number_of_people = models.IntegerField(choices=NUM_CHOICES, blank=True)
     email = models.EmailField(max_length=100)
-    order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True, related_name="confirm")
 
     def save(self, *args, **kwargs):
 
