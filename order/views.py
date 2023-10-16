@@ -65,21 +65,16 @@ def confirm_order(request):
 
     print("NOTHING FOUND!!!!!!!!!!")
     
-     
-    # if confirm already exist then:
-    # confirm = blahblahblahh from the database
-    # else:
-    # form = BookTimeForm() 
+      
     return render(
         request,
-        "confirm_order.html",
-        # {'form': form}
+        "cnfirm_order.html",
         )
 
 def sushi_order(request):
     if request.method == "POST":
         form = SushiOrder(request.POST)
-        # form = AddSushiOrder(request.POST)
+        
 
         if form.is_valid():
             form.save(commit=False)
@@ -97,7 +92,7 @@ def sushi_order(request):
                 return redirect(drink_order)
             else:
                 return redirect(reverse('order'))
-            # form.save()
+            
             
         else:
             print('form invalid')
@@ -107,8 +102,6 @@ def sushi_order(request):
 def ramen_order(request):
     if request.method == "POST":
         form = RamenOrder(request.POST)
-        # form = AddRamenOrder(request.POST)
-        # ​
         if form.is_valid():
             form.save(commit=False)
             order = Order.objects.filter(customer=request.user, confirmed=False).last()
@@ -134,7 +127,7 @@ def ramen_order(request):
 def drink_order(request):
     if request.method == "POST":
         form = DrinkOrder(request.POST)
-        # form = AddDrinkOrder(request.POST)​
+        ​
         if form.is_valid():
             form.save(commit=False)
             order = Order.objects.filter(customer=request.user, confirmed=False).last()
