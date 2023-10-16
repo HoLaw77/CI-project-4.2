@@ -120,7 +120,11 @@
 <br>
 
 <div>
+    {% if not request.user.is_authenticated %}
 
+    <p>Login to make your order</p>
+
+    {% else %}
     <h2 class="order_text">Make your order</h2>
 
 <form method="POST" action="{% url 'ramen_order' %}">
@@ -162,4 +166,5 @@
 </form>
 
 </div>
+{% endif %}
 {% endblock %}

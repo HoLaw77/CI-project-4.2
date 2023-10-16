@@ -160,6 +160,11 @@
     
     </div>  
       
+    {% if not request.user.is_authenticated %}
+
+    <p>Login to make your order</p>
+
+    {% else %}
     
       <h2 class="order_text">Make your order</h2>
 
@@ -223,4 +228,6 @@
 
         <input type="submit" />
     </form>
+
+{% endif %}
 {% endblock %}
