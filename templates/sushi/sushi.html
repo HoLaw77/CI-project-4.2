@@ -162,7 +162,7 @@
       
     {% if not request.user.is_authenticated %}
 
-    <p>Login to make your order</p>
+    <a href="{% url 'account_login' %}"><p class="sign-up-text">Login to make your order</p></a>
 
     {% else %}
     

@@ -122,7 +122,7 @@
 <div>
     {% if not request.user.is_authenticated %}
 
-    <p>Login to make your order</p>
+    <a href="{% url 'account_login' %}"><p class="sign-up-text">Login to make your order</p></a>
 
     {% else %}
     <h2 class="order_text">Make your order</h2>
