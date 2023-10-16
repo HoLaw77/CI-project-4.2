@@ -1,16 +1,18 @@
 {% extends "base.html" %} {% block content %} {% load static %}
-<div class="container">
-  <div class="row menu-photo">
-    <img src="{% static 'images/sushi.jpg'%}" class="col-lg-6 offset-0" />
-    <img src="{% static 'images/ramen.jpg'%}" class="col-lg-6 offset-0" />
-  </div>
-</div>
-<div class="row">
-  <div class="dropdown container offset-0">
-    <div class="dropdown container">
+<div class="main">
+
+    <div class="container">
+        <div class="row menu-photo">
+            <img src="{% static 'images/sushi.jpg'%}" class="col-lg-6 offset-0" />
+            <img src="{% static 'images/ramen.jpg'%}" class="col-lg-6 offset-0" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="dropdown container offset-0">
+            <div class="dropdown container">
       <button
-        id="showSushiMenu"
-        class="btn btn-dark dropdown-toggle column offset-0"
+      id="showSushiMenu"
+      class="btn btn-dark dropdown-toggle column offset-0"
         type="button"
         id="sushi-dropdownMenuButton"
         data-toggle="dropdown"
@@ -64,12 +66,12 @@
     <img src="{% static '/images/sake.jpg' %}" class="col-lg-4 offset-0" />
     <img src="{% static '/images/beer.jpg' %}" class="col-lg-4 offset-0" />
     <img src="{% static 'images/choya.jpg' %}" class="col-lg-4 offset-0" />
-  </div>
-  <div class="row">
+</div>
+<div class="row">
     <button
-      class="btn btn-dark dropdown-toggle column"
-      type="button"
-      id="dropdownMenuButton"
+    class="btn btn-dark dropdown-toggle column"
+    type="button"
+    id="dropdownMenuButton"
       data-toggle="dropdown"
       aria-haspopup="true"
       aria-expanded="false"
@@ -98,6 +100,7 @@
       referrerpolicy="no-referrer-when-downgrade"
     ></iframe>
   </div>
+</div>
 </div>
 
 {% endblock content %}

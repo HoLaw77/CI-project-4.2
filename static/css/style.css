@@ -30,9 +30,6 @@ a:link {
     width: 50%;
 }
 
-main {
-    background-image: url("Japanese_style_background.jpeg");
-}
 
 /* Clear floats after the columns */
 .row:after {

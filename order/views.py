@@ -127,7 +127,7 @@ def ramen_order(request):
 def drink_order(request):
     if request.method == "POST":
         form = DrinkOrder(request.POST)
-        ​
+        
         if form.is_valid():
             form.save(commit=False)
             order = Order.objects.filter(customer=request.user, confirmed=False).last()
