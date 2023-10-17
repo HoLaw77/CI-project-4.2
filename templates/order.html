@@ -168,8 +168,26 @@
   
         </tr>
     {% endif %}
+    
+    
+   
   </table>
   <p class="total-price">Total Price: £ {{order.total_price}}</p>
+  <br>
+  <br>
+
+  <table class="order-table">
+    <tr>
+<td>
+
+    <button><a href="{% url 'view_order' %}"><p>View all orders</p></a></button>
+</td>
+    </tr>
+  </table>
+  <br>
+  <br>
+  <br>
+
   <div class="booking-area">
       <h2 class="confirm-text">Confirm your booking</h2>
       <form action="{% url 'confirm_order' %}" method="POST">

@@ -104,7 +104,7 @@ def ramen_order(request):
         form = RamenOrder(request.POST)
         if form.is_valid():
             form.save(commit=False)
-            order = Order.objects.filter(customer=request.user, confirmed=False).last()
+            order = Order.objects.filter(customer=request.user, confirmed=False).get()
             if order is not None:
                 order.ramen = form.save()
                 order.save()
@@ -137,6 +137,7 @@ def drink_order(request):
             else:
                 order = Order.objects.create(customer=request.user)
                 order.drink = form.save()
+                
                 order.save()
             if order.sushi is None:
                 return redirect(sushi_order)
@@ -186,3 +187,12 @@ def edit_drink_order(request, order_id):
     form = DrinkOrder(instance=order)
     order.save()
     return redirect(drink_order)
+
+def view_order(request):
+    order = Order.objects.filter(customer=request.user, confirmed=False)
+    if order is not None:
+        print(order)
+    else:
+        print("Order not found")
+    
+    return render (request,"view_order.html")
