@@ -195,4 +195,5 @@ def view_order(request):
     else:
         print("Order not found")
     
-    return render (request,"view_order.html")
+    # return render (request,"view_order.html")
+    return HttpResponse(order)

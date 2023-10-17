@@ -1,8 +1,27 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 
-{% for order in view_order %}
+{% for order in order %}
 
-{{order}}
+<table>
+<tr>
+<td>
+{{order.drink}}
+</td>
+</tr>
+<tr>
+    <td>
+        
+        {{order.sushi}}
+    </td>
+</tr>    
+
+<tr>
+    <td>
+
+        {{order.ramen}}
+    </td>
+</tr>
+</table>
 
 {% endfor %}
 
