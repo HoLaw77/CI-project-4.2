@@ -63,7 +63,7 @@ class Ramen(models.Model):
     price = models.DecimalField(
          max_digits=5, decimal_places=2, default=10.00, null=True, blank=True)  # 22.12
     toppings_choice = models.IntegerField(
-        choices=TOPPINGS_CHOICES, default=3)
+        choices=TOPPINGS_CHOICES, default=1)
     side_dish = models.IntegerField(choices=SIDE_DISH_CHOICES, default=1)
     soup_choice = models.IntegerField(
         choices=SOUP_CHOICES, default=1)
@@ -356,7 +356,7 @@ class Confirm(models.Model):
     your_name = models.CharField(max_length=100)
     dinning_time = models.TimeField(auto_now=False, auto_now_add=False)
     arriving_date = models.DateField(auto_now=False, auto_now_add=False)
-    number_of_people = models.IntegerField(choices=NUM_CHOICES, blank=True)
+    number_of_people = models.IntegerField(choices=NUM_CHOICES)
     email = models.EmailField(max_length=100)
     order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True, related_name="confirm")
 

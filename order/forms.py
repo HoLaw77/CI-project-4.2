@@ -21,17 +21,3 @@ class DrinkOrder(forms.ModelForm):
         model = Drink
         fields = ["sake", "beer", "choya", "green_tea", "water" ]
 
-class AddSushiOrder(forms.ModelForm):
-    class Meta:
-        model = Order
-        fields = ["sushi"]
-
-class AddRamenOrder(forms.ModelForm):
-    class Meta:
-        model = Order
-        fields = ["ramen"]
-
-class AddDrinkOrder(forms.ModelForm):
-    class Meta:
-        model = Order
-        fields = ["drink"]
