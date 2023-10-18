@@ -21,4 +21,5 @@ urlpatterns = [
     path('edit_ramen_order/<order_id>', views.edit_ramen_order, name='edit_ramen_order'),
     path('edit_sushi_order/<order_id>', views.edit_sushi_order, name='edit_sushi_order'),
     path('view_order', views.view_order, name='view_order'),
+    path('view_specific_order', views.view_specific_order, name='view_specific_order')
 ]

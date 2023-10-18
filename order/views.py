@@ -199,5 +199,11 @@ def view_order(request):
     return render (request,"view_order.html", {'order': order})
 
 def view_specific_order(request):
+    order = Order.objects.filter(customer=request.user, confirmed=False)
+    latest = Order.objects.filter(customer=request.user, confirmed=False).last()
+    if order.order_time ==  latest.order_time:
 
-    return render (request, "order.html")    
+        return render (request, "order.html")    
+    else:
+
+        return render (request, )
