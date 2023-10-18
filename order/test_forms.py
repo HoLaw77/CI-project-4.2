@@ -1,6 +1,6 @@
 from django.test import TestCase
 from .models import Ramen, Sushi, Drink, Order, Confirm
-from .forms import BookTimeForm, SushiOrder, RamenOrder, DrinkOrder, 
+from .forms import BookTimeForm, SushiOrder, RamenOrder, DrinkOrder
 
 class TestDjango(TestCase):
     
@@ -117,4 +117,15 @@ class TestDjango(TestCase):
         self.assertFalse(form.is_valid())
         self.assertIn('water', form.errors.keys())
         self.assertEqual(form.errors['water'][0], 'This field is required.')
-        
+    
+    def test_ramen_order_form_exclusive_for_meta(self):
+        form = RamenOrder()
+        self.assertEqual(form.Meta.fields, ["toppings_choice", "side_dish", "soup_choice"])
+
+    def test_drink_order_form_exclusive_for_meta(self):
+        form = DrinkOrder()
+        self.assertEqual(form.Meta.fields, ["sake", "beer", "choya", "green_tea", "water"])
+
+    def test_sushi_order_form_exclusive_for_meta(self):
+        form = SushiOrder()
+        self.assertEqual(form.Meta.fields, ["nigiri_sushi", "inari_sushi", "maki_sushi", "temaki_sushi", "soy_oil", "wasabi"])
