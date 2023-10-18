@@ -1,21 +1,23 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 
-{% for order in order %}
 
-<table>
-<tr>
-<td>
-    <a href="/">
+<table class="sign-up-text">
+    {% for order in order %}
+    <tr>
+        <td>
+            <p>
+            <a href="/">
 
-        {{order}}
-    </a>
+            {{order}}
+        </a>
+        </p>
 </td>
 </tr>
 
 
+{% endfor %}
 </table>
 
-{% endfor %}
 
 
 {% endblock %}
