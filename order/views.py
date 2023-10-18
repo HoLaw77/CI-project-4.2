@@ -192,8 +192,11 @@ def view_order(request):
     order = Order.objects.filter(customer=request.user, confirmed=False)
     if order is not None:
         print(order)
+        if order.count() == 1:
+            return redirect(order)
+        
     else:
         print("Order not found")
     
-    # return render (request,"view_order.html")
+    return render (request,"view_order.html", {'order': order})
     return HttpResponse(order)
