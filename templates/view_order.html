@@ -3,6 +3,8 @@
 
 <table class="sign-up-text">
     {% for order in order %}
+
+    {% if order %}
     <tr>
         <td>
             <p class="sign-up-text">
@@ -173,7 +175,7 @@
     </tr>
     {% endif %}
 
-
+    {% endif %}
 {% endfor %}
 </table>
 

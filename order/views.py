@@ -104,7 +104,7 @@ def ramen_order(request):
         form = RamenOrder(request.POST)
         if form.is_valid():
             form.save(commit=False)
-            order = Order.objects.filter(customer=request.user, confirmed=False).get()
+            order = Order.objects.filter(customer=request.user, confirmed=False).last()
             if order is not None:
                 order.ramen = form.save()
                 order.save()
