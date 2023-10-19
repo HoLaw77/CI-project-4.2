@@ -25,3 +25,5 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'drink/drink.html')
     
     
+
+
