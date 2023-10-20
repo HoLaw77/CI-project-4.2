@@ -12,6 +12,14 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 
 <p>User will need to sign in or register first, then they can navigate to Ramen, Sushi and Drink and make their order after clicking into the dropdown menu. It will lead them to the menu and a form form them to make their order.</p>
 
+<h3>Sign In page</h3>
+
+![sign_in](static/documentations/sign_in.png)
+
+<h3>Sign Up page</h3>
+
+![sign_up](static/documentations/sign_up.png)
+
 <h3>Dropdown menu at home page</h3>
 
 ![drop_down](static/documentations/dropdown_menu.png)
