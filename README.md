@@ -13,12 +13,15 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 <p>User will need to sign in or register first, then they can navigate to Ramen, Sushi and Drink and make their order after clicking into the dropdown menu. It will lead them to the menu and a form form them to make their order.</p>
 
 <h3>Dropdown menu at home page</h3>
+
 ![drop_down](static/documentations/dropdown_menu.png)
 
 <h3>Ramen Menu</h3>
+
 ![ramen_menu](static/documentations/ramen_menu.png)
 
 <h3>Ramen order form</h3>
+
 ![ramen_order_form](static/documentations/ramen_order_form.png)
 
 <br>
@@ -26,9 +29,11 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 <p>User can choose their own topping, soup choice, and side dish of their ramen.</p>
 
 <h3>Sushi Menu</h3>
+
 ![sushi_menu](static/documentations/sushi_menu.png)
 
 <h3>Sushi order form</h3>
+
 ![sushi_order_form](static/documentations/sushi_order_form.png)
 
 <br>
@@ -36,9 +41,11 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 <p>User can choose different types of sushi such as nigiri, inari, maki, temaki, we also offer wasabi and soy oil.</p>
 
 <h3>Drink Menu</h3>
+
 ![drink_menu](static/documentations/drink_menu.png)
 
 <h3>Drink order form</h3>
+
 ![drink_order_form](static/documentations/drink_order_form.png)
 <br>
 <br>
