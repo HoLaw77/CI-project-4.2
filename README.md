@@ -14,4 +14,6 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 
 <h2>How to Check Order</h2>
 
-<p></p>
+<p>User can click on the "Confirm Order" button at the top right corner of the page</p>
+<p>User can also view and amend previous others at the bottom of the order.html page by pressing the "View all orders" button</p>
+
