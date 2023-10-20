@@ -12,6 +12,38 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 
 <p>User will need to sign in or register first, then they can navigate to Ramen, Sushi and Drink and make their order after clicking into the dropdown menu. It will lead them to the menu and a form form them to make their order.</p>
 
+![drop_down](static/documentations/dropdown_menu.png)
+<p>dropdown menu at home page</p>
+
+![ramen_menu](static/documentations/ramen_menu.png)
+<p>Ramen Menu</p>
+
+![ramen_order_form](static/documentations/ramen_order_form.png)
+<p>Ramen order form</p>
+
+<br>
+<br>
+<p>User can choose their own topping, soup choice, and side dish of their ramen.</p>
+
+![sushi_menu](static/documentations/sushi_menu.png)
+<p>Sushi Menu</p>
+
+![sushi_order_form](static/documentations/sushi_order_form.png)
+<p>Sushi order form</p>
+
+<br>
+<br>
+<p>User can choose different types of sushi such as nigiri, inari, maki, temaki, we also offer wasabi and soy oil.</p>
+
+![drink_menu](static/documentations/drink_menu.png)
+<p>Drink Menu</p>
+
+![drink_order_form](static/documentations/drink_order_form.png)
+<p>Drink order form</p>
+<br>
+<br>
+<p>User can choose different brands of beer, sake, choya for wine and green tea dnd water as well.</p>
+
 <h2>How to Check Order</h2>
 
 <p>User can click on the "Confirm Order" button at the top right corner of the page</p>
@@ -22,4 +54,13 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 <p>It will collect the users' name, email, date of visiting, time of arrival, number of people and email.</p>
 
 <h2>How to Edit Order</h2>
+<p>User can edit order by clicking the edit button in order page which is below each item order. After clicking it will redirect user to the respective product (Ramen/Sushi/Drink) to change their order.</p>
+
+<p>User can confirm the order(s) has been changed by clicking the confirm order button again.</p>
+
 <h2>How to Delete Order</h2>
+<p>User can edit order by clicking the delete button in order page which is below each item order. After clicking it will redirect user to the respective product menu (Ramen/Sushi/Drink).</p>
+
+<p>User can confirm the order(s) has been deleted by clicking the confirm order button again.</p>
+
+{::ignore rule="MD033"}
