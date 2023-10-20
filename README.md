@@ -1,6 +1,6 @@
 <h1>Ramen and Sushi Bar</h1>
 
-! [logo] (static/images/japan-red-cloud.png)
+![logo](static/images/japan-red-cloud.png)
 
 <p>
 
