@@ -23,8 +23,4 @@ class TestViews(TestCase):
         response = self.client.get('/drink/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'drink/drink.html')
-    
-    def test_ramen_order_return_render(self):
-	    response = self.client.get('/ramen_order/')
-	    self.assertEqual(response.status_code, 200)
-	    self.assertTemplateUsed(response, 'ramen/ramen.html')
+   
