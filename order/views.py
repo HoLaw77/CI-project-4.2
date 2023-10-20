@@ -65,7 +65,7 @@ def confirm_order(request):
       
     return render(
         request,
-        "cnfirm_order.html",
+        "confirm_order.html",
         )
 
 def sushi_order(request):
