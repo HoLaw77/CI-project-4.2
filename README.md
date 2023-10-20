@@ -4,7 +4,7 @@
 
 <p>
 
-Ramen and Sushi Bar is a full-stack project that enables user to make order on three types of Japanese food products: Ramen, Sushi, and drink.
+Ramen and Sushi Bar is a full-stack project that enables user to make order on three types of Japanese food products: Ramen, Sushi, and drink and reserve table for meal.
 
 </p>
 
@@ -17,3 +17,9 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 <p>User can click on the "Confirm Order" button at the top right corner of the page</p>
 <p>User can also view and amend previous others at the bottom of the order.html page by pressing the "View all orders" button</p>
 
+<h2>How to Reserve Booking</h2>
+<p>User can reserve booking by filling the reservation form at the bottom of the order page.</p>
+<p>It will collect the users' name, email, date of visiting, time of arrival, number of people and email.</p>
+
+<h2>How to Edit Order</h2>
+<h2>How to Delete Order</h2>
