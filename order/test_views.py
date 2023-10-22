@@ -24,3 +24,18 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'drink/drink.html')
    
+# class TestRamenViews(TestCase):
+
+#     # def setUp(self):
+#     #     self.ramen_order = Ramen.objects.create(
+#     #         toppings_choice= 1,
+#     #         soup_choice= 1,
+#     #         side_dish= 1,
+#     #     )
+#     #     self.ramen_order.save()
+
+#     # def testRamenOrder(self):
+#     #     url = reverse('/order/', )
+#     #     response = self.client.get('/ramen_order/')
+#     #     self.assertEqual(response.status_code, 200)
+#     #     self.assertTemplateUsed(response, 'ramen/ramen.html')
