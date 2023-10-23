@@ -95,5 +95,15 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 
 ![edit_and_delete_order](static/documentations/edit_and_delete_order.png)
 
+<h2>Testing</h2>
+
+<h2>Bugs</h2>
+
+<h2>Validation Testing</h2>
+
+<h2>Deployment</h2>
+
+<h2>Credit</h2>
+
 
 {::ignore rule="MD033"}

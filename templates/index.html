@@ -3,8 +3,8 @@
 
     <div class="container">
         <div class="row menu-photo">
-            <img src="{% static 'images/sushi.jpg'%}" class="col-lg-6 offset-0 p-0" />
-            <img src="{% static 'images/ramen.jpg'%}" class="col-lg-6 offset-0 p-0" />
+            <img src="{% static 'images/sushi.jpg'%}" class="col-lg-6 offset-0 p-0" alt="sushi"/>
+            <img src="{% static 'images/ramen.jpg'%}" class="col-lg-6 offset-0 p-0" alt="ramen"/>
         </div>
     </div>
     <div class="row">
@@ -63,9 +63,9 @@
 
 <div class="dropdown container">
   <div class="row menu-photo">
-    <img src="{% static '/images/sake.jpg' %}" class="col-lg-4 offset-0 p-0" />
-    <img src="{% static '/images/beer.jpg' %}" class="col-lg-4 offset-0 p-0" />
-    <img src="{% static 'images/choya.jpg' %}" class="col-lg-4 offset-0 p-0" />
+    <img src="{% static '/images/sake.jpg' %}" class="col-lg-4 offset-0 p-0" alt="sake" />
+    <img src="{% static '/images/beer.jpg' %}" class="col-lg-4 offset-0 p-0" alt="beer"/>
+    <img src="{% static 'images/choya.jpg' %}" class="col-lg-4 offset-0 p-0" alt="choya"/>
 </div>
 <div class="row">
     <button
@@ -95,6 +95,7 @@
       width="600"
       height="450"
       style="border: 0"
+      title="google-map"
       class="p-0"
       allowfullscreen=""
       loading="lazy"
