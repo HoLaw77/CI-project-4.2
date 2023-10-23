@@ -288,3 +288,11 @@ input{
 .row>*{
     padding: 0;
 }
+
+.view-order-table {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 200%;
+    font-family: "Kanit", sans-serif;
+       
+}
