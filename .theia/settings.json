@@ -3,4 +3,10 @@
         "--load-plugins=pylint_django",
         "--django-settings-module=<mainapp>.settings",
     ],
+    "[html]": {
+        "editor.defaultFormatter": "hookyqr.beautify"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "hookyqr.beautify"
+    },
 }

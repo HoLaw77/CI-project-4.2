@@ -179,57 +179,57 @@ img {
     height: auto;
 }
 
-.nigiri{
+.nigiri {
     font-family: "Kanit", sans-serif;
     text-align: center;
     font-size: 400%;
 }
 
-.menu{
+.menu {
     font-family: "Kanit", sans-serif;
     text-align: center;
-    font-size: 200%; 
+    font-size: 200%;
 }
 
-input{
+input {
     display: inline;
 }
 
-.ramen{
+.ramen {
     font-family: "Kanit", sans-serif;
     text-align: center;
     font-size: 400%;
 }
 
-.ramen-text{
+.ramen-text {
     color: black;
 }
 
-.order_text{
+.order_text {
     font-family: "Kanit", sans-serif;
     text-align: center;
-    font-size: 200%; 
+    font-size: 200%;
 }
 
-.sushi-text{
+.sushi-text {
     color: black;
 }
 
-.beer{
+.beer {
     font-family: "Kanit", sans-serif;
     text-align: center;
     font-size: 400%;
 }
 
-.drink-text{
+.drink-text {
     color: black;
 }
 
-.tea{
+.tea {
     text-align: center;
 }
 
-.water{
+.water {
     text-align: center;
 }
 
@@ -241,7 +241,7 @@ input{
     text-align: center;
 }
 
-.inari{
+.inari {
     text-align: center;
 }
 
@@ -269,18 +269,18 @@ input{
     text-align: center;
 }
 
-.login{
-    font-family: "Kanit", sans-serif ;
+.login {
+    font-family: "Kanit", sans-serif;
     color: black;
 }
 
-.sign-up-text{
+.sign-up-text {
     text-align: center;
     font-size: 200%;
-    font-family: "Kanit", sans-serif ;
+    font-family: "Kanit", sans-serif;
 }
 
-.row>*{
+.row>* {
     padding: 0;
 }
 
@@ -289,5 +289,5 @@ input{
     margin-right: auto;
     font-size: 200%;
     font-family: "Kanit", sans-serif;
-       
+
 }

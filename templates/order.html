@@ -2,235 +2,241 @@
 
 <h1 class="order-list">Here is your Order:</h1>
 <div class="order">
-  <!-- test -->
+    <!-- test -->
 
-  <table class="order-table">
-    {% if order.ramen %}
-    <tr>
-        <td>{{order.ramen}}</td>
+    <table class="order-table">
+        {% if order.ramen %}
+        <tr>
+            <td>{{order.ramen}}</td>
 
-    </tr>
-    <tr>
-      <td>
-        <p>
-        Topping:
-        {{ order.ramen.topping }}
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-        Soup:
-        {{ order.ramen.soup }}
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-        Side Dish:
-        {{ order.ramen.side }}
-        </p>
-      </td>
-    </tr>
-    <tr>
-        <td><p>Price: £ {{order.ramen.price}}</p></td>
-    </tr>
-    <tr>
-        <td>
-            
-            <button><a href="/edit_ramen_order/{{order.id}}">Edit your order</a></button>
-            <button><a href="/delete_ramen_order/{{order.id}}">Remove Ramen</a></button>
-        </td>
-    </tr>
-    {% else %}
-    <tr>
-        <td>No Ramen</td>
-    </tr>
-    {% endif %}
-  </table>
-  <table class="order-table" id="sushi_table">
-    {% if order.sushi %}
-    <tr>
-        <td>{{ order.sushi }}</td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-        Nigiri Sushi:
-        {{ order.sushi.nigiri }}
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-        Inari Sushi: 
-        {{ order.sushi.inari }}
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-        Maki Sushi:
-        {{ order.sushi.maki }}
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Temaki Sushi:
-        {{ order.sushi.temaki }}
-        
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Soy Oil:
-        {{ order.sushi.soy }}
-      </td>
-    </tr>
-    <tr>
-      <td>        
-        Wasabi:
-        {{ order.sushi.wasabi_choice }}
-      </td>
-
-    </tr>
-    <tr>
-        <td>Price: £ {{order.sushi.price}}</td>
-    </tr>
-
-    <tr>
-        <td>
-            
-        <button><a href="/edit_sushi_order/{{order.id}}">Edit your order</a></button>
-        <button><a href="/delete_sushi_order/{{order.id}}">Remove Sushi</a></button>
-        </td>
-    </tr>
-    {% else %}
-    <tr>
-        <td>No Sushi</td>
-    </tr>
-    {% endif %}
-  </table >
-  <table class="order-table">
-    {% if order.drink %}
-    <tr>
-        <td>{{ order.drink }}</td>
-    </tr>
-    <tr>
-      <td>
-        Sake:
-        {{ order.drink.sake_choice }}
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Beer:
-        {{ order.drink.beer_choice }}
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Choya:
-        {{ order.drink.choya_choice }}
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Green Tea:
-        {{ order.drink.green_tea_choice }}
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Water:
-        {{ order.drink.water_choice }}
-      </td>
-    </tr>
-    <tr>
-        <td>Price: £ {{order.drink.price}}</td>
-    </tr>
-    
-    <tr>
-        <td>
-            
-            <button><a href="/edit_drink_order/{{order.id}}">Edit your order</a></button>
-            <button><a href="/delete_drink_order/{{order.id}}">Remove Drink</a></button>
-        </td>
-    </tr>
-    {% else %}
-    <tr> 
-        <td>No drink</td>
-  
         </tr>
-    {% endif %}
-    
-    
-   
-  </table>
-  <p class="total-price">Total Price: £ {{order.total_price}}</p>
-  <br>
-  <br>
+        <tr>
+            <td>
+                <p>
+                    Topping:
+                    {{ order.ramen.topping }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Soup:
+                    {{ order.ramen.soup }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Side Dish:
+                    {{ order.ramen.side }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Price: £ {{order.ramen.price}}</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
 
-  <table class="order-table">
-    <tr>
-<td>
+                <button><a href="/edit_ramen_order/{{order.id}}">Edit your order</a></button>
+                <button><a href="/delete_ramen_order/{{order.id}}">Remove Ramen</a></button>
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td>No Ramen</td>
+        </tr>
+        {% endif %}
+    </table>
+    <table class="order-table" id="sushi_table">
+        {% if order.sushi %}
+        <tr>
+            <td>{{ order.sushi }}</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Nigiri Sushi:
+                    {{ order.sushi.nigiri }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Inari Sushi:
+                    {{ order.sushi.inari }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Maki Sushi:
+                    {{ order.sushi.maki }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Temaki Sushi:
+                {{ order.sushi.temaki }}
 
-    <button><a href="{% url 'view_order' %}"><p>View all orders</p></a></button>
-</td>
-    </tr>
-    <tr>
-        <td>
-        
-            <button><a href="{% url 'clear_order' %}"><p>Add new orders</p></a></button>
-        </td>
-            </tr>
-  </table>
-  <br>
-  <br>
-  <br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Soy Oil:
+                {{ order.sushi.soy }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Wasabi:
+                {{ order.sushi.wasabi_choice }}
+            </td>
 
-  <div class="booking-area">
-      <h2 class="confirm-text">Confirm your booking</h2>
-      <form action="{% url 'confirm_order' %}" method="POST">
-          {% csrf_token %}
-          {{form}}
-          <div>
-              <p><label for="your_name" class="order-text">Your name: </label>
-              <input id="your_name" type="text" name="your_name" value="{{ current_name }}"></p>
-          </div>
-          <div>
-              <p><label for="arriving_date" class="order-text">Arriving date:</label>
-              <input type="date" id="arriving_date" name="arriving_date"></p>
-          </div>
-          <div>
-              <p><label for="dinning_time" class="order-text">Dinning time:</label>
-              <input type="time" id="dinning_time" name="dinning_time"></p>
-          </div>
-          <div>
-              <p><label for="number_of_people" class="order-text">Number of people:</label>
-              <input type="number" id="quantity" name="number_of_people" min="1" max="5"></p>
-          </div>
-          
-          <input type="hidden" name="id" value="{{order.id}}">
-          <br>
-          <br>
-          <label for="email" class="order-text">Email:</label>
-          <input type="email" id="email" name="email">
-      
-      <br>
-      <br>
-      <input type="submit" class= "submit-button" value="Submit"> 
-      </form>
-  
-  
-  </div>
-  
-  
+        </tr>
+        <tr>
+            <td>Price: £ {{order.sushi.price}}</td>
+        </tr>
+
+        <tr>
+            <td>
+
+                <button><a href="/edit_sushi_order/{{order.id}}">Edit your order</a></button>
+                <button><a href="/delete_sushi_order/{{order.id}}">Remove Sushi</a></button>
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td>No Sushi</td>
+        </tr>
+        {% endif %}
+    </table>
+    <table class="order-table">
+        {% if order.drink %}
+        <tr>
+            <td>{{ order.drink }}</td>
+        </tr>
+        <tr>
+            <td>
+                Sake:
+                {{ order.drink.sake_choice }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Beer:
+                {{ order.drink.beer_choice }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Choya:
+                {{ order.drink.choya_choice }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Green Tea:
+                {{ order.drink.green_tea_choice }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Water:
+                {{ order.drink.water_choice }}
+            </td>
+        </tr>
+        <tr>
+            <td>Price: £ {{order.drink.price}}</td>
+        </tr>
+
+        <tr>
+            <td>
+
+                <button><a href="/edit_drink_order/{{order.id}}">Edit your order</a></button>
+                <button><a href="/delete_drink_order/{{order.id}}">Remove Drink</a></button>
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td>No drink</td>
+
+        </tr>
+        {% endif %}
+
+
+
+    </table>
+    <p class="total-price">Total Price: £ {{order.total_price}}</p>
+    <br>
+    <br>
+
+    <table class="order-table">
+        <tr>
+            <td>
+
+                <button><a href="{% url 'view_order' %}">
+                        <p>View all orders</p>
+                    </a></button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+                <button><a href="{% url 'clear_order' %}">
+                        <p>Add new orders</p>
+                    </a></button>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+
+    <div class="booking-area">
+        <h2 class="confirm-text">Confirm your booking</h2>
+        <form action="{% url 'confirm_order' %}" method="POST">
+            {% csrf_token %}
+            {{form}}
+            <div>
+                <p><label for="your_name" class="order-text">Your name: </label>
+                    <input id="your_name" type="text" name="your_name" value="{{ current_name }}"></p>
+            </div>
+            <div>
+                <p><label for="arriving_date" class="order-text">Arriving date:</label>
+                    <input type="date" id="arriving_date" name="arriving_date"></p>
+            </div>
+            <div>
+                <p><label for="dinning_time" class="order-text">Dinning time:</label>
+                    <input type="time" id="dinning_time" name="dinning_time"></p>
+            </div>
+            <div>
+                <p><label for="number_of_people" class="order-text">Number of people:</label>
+                    <input type="number" id="quantity" name="number_of_people" min="1" max="5"></p>
+            </div>
+
+            <input type="hidden" name="id" value="{{order.id}}">
+            <br>
+            <br>
+            <label for="email" class="order-text">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <br>
+            <br>
+            <input type="submit" class="submit-button" value="Submit">
+        </form>
+
+
+    </div>
+
+
 </div>
 
 
