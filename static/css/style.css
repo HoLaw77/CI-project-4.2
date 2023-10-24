@@ -36,12 +36,7 @@ a:link {
 }
 
 /* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-    padding: clear;
-}
+
 
 .red-cloud>img {
     border-radius: 10px;

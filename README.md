@@ -95,15 +95,39 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 
 ![edit_and_delete_order](static/documentations/edit_and_delete_order.png)
 
+<h2>Development</h2>
+<h3> Original Flowchart and Wireframe</h3>
+
+![wire_frame_1](static/documentations/wire_frame_1.png)
+![wire_frame_2](static/documentations/wire_frame_2.png)
+![wire_frame_3](static/documentations/wire_frame_3.png)
+
+![flow_chart]
+
+<p>In my original setting, I would like to offer user choices in choosing the soup, side_dish and noodles for ramen options and different types of sushi in the same form.</p>
+<p>After doing more research and building the page, I realise that it would be too complicated so I simplified the number of options for users to choose.</p>
+<p>I have also added a login and sign off function using django allauth functionality.</p>
+
 <h2>Testing</h2>
+<p>I tested that this page works in different browser such as: Chrome, Microsoft-edge, Firefox.</p>
+<p>I confirmed the project is responsive, look goods and function on all standard size screen using devtool device tool bar.</p>
 
 <h2>Bugs</h2>
 
 <h2>Validation Testing</h2>
+<li>***HTML: No error was found using official W3C Validator.</li>
+<li>CSS: No error was found using official W3C Validator.</li>
+<li>Accesssibility: I confirm the design and layout of the page is easy to read and accessible by running it through lighthouse in devtools.
+</li>
 
+![lighthouse](static/documentations/lighthouse_testing%20.png)
 <h2>Deployment</h2>
 
 <h2>Credit</h2>
+
+<h3>Code</h3>
+
+<h3>Media</h3>
 
 
 {::ignore rule="MD033"}

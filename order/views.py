@@ -195,3 +195,9 @@ def view_order(request):
     
     return render (request,"view_order.html", {'order': order})
 
+def clear_order(request):
+    order = Order.objects.filter(customer=request.user, confirmed=False).last()
+    order.full_clean()
+    Order.objects.create()
+    order.save()
+    return redirect(ramen_order)
