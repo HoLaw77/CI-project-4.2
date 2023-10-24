@@ -10,7 +10,7 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 
 <h2>How to Make Order</h2>
 
-<p>User will need to sign in or register first, then they can navigate to Ramen, Sushi and Drink and make their order after clicking into the dropdown menu. It will lead them to the menu and a form form them to make their order.</p>
+<p>User will need to sign in or register first, then they can navigate to Ramen, Sushi and Drink page and make their order after clicking into the dropdown menu. It will lead them to the menu and a form for them to make their order.</p>
 
 <h3>Sign In page</h3>
 
@@ -57,12 +57,12 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 ![drink_order_form](static/documentations/drink_order_form.png)
 <br>
 <br>
-<p>User can choose different brands of beer, sake, choya for wine and green tea dnd water as well.</p>
+<p>User can choose different brands of beer, sake, choya for wine and green tea and water as well.</p>
 
 <h2>How to Check Order</h2>
 
 <p>User can click on the "Confirm Order" button at the top right corner of the page</p>
-<p>User can also view and amend previous others at the bottom of the order.html page by pressing the "View all orders" button</p>
+<p>User can also view and amend previous orders at the bottom of the order.html page by pressing the "View all orders" button</p>
 
 <h3>Confirm Order button</h3>
 
@@ -74,7 +74,7 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 
 <h2>How to Reserve Booking</h2>
 <p>User can reserve booking by filling the reservation form at the bottom of the order page.</p>
-<p>It will collect the users' name, email, date of visiting, time of arrival, number of people and email.</p>
+<p>It will collect the user's name, email, date of visiting, time of arrival, number of people visiting and email.</p>
 
 <h3>Confirm booking form</h3>
 
@@ -86,7 +86,7 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 <p>User can confirm the order(s) has been changed by clicking the confirm order button again.</p>
 
 <h2>How to Delete Order</h2>
-<p>User can edit order by clicking the delete button in order page which is below each item order. After clicking it will redirect user to the respective product menu (Ramen/Sushi/Drink).</p>
+<p>User can delete order by clicking the delete button in order page which is below each item order. After clicking it will redirect user to the respective product menu (Ramen/Sushi/Drink).</p>
 
 
 <p>User can confirm the order(s) has been deleted by clicking the confirm order button again.</p>
@@ -115,7 +115,7 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 <h2>Bugs</h2>
 
 <h2>Validation Testing</h2>
-<li>***HTML: No error was found using official W3C Validator.</li>
+<li>HTML: No error was found using official W3C Validator.</li>
 <li>CSS: No error was found using official W3C Validator.</li>
 <li>Accesssibility: I confirm the design and layout of the page is easy to read and accessible by running it through lighthouse in devtools.
 </li>
