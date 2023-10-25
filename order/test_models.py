@@ -1,7 +1,7 @@
 from django.test import TestCase
 from .models import Ramen, Sushi, Drink, Order, Confirm
 
-class TestOrderModels(TestCase):
+class TestModels(TestCase):
 
     def setUp(self):
         Ramen.objects.create(
