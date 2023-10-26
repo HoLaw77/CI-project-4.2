@@ -23,7 +23,7 @@ class TestModels(TestCase):
             beer = 1,
             choya = 1,
             green_tea = 1,
-            water = 2,
+            water = 1,
         )
         
     def test_model_topping(self):
@@ -80,4 +80,8 @@ class TestModels(TestCase):
 
     def test_model_water(self):
         water = Drink()
-        self.assertEqual(water.water_choice, "None")
+        self.assertEqual(water.water_choice, "1 cup")
+
+    def test_model_order_price(self):
+        price = Order()
+        self.assertEqual(price.total_price, 0.0)
