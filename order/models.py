@@ -63,10 +63,10 @@ class Ramen(models.Model):
     price = models.DecimalField(
          max_digits=5, decimal_places=2, default=10.00, null=True, blank=True)  # 22.12
     toppings_choice = models.IntegerField(
-        choices=TOPPINGS_CHOICES, default=1)
-    side_dish = models.IntegerField(choices=SIDE_DISH_CHOICES, default=1)
+        choices=TOPPINGS_CHOICES)
+    side_dish = models.IntegerField(choices=SIDE_DISH_CHOICES)
     soup_choice = models.IntegerField(
-        choices=SOUP_CHOICES, default=1)
+        choices=SOUP_CHOICES)
     # customer = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     order_time = models.DateTimeField(auto_now_add=True, null=True)
 
@@ -175,17 +175,17 @@ class Sushi(models.Model):
     price = models.DecimalField(
         max_digits=5, decimal_places=2, default=10.00, null=True, blank=True)  # 22.12
     nigiri_sushi = models.IntegerField(
-        choices=NIGIRI_SUSHI, default=6)
+        choices=NIGIRI_SUSHI)
     inari_sushi = models.IntegerField(
-        choices=INARI_SUSHI, default=1)
+        choices=INARI_SUSHI)
     maki_sushi = models.IntegerField(
-        choices=MAKI_SUSHI, default=3)
+        choices=MAKI_SUSHI)
     temaki_sushi = models.IntegerField(
-        choices=TEMAKI_SUSHI, default=4)
+        choices=TEMAKI_SUSHI)
     soy_oil = models.IntegerField(
-        choices=SOY_OIL, default=1)
+        choices=SOY_OIL)
     wasabi = models.IntegerField(
-        choices=WASABI, default=1)
+        choices=WASABI)
     # customer = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     order_time = models.DateTimeField(auto_now_add=True, null=True)
 
@@ -290,11 +290,11 @@ class Drink(models.Model):
     price = models.DecimalField(
         max_digits=100, decimal_places=2, default=00.00, null=True, blank=True)  # 22.12
     sake = models.IntegerField(
-        choices=SAKE, default=1)
-    beer = models.IntegerField(choices=BEER, default=1)
-    choya = models.IntegerField(choices=CHOYA, default=1)
-    green_tea = models.IntegerField(choices=GREEN_TEA, default=1)
-    water = models.IntegerField(choices=WATER, default=1)
+        choices=SAKE)
+    beer = models.IntegerField(choices=BEER)
+    choya = models.IntegerField(choices=CHOYA)
+    green_tea = models.IntegerField(choices=GREEN_TEA)
+    water = models.IntegerField(choices=WATER)
     # customer = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     order_time = models.DateTimeField(auto_now_add=True, null=True)
 
