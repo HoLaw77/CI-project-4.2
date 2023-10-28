@@ -25,7 +25,7 @@ class TestModels(TestCase):
             green_tea = 1,
             water = 1,
         )
-        
+
     def test_model_topping(self):
         topping = Ramen()
         self.assertEqual(topping.topping, 'Egg')
