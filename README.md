@@ -113,6 +113,9 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 <p>I confirmed the project is responsive, look goods and function on all standard size screen using devtool device tool bar.</p>
 
 <h2>Bugs</h2>
+<li></li>
+
+<h3>Solving bugs</h3>
 
 <h2>Validation Testing</h2>
 <li>HTML: No error was found using official W3C Validator.</li>
@@ -123,9 +126,25 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 ![lighthouse](static/documentations/lighthouse_testing%20.png)
 <h2>Deployment</h2>
 
+
 <h2>Credit</h2>
 
 <h3>Code</h3>
+
+<li>Model structure has been advised by my mentor Aleksei Konovalov. Many Thanks for his patient and helpful guidance.</li>
+
+<li>view order template and view is inspired by handout of Hello Django project in Code Institute.
+
+[Hello Django: Part 6: Rendering a Create New Item page](https://docs.google.com/document/d/1P5Mzkvzm3HUMrMgABn1KwU_pHnR5n4TUX8rHKB-9CMA/edit)
+</li>
+
+<li>testing format has been inspired by handout of Hello Django project in Code Institute modules
+
+[Hello Django: Part 8: Testing](https://docs.google.com/document/d/1L7zyIXL1wCki2eOoDZPCw9fIIe93NfdCiA_mbht9P8A/edit#heading=h.hvy9tw74f1o0)
+
+</li>
+
+
 
 <h3>Media</h3>
 
