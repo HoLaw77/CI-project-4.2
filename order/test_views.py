@@ -1,4 +1,5 @@
 from django.test import TestCase
+from django.urls import reverse
 from .models import Ramen, Sushi, Drink, Order, Confirm
 # Create your tests here.
 
@@ -24,18 +25,33 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'drink/drink.html')
    
-# class TestRamenViews(TestCase):
+class TestRamenViews(TestCase):
 
-#     # def setUp(self):
-#     #     self.ramen_order = Ramen.objects.create(
-#     #         toppings_choice= 1,
-#     #         soup_choice= 1,
-#     #         side_dish= 1,
-#     #     )
-#     #     self.ramen_order.save()
+    def setUp(self):
+        self.ramen_order = Ramen.objects.create(
+            toppings_choice= 1,
+            soup_choice= 1,
+            side_dish= 1,
+        )
 
-#     # def testRamenOrder(self):
-#     #     url = reverse('/order/', )
-#     #     response = self.client.get('/ramen_order/')
-#     #     self.assertEqual(response.status_code, 200)
-#     #     self.assertTemplateUsed(response, 'ramen/ramen.html')
+        self.ramen_order = reverse('ramen')
+        self.order = reverse('confirm_order')
+
+    # def testOrderGet(self):
+    #     response= self.client.get(self.order)
+    #     self.assertEqual(response.status_code, 200)
+    #     self.assertTemplateUsed(response, 'order.html')
+    def testRamenOrder(self):
+        Ramen.objects.create(
+            toppings_choice= 1,
+            soup_choice= 1,
+            side_dish= 1,
+        )
+        
+        response = self.client.post(self.ramen_order, {
+              'toppings_choice': "Egg",
+                'soup_choice': "pork bone soup",
+                'side_dish': "Gyoza dumpling",
+            })
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'ramen/ramen.html')
