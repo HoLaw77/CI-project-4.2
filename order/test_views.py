@@ -55,3 +55,4 @@ class TestRamenViews(TestCase):
             })
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'ramen/ramen.html')
+
