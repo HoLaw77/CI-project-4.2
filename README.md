@@ -126,10 +126,10 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 
 <h3>Solving bugs</h3>
 
+<li>When I tried to build the confirm order button, I realise that the order rendered in the order.html have to be manually added by admin through admin panel. After checking on the Foreign Key field and discussing with my mentor, I learn about it is necessary to use the @property method to store the fields in Ramen, Sushi and Drink model in order to make them accessible in Order model.</li>
+
 <li>When I am building the order.html and the view_order.html, I cannot render the order from the database. After checking with tutor, I realise the problem is in the url.py and views.py where my class view with the same url name 'order' execute before the confirm_order views, so I amended the url and it works.</li>
 <li>When I am running test in test_model.py, some of my tests passed but the coverage report did not reflect that, after checking, I use the command coverage run --source=order manage.py test which reflects the test coverage report correctly.</li>
-<li></li>
-<li></li>
 
 <h2>Validation Testing</h2>
 <li>HTML: No error was found using official W3C Validator.</li>
