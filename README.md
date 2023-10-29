@@ -136,6 +136,21 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 ![lighthouse](static/documentations/lighthouse_testing%20.png)
 <h2>Deployment</h2>
 
+<p>The page is deployed using heroku, following the below steps:</p>
+
+<li> Install the heroku CLI in IDE terminal</li>
+<li>Install Project requirements app </li>
+<li>Create the heroku app</li>
+<li>Create a database in ElephantSQL</li>
+<li>Connecting our Remote Database</li>
+<li>Pushing changes to Github</li>
+<li>Fix ALLOWED_HOSTS and Run the Project</li>
+<li>Connecting Heroku to Github</li>
+<li>Set The SECRET_KEY in setting.py</li>
+<li>Once the link is deployed, the link is generated</li>
+
+<p>The link is below</p>
+
 
 <h2>Credit</h2>
 
