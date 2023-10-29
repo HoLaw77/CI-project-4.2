@@ -120,6 +120,7 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 <h2>Testing</h2>
 <li>I tested that this page works in different browser such as: Chrome, Microsoft-edge, Firefox.</li>
 <li>I confirmed the project is responsive, look goods and function on all standard size screen using devtool device tool bar.</li>
+<li>Code tested in my local terminal and confirmed using coverage.</li>
 
 <h2>Bugs</h2>
 <li></li>
