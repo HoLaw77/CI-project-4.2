@@ -104,9 +104,17 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 
 ![flow_chart](static/documentations/Flowchart%20Template.jpg)
 
-<p>In my original setting, I would like to offer user choices in choosing the soup, side_dish and noodles for ramen options and different types of sushi in the same form.</p>
-<p>After doing more research and building the page, I realise that it would be too complicated so I simplified the number of options for users to choose.</p>
-<p>I have also added a login and sign off function using django allauth functionality.</p>
+<li>In my original setting, I would like to offer user choices in choosing the soup, side_dish and noodles for ramen options and different types of sushi in the same form.</li>
+<li>After doing more research and building the page, I realise that it would be too complicated so I simplified the number of options for users to choose.</li>
+<li>I have also added a login and sign off function using django allauth functionality.</li>
+
+<h3>Agile approach in development </h3>
+
+![agile_example](static/documentations/agile_example.png)
+
+<li>I have follow the agile approach in this project by setting up various issues to improve my project throughout the development process</li>
+<li>For example, I have added food photoes and amended the menu into more customer-friendly so that the customer can order the food easily even they don't understand Japanese.</li>
+
 
 <h2>Testing</h2>
 <p>I tested that this page works in different browser such as: Chrome, Microsoft-edge, Firefox.</p>
