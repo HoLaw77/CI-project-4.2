@@ -158,7 +158,7 @@ class Sushi(models.Model):
     )
     
     SOY_OIL_PRICE = (
-        (1, 1),
+        (1, 0),
         (2, 0),
     )
 
@@ -168,7 +168,7 @@ class Sushi(models.Model):
     )
     
     WASABI_PRICE = (
-        (1, 1),
+        (1, 0),
         (2, 0),
     )
 
