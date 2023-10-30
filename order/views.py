@@ -41,7 +41,8 @@ def confirm_order(request):
 
             order_id = request.POST.get('id')
             order = Order.objects.get(id=order_id)
-
+            order.confirmed = True
+            order.save()
             confirm = form.save(commit = False)
             confirm.order = order
             confirm.save()
@@ -99,10 +100,12 @@ def sushi_order(request):
 def ramen_order(request):
     if request.method == "POST":
         form = RamenOrder(request.POST)
+        print("This is post")
         if form.is_valid():
+            print("form is valid")
             form.save(commit=False)
             order = Order.objects.filter(customer=request.user, confirmed=False).last()
-            if order is not None:
+            if order is not None and not order.confirmed:
                 order.ramen = form.save()
                 order.save()
             else:
@@ -117,7 +120,8 @@ def ramen_order(request):
                 return redirect(reverse('order'))
             
         else:
-            print('form invalid')
+            form = RamenOrder()
+            return render(request, "ramen/ramen.html", {'form':form}) 
     form = RamenOrder()
     return render(request, "ramen/ramen.html", {'form':form})
 
@@ -128,7 +132,7 @@ def drink_order(request):
         if form.is_valid():
             form.save(commit=False)
             order = Order.objects.filter(customer=request.user, confirmed=False).last()
-            if order is not None:
+            if order is not None and not order.confirmed:
                 order.drink = form.save()
                 order.save()
             else:
