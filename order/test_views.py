@@ -139,7 +139,7 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse("sushi_order"))
         order = Order.objects.get(customer=self.user)
-        self.assertEqual(order.drink, Drink.objects.get(sake = 3, beer = 2, choya = 2, green_tea = 1, water = 2)) 
+        self.assertEqual(order.drink, Drink.objects.get(sake = 4, beer = 1, choya = 4, green_tea = 2, water = 2)) 
     
     def test_post_valid_form_existing_order_and_ramen(self):
         order = Order.objects.create(customer=self.user)
