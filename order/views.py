@@ -27,10 +27,10 @@ class SushiList(generic.ListView):
 def order(request):
     order = Order.objects.filter(customer=request.user, confirmed=False).last()
     if order is not None:
-        print('order is not none')
+        
         return render(request, "order.html", {'order': order})
     else:
-        print('order is none')
+        
         return render(request, "order.html")
 
 def confirm_order(request):
@@ -47,22 +47,17 @@ def confirm_order(request):
             confirm.order = order
             confirm.save()
           
-        else:
-            print('form invalid')
     
 
     order = Order.objects.filter(customer=request.user, confirmed=False).last()
     if order is not None:
         if confirm is not None:
-            print(confirm.your_name)
+            
             return render(
                 request,
                 "confirm_order.html",
                 {"confirm":confirm}
                 )
-
-    print("NOTHING FOUND!!!!!!!!!!")
-    
       
     return render(
         request,
@@ -93,16 +88,17 @@ def sushi_order(request):
             
             
         else:
-            print('form invalid')
+            form = SushiOrder()
+            return render(request, "sushi/sushi.html", {'form':form})
     form = SushiOrder()
     return render(request, "sushi/sushi.html", {'form':form})
 
 def ramen_order(request):
     if request.method == "POST":
         form = RamenOrder(request.POST)
-        print("This is post")
+        
         if form.is_valid():
-            print("form is valid")
+            
             form.save(commit=False)
             order = Order.objects.filter(customer=request.user, confirmed=False).last()
             if order is not None and not order.confirmed:
@@ -149,7 +145,8 @@ def drink_order(request):
             
             
         else:
-            print('form invalid')
+            form = DrinkOrder()
+            return render(request, "drink/drink.html", {'form':form})        
     form = DrinkOrder()
     return render(request, "drink/drink.html", {'form':form})
 
@@ -192,12 +189,8 @@ def edit_drink_order(request, order_id):
 def view_order(request):
     order = Order.objects.filter(customer=request.user, confirmed=False)
     if order is not None:
-        print(order)
-        
-    else:
-        print("Order not found")
     
-    return render (request,"view_order.html", {'order': order})
+        return render (request,"view_order.html", {'order': order})
 
 def clear_order(request):
     order = Order.objects.filter(customer=request.user, confirmed=False).last()
