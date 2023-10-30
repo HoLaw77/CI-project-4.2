@@ -4,7 +4,7 @@ from .models import Ramen, Sushi, Drink, Order, Confirm
 from django.contrib.auth.models import User
 # Create your tests here.
 
-class TestViews(TestCase):
+class TestURLViews(TestCase):
 
     def test_get_index(self):
         response = self.client.get('/')
@@ -33,6 +33,7 @@ class TestViews(TestCase):
         self.user = User.objects.create_user(username="Testuser", password="Password987")
         self.ramen = Ramen.objects.create(toppings_choice=1, side_dish=1, soup_choice=1)
         self.sushi = Sushi.objects.create(nigiri_sushi=1, inari_sushi=1, maki_sushi=1, temaki_sushi=1, soy_oil=1, wasabi=1)
+        self.drink = Drink.objects.create(sake = 1, beer = 1, choya = 1, green_tea = 1, water =1)
         self.client.login(username="Testuser", password="Password987")
     
     def test_post_valid_form_existing_order(self):
@@ -125,3 +126,50 @@ class TestViews(TestCase):
         response = self.client.get(reverse('sushi_order'))
         self.assertEqual(response.status_code, 200)
         
+    def test_drink_post_valid_form_existing_order(self):
+        order = Order.objects.create(customer=self.user)
+        response = self.client.post(reverse('drink_order'), {"sake": 3, "beer": 2, "choya": 2, "green_tea": 1, "water": 2})
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse("sushi_order"))
+        order.refresh_from_db()
+        self.assertEqual(order.drink, Drink.objects.get(sake = 3, beer = 2, choya = 2, green_tea = 1, water = 2)) 
+    
+    def test_post_valid_form_not_existing_order(self):
+        response = self.client.post(reverse('drink_order'), {"sake": 4, "beer": 1, "choya": 4, "green_tea": 2, "water": 2})
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse("sushi_order"))
+        order = Order.objects.get(customer=self.user)
+        self.assertEqual(order.drink, Drink.objects.get(sake = 3, beer = 2, choya = 2, green_tea = 1, water = 2)) 
+    
+    def test_post_valid_form_existing_order_and_ramen(self):
+        order = Order.objects.create(customer=self.user)
+        order.ramen = Ramen.objects.create()
+        order.save()
+        response = self.client.post(reverse('drink_order'), {"sake": 3, "beer": 2, "choya": 1, "green_tea": 2, "water": 1})
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse("sushi_order"))
+        order.refresh_from_db()
+        self.assertEqual(order.drink, Drink.objects.get(sake = 3, beer = 2, choya = 1, green_tea = 2, water = 1)) 
+    
+    def test_post_valid_form_existing_order_and_ramen_and_sushi(self):
+        order = Order.objects.create(customer=self.user)
+        order.ramen = Ramen.objects.create()
+        order.sushi = Sushi.objects.create()
+        order.save()
+        response = self.client.post(reverse('drink_order'), {"sake": 5, "beer": 5, "choya": 4, "green_tea": 2, "water": 1})
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse("order"))
+        order.refresh_from_db()
+        self.assertEqual(order.drink, Drink.objects.get(sake = 5, beer = 5, choya = 4, green_tea = 2, water = 1)) 
+    
+
+    def test_drink_post_invalid_form(self):
+        response = self.client.post(reverse('drink_order'), {"blah blah": "blah blah"})
+        self.assertEqual(response.status_code, 200)
+
+    def test_drink_get_request(self):
+        response = self.client.get(reverse('drink_order'))
+        self.assertEqual(response.status_code, 200)
+        
+    
+    

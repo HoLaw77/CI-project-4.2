@@ -295,7 +295,6 @@ class Drink(models.Model):
     choya = models.IntegerField(choices=CHOYA, default=1)
     green_tea = models.IntegerField(choices=GREEN_TEA, default=1)
     water = models.IntegerField(choices=WATER, default=1)
-    # customer = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     order_time = models.DateTimeField(auto_now_add=True, null=True)
 
     
