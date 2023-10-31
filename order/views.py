@@ -40,19 +40,21 @@ def confirm_order(request):
         if form.is_valid():
 
             order_id = request.POST.get('id')
-            order = Order.objects.get(id=order_id)
+            order = Order.objects.get(id= order_id)
             order.confirmed = True
             order.save()
             confirm = form.save(commit = False)
             confirm.order = order
             confirm.save()
           
-    
+        else:
+
+            print("form invalid")
 
     order = Order.objects.filter(customer=request.user, confirmed=False).last()
     if order is not None:
         if confirm is not None:
-            
+            print(confirm.your_name)
             return render(
                 request,
                 "confirm_order.html",
@@ -72,7 +74,7 @@ def sushi_order(request):
         if form.is_valid():
             form.save(commit=False)
             order = Order.objects.filter(customer=request.user, confirmed=False).last()
-            if order is not None:
+            if order is not None and not order.confirmed:
                 order.sushi = form.save()
                 order.save()
             else:
