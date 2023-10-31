@@ -34,6 +34,7 @@ class TestViews(TestCase):
         self.ramen = Ramen.objects.create(toppings_choice=1, side_dish=1, soup_choice=1)
         self.sushi = Sushi.objects.create(nigiri_sushi=1, inari_sushi=1, maki_sushi=1, temaki_sushi=1, soy_oil=1, wasabi=1)
         self.drink = Drink.objects.create(sake = 1, beer = 1, choya = 1, green_tea = 1, water =1)
+        self.confirm = Confirm.objects.create(your_name= "Test", dinning_time= "12:00:00", arriving_date= "2023-12-29", number_of_people= 3, email="test@pass.com")
         self.client.login(username="Testuser", password="Password987")
     
     def test_post_valid_form_existing_order(self):
@@ -226,4 +227,12 @@ class TestViews(TestCase):
     #     self.assertRedirects(response, reverse('drink_order'))
     #     order.refresh_from_db()
     #     self.assertEqual(order.drink, None)
+        # def test_confirm_book_time_form_valid(self):
+        #     confirm = Confirm.objects.create(customer=self.user)
+        #     confirm.save()
+        #     response = self.client.post(reverse('confirm_order'), {"your_name":"Test", "dinning_time":"12:00:00", "arriving_date":"2023-12-29", "number_of_people":3, "email":"test@pass.com"})
+        #     self.assertEqual(response.status_code, 302)
+        #     confirm.refresh_from_db()
+        #     new_confirm = Confirm.objects.filtler(customer=self.user).last()
+        #     self.assertEqual(new_confirm, Confirm.objects.get(your_name= "Test", dinning_time= "12:00:00", arriving_date= "2023-12-29", number_of_people= 3, email="test@pass.com")) 
     

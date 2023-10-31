@@ -186,8 +186,3 @@ def edit_drink_order(request, order_id):
     order.save()
     return redirect(drink_order)
 
-def view_order(request):
-    order = Order.objects.filter(customer=request.user, confirmed=False)
-    if order is not None:
-    
-        return render (request,"view_order.html", {'order': order})
