@@ -51,6 +51,7 @@
 
 <br>
 <br>
+{% if confirm.order.ramen %}
 <div class="order">
     <table class="order-table">
 
@@ -86,6 +87,8 @@
 </div>
 <br>
 <br>
+{% endif %}
+{% if confirm.order.sushi %}
 <div class="order">
 
     <table class="order-table">
@@ -155,6 +158,9 @@
 </div>
 <br>
 <br>
+{% endif %}
+
+{% if confirm.order.drink %}
 <div class="order">
 
 
@@ -214,17 +220,21 @@
                 </p>
             </td>
         </tr>
+        </table>
 
-        <tr>
-            <td>
-                <p>Total Price: £ {{confirm.order.total_price}}</p>
-
-            </td>
-        </tr>
         {% endif %}
-    </table>
+        <div class="order">
+        <table class="order-table">
+            <tr>
+                <td>
+                    <p>Total Price: £ {{confirm.order.total_price}}</p>
+                    
+                </td>
+            </tr>
+        </table>
+    </div>
 
-
+{% endif %}
 </div>
 
 
