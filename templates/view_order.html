@@ -1,0 +1,184 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+
+
+<table class="view-order-table">
+    {% for order in order %}
+
+    {% if order %}
+    <tr>
+        <td>
+            <p class="sign-up-text">
+
+
+                {{order}}
+
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <p>
+                Order time: {{order.order_time}}
+            </p>
+        </td>
+    </tr>
+
+    {% if order.ramen %}
+    <tr>
+        <td>
+            <p>
+                Ramen: {{order.ramen}}
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <p>
+                Topping: {{order.ramen.topping}}
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <p>
+                Soup: {{order.ramen.soup}}
+            </p>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <p>
+                Side Dish: {{order.ramen.side}}
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>Price: £ {{order.ramen.price}}</td>
+    </tr>
+    <tr>
+        <td>
+
+            <button><a href="/edit_ramen_order/{{order.id}}">Edit your order</a></button>
+            <button><a href="/delete_ramen_order/{{order.id}}">Remove Ramen</a></button>
+        </td>
+    </tr>
+    {% endif %}
+    {% if order.sushi %}
+    <tr>
+        <td>{{ order.sushi }}</td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                Nigiri Sushi:
+                {{ order.sushi.nigiri }}
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                Inari Sushi:
+                {{ order.sushi.inari }}
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>
+                Maki Sushi:
+                {{ order.sushi.maki }}
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Temaki Sushi:
+            {{ order.sushi.temaki }}
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Soy Oil:
+            {{ order.sushi.soy }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Wasabi:
+            {{ order.sushi.wasabi_choice }}
+        </td>
+
+    </tr>
+    <tr>
+        <td>Price: £ {{order.sushi.price}}</td>
+    </tr>
+    <tr>
+        <td>
+
+            <button><a href="/edit_sushi_order/{{order.id}}">Edit your order</a></button>
+            <button><a href="/delete_sushi_order/{{order.id}}">Remove Sushi</a></button>
+        </td>
+    </tr>
+    {% endif %}
+
+    {% if order.drink %}
+    <tr>
+        <td>{{ order.drink }}</td>
+    </tr>
+    <tr>
+        <td>
+            Sake:
+            {{ order.drink.sake_choice }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Beer:
+            {{ order.drink.beer_choice }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Choya:
+            {{ order.drink.choya_choice }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Green Tea:
+            {{ order.drink.green_tea_choice }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Water:
+            {{ order.drink.water_choice }}
+        </td>
+    </tr>
+    <tr>
+        <td>Price: £ {{order.drink.price}}</td>
+    </tr>
+
+    <tr>
+        <td>
+
+            <button><a href="/edit_drink_order/{{order.id}}">Edit your order</a></button>
+            <button><a href="/delete_drink_order/{{order.id}}">Remove Drink</a></button>
+        </td>
+    </tr>
+    {% endif %}
+
+    {% endif %}
+    {% endfor %}
+</table>
+
+
+
+{% endblock %}
