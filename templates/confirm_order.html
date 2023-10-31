@@ -1,16 +1,16 @@
 {% extends "base.html" %}{% block content%} {% load static %}
 
 <div>
-    <h1>Your booking as follow:</h1>
+    <h1 class="confirm_booking_text">Your Booking as follow:</h1>
 </div>
 
-<div>
-    <table>
+<div class="order">
+    <table class="order-table">
         {% if confirm %}
         <tr>
             
             <td>
-                <p> Your Name:{{confirm.your_name}}</p>
+                <p> Your Name: {{confirm.your_name}}</p>
             </td>
         </tr>
 
@@ -26,7 +26,7 @@
         <tr>
             <td>
                 <p>
-                    Arriving Date:{{confirm.arriving_date}}
+                    Arriving Date: {{confirm.arriving_date}}
                 </p>
             </td>
         </tr>
@@ -46,8 +46,184 @@
                 </p>
             </td>
         </tr>
+        </table>
+</div>
+
+<br>
+<br>
+<div class="order">
+        <table class="order-table">
+
+        <tr>
+            
+            <td>
+                <p>
+                    Ramen toppings: {{confirm.order.ramen.topping}}
+                </p>
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Ramen soup: {{confirm.order.ramen.soup}}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Ramen side dish: {{confirm.order.ramen.side}}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Price: £ {{confirm.order.ramen.price}}</p>
+            </td>
+        </tr>
+        </table>
+        </div>
+        <br>
+<br>
+        <div class="order">
+
+            <table class="order-table">
+                
+                <tr>
+                    <td>
+                        <p>
+                            Nigiri Sushi:
+                            {{ confirm.order.sushi.nigiri }}
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            Inari Sushi:
+                    {{ confirm.order.sushi.inari }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Maki Sushi:
+                    {{ confirm.order.sushi.maki }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    
+                    Temaki Sushi:
+                    {{ confirm.order.sushi.temaki }}
+                </p>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+
+                    Soy Oil:
+                    {{ confirm.order.sushi.soy }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    
+                    Wasabi:
+                    {{ confirm.order.sushi.wasabi_choice }}
+                </p>
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    
+                    Price: £ {{confirm.order.sushi.price}}
+                </p>
+            </td>
+        </tr>
+    </table>
+</div>
+<br>
+<br>
+    <div class="order">
+
+
+        <table class="order-table">
+
+        
+        <tr>
+            <td>
+                <p>
+
+                    Sake:
+                    {{ confirm.order.drink.sake_choice }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+
+                    Beer:
+                    {{ confirm.order.drink.beer_choice }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+
+                Choya:
+                {{ confirm.order.drink.choya_choice }}
+            </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+
+                    Green Tea:
+                    {{ confirm.order.drink.green_tea_choice }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+
+                    Water:
+                    {{ confirm.order.drink.water_choice }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    
+                    Price: £ {{confirm.order.drink.price}}
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>Total Price: £ {{confirm.order.total_price}}</p>
+                
+            </td>
+        </tr>
         {% endif %}
     </table>
+    
 
 </div>
 

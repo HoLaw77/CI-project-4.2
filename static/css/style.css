@@ -291,3 +291,7 @@ input {
     font-family: "Kanit", sans-serif;
 
 }
+
+.confirm_booking_text {
+    text-align: center;
+}
