@@ -8,7 +8,7 @@
     <table class="order-table">
         {% if confirm %}
         <tr>
-            
+
             <td>
                 <p> Your Name: {{confirm.your_name}}</p>
             </td>
@@ -46,22 +46,22 @@
                 </p>
             </td>
         </tr>
-        </table>
+    </table>
 </div>
 
 <br>
 <br>
 <div class="order">
-        <table class="order-table">
+    <table class="order-table">
 
         <tr>
-            
+
             <td>
                 <p>
                     Ramen toppings: {{confirm.order.ramen.topping}}
                 </p>
             </td>
-            
+
         </tr>
         <tr>
             <td>
@@ -82,26 +82,26 @@
                 <p>Price: £ {{confirm.order.ramen.price}}</p>
             </td>
         </tr>
-        </table>
-        </div>
-        <br>
+    </table>
+</div>
 <br>
-        <div class="order">
+<br>
+<div class="order">
 
-            <table class="order-table">
-                
-                <tr>
-                    <td>
-                        <p>
-                            Nigiri Sushi:
-                            {{ confirm.order.sushi.nigiri }}
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p>
-                            Inari Sushi:
+    <table class="order-table">
+
+        <tr>
+            <td>
+                <p>
+                    Nigiri Sushi:
+                    {{ confirm.order.sushi.nigiri }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Inari Sushi:
                     {{ confirm.order.sushi.inari }}
                 </p>
             </td>
@@ -117,11 +117,11 @@
         <tr>
             <td>
                 <p>
-                    
+
                     Temaki Sushi:
                     {{ confirm.order.sushi.temaki }}
                 </p>
-                
+
             </td>
         </tr>
         <tr>
@@ -136,17 +136,17 @@
         <tr>
             <td>
                 <p>
-                    
+
                     Wasabi:
                     {{ confirm.order.sushi.wasabi_choice }}
                 </p>
             </td>
-            
+
         </tr>
         <tr>
             <td>
                 <p>
-                    
+
                     Price: £ {{confirm.order.sushi.price}}
                 </p>
             </td>
@@ -155,12 +155,12 @@
 </div>
 <br>
 <br>
-    <div class="order">
+<div class="order">
 
 
-        <table class="order-table">
+    <table class="order-table">
 
-        
+
         <tr>
             <td>
                 <p>
@@ -183,9 +183,9 @@
             <td>
                 <p>
 
-                Choya:
-                {{ confirm.order.drink.choya_choice }}
-            </p>
+                    Choya:
+                    {{ confirm.order.drink.choya_choice }}
+                </p>
             </td>
         </tr>
         <tr>
@@ -209,7 +209,7 @@
         <tr>
             <td>
                 <p>
-                    
+
                     Price: £ {{confirm.order.drink.price}}
                 </p>
             </td>
@@ -218,12 +218,12 @@
         <tr>
             <td>
                 <p>Total Price: £ {{confirm.order.total_price}}</p>
-                
+
             </td>
         </tr>
         {% endif %}
     </table>
-    
+
 
 </div>
 

@@ -7,7 +7,12 @@
     <table class="order-table">
         {% if order.ramen %}
         <tr>
-            <td>{{order.ramen}}</td>
+            <td>
+                <p>
+
+                    {{order.ramen}}
+                </p>
+            </td>
 
         </tr>
         <tr>
@@ -48,14 +53,24 @@
         </tr>
         {% else %}
         <tr>
-            <td>No Ramen</td>
+            <td>
+                <p>
+
+                    No Ramen
+                </p>
+            </td>
         </tr>
         {% endif %}
     </table>
     <table class="order-table" id="sushi_table">
         {% if order.sushi %}
         <tr>
-            <td>{{ order.sushi }}</td>
+            <td>
+                <p>
+
+                    {{ order.sushi }}
+                </p>
+            </td>
         </tr>
         <tr>
             <td>
@@ -83,26 +98,40 @@
         </tr>
         <tr>
             <td>
-                Temaki Sushi:
-                {{ order.sushi.temaki }}
+                <p>
+
+                    Temaki Sushi:
+                    {{ order.sushi.temaki }}
+                </p>
 
             </td>
         </tr>
         <tr>
             <td>
-                Soy Oil:
-                {{ order.sushi.soy }}
+                <p>
+
+                    Soy Oil:
+                    {{ order.sushi.soy }}
+                </p>
             </td>
         </tr>
         <tr>
             <td>
-                Wasabi:
-                {{ order.sushi.wasabi_choice }}
+                <p>
+
+                    Wasabi:
+                    {{ order.sushi.wasabi_choice }}
+                </p>
             </td>
 
         </tr>
         <tr>
-            <td>Price: £ {{order.sushi.price}}</td>
+            <td>
+                <p>
+
+                    Price: £ {{order.sushi.price}}
+                </p>
+            </td>
         </tr>
 
         <tr>
@@ -114,47 +143,77 @@
         </tr>
         {% else %}
         <tr>
-            <td>No Sushi</td>
+            <td>
+                <p>
+
+                    No Sushi
+                </p>
+            </td>
         </tr>
         {% endif %}
     </table>
     <table class="order-table">
         {% if order.drink %}
         <tr>
-            <td>{{ order.drink }}</td>
-        </tr>
-        <tr>
             <td>
-                Sake:
-                {{ order.drink.sake_choice }}
+                <p>
+
+                    {{ order.drink }}
+                </p>
             </td>
         </tr>
         <tr>
             <td>
-                Beer:
-                {{ order.drink.beer_choice }}
+                <p>
+
+                    Sake:
+                    {{ order.drink.sake_choice }}
+                </p>
             </td>
         </tr>
         <tr>
             <td>
-                Choya:
-                {{ order.drink.choya_choice }}
+                <p>
+
+                    Beer:
+                    {{ order.drink.beer_choice }}
+                </p>
             </td>
         </tr>
         <tr>
             <td>
-                Green Tea:
-                {{ order.drink.green_tea_choice }}
+                <p>
+
+                    Choya:
+                    {{ order.drink.choya_choice }}
+                </p>
             </td>
         </tr>
         <tr>
             <td>
-                Water:
-                {{ order.drink.water_choice }}
+                <p>
+
+                    Green Tea:
+                    {{ order.drink.green_tea_choice }}
+                </p>
             </td>
         </tr>
         <tr>
-            <td>Price: £ {{order.drink.price}}</td>
+            <td>
+                <p>
+
+                    Water:
+                    {{ order.drink.water_choice }}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+
+                    Price: £ {{order.drink.price}}
+                </p>
+            </td>
         </tr>
 
         <tr>
@@ -166,7 +225,12 @@
         </tr>
         {% else %}
         <tr>
-            <td>No drink</td>
+            <td>
+                <p>
+
+                    No drink
+                </p>
+            </td>
 
         </tr>
         {% endif %}
@@ -178,7 +242,7 @@
     <br>
     <br>
 
-   
+
     <br>
     {% if order %}
     <div class="booking-area">
