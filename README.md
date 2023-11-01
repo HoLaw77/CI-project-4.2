@@ -158,9 +158,14 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 
 <li>Model structure has been advised by my mentor Aleksei Konovalov. Many Thanks for his patient and helpful guidance.</li>
 
-<li>view order template and view is inspired by handout of Hello Django project in Code Institute.
+<li>view order template and view is inspired by handout of Hello Django project in Code Institute course.
 
 [Hello Django: Part 6: Rendering a Create New Item page](https://docs.google.com/document/d/1P5Mzkvzm3HUMrMgABn1KwU_pHnR5n4TUX8rHKB-9CMA/edit)
+</li>
+
+<li>Edit and delete order button is inspired by the handout of Hello Django project in Code Institute course
+
+[Hello Django: Part 7: Modifying Data](https://docs.google.com/document/d/1RNDHMuQEBJ8if9XYR1WLjNJx_Z4Nad-NarjRVFrC0gQ/edit#heading=h.hvy9tw74f1o0)
 </li>
 
 <li>testing format has been inspired by handout of Hello Django project in Code Institute modules
