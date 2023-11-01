@@ -199,34 +199,36 @@ class TestViews(TestCase):
         order.refresh_from_db()
         self.assertEqual(order.drink, None)
 
-    # def test_ramen_edit_order(self):
-    #     order = Order.objects.create(customer=self.user)
-    #     order.ramen = Ramen.objects.create()
-    #     order.save()
-    #     response = self.client.get(f'/edit_ramen_order/{order.id}')
-    #     self.assertRedirects(response, reverse('ramen_order'))
-    #     order.refresh_from_db()
-    #     new_order = Ramen.objects.filter(id=order.id).last()
-    #     self.assertEqual(new_order, Ramen.objects.get(toppings_choice=1, side_dish=1, soup_choice=1))
+    def test_ramen_edit_order(self):
+        order = Order.objects.create(customer=self.user)
+        order.ramen = Ramen.objects.create()
+        order.save()
+        response = self.client.get(f'/edit_ramen_order/{order.id}')
+        self.assertRedirects(response, '/ramen_order/')
+        order.refresh_from_db()
+        new_order = Ramen.objects.filter(id=order.id).last()
+        self.assertEqual(new_order, Ramen.objects.filter(id=order.id).get())
 
-    # def test_sushi_edit_order(self):
-    #     order = Order.objects.create(customer=self.user)
-    #     order.sushi = Sushi.objects.create()
-    #     order.save()
-    #     response = self.client.get(f'/edit_sushi_order/{order.id}')
-    #     self.assertRedirects(response, reverse('sushi_order'))
-    #     order.refresh_from_db()
-    #     new_order = Sushi.objects.filter(id=order.id)
-    #     self.assertEqual(new_order, None)
+    def test_sushi_edit_order(self):
+        order = Order.objects.create(customer=self.user)
+        order.sushi = Sushi.objects.create()
+        order.save()
+        response = self.client.get(f'/edit_sushi_order/{order.id}')
+        self.assertRedirects(response, '/sushi_order/')
+        order.refresh_from_db()
+        new_order = Sushi.objects.filter(id=order.id).last()
+        self.assertEqual(new_order, Sushi.objects.filter(id=order.id).get())
 
-    # def test_drink_edit_order(self):
-    #     order = Order.objects.create(customer=self.user)
-    #     order.drink = Drink.objects.create()
-    #     order.save()
-    #     response = self.client.get(f'/edit_drink_order/{order.id}')
-    #     self.assertRedirects(response, reverse('drink_order'))
-    #     order.refresh_from_db()
-    #     self.assertEqual(order.drink, None)
+    def test_drink_edit_order(self):
+        order = Order.objects.create(customer=self.user)
+        order.drink = Drink.objects.create()
+        order.save()
+        response = self.client.get(f'/edit_drink_order/{order.id}')
+        self.assertRedirects(response, '/drink_order/')
+        order.refresh_from_db()
+        new_order = Drink.objects.filter(id=order.id).last()
+        self.assertEqual(new_order, Drink.objects.filter(id=order.id).get())
+
         # def test_confirm_book_time_form_valid(self):
         #     confirm = Confirm.objects.create(customer=self.user)
         #     confirm.save()
