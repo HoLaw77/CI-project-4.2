@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from .models import Ramen, Sushi, Drink, Order, Confirm
 from django.contrib.auth.models import User
-# Create your tests here.
+
 
 class TestURLViews(TestCase):
 

@@ -3,7 +3,7 @@ from django.db.models import Sum
 from django.contrib.auth.models import User
 import decimal
 from datetime import datetime
-# Create your models here.
+
 
 
 class Ramen(models.Model):
@@ -61,13 +61,13 @@ class Ramen(models.Model):
     )
 
     price = models.DecimalField(
-         max_digits=5, decimal_places=2, default=10.00, null=True, blank=True)  # 22.12
+         max_digits=5, decimal_places=2, default=10.00, null=True, blank=True)  
     toppings_choice = models.IntegerField(
         choices=TOPPINGS_CHOICES, default=1)
     side_dish = models.IntegerField(choices=SIDE_DISH_CHOICES, default=1)
     soup_choice = models.IntegerField(
         choices=SOUP_CHOICES, default=1)
-    # customer = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    
     order_time = models.DateTimeField(auto_now_add=True, null=True)
 
     @property
@@ -173,7 +173,7 @@ class Sushi(models.Model):
     )
 
     price = models.DecimalField(
-        max_digits=5, decimal_places=2, default=10.00, null=True, blank=True)  # 22.12
+        max_digits=5, decimal_places=2, default=10.00, null=True, blank=True)  
     nigiri_sushi = models.IntegerField(
         choices=NIGIRI_SUSHI, default=1)
     inari_sushi = models.IntegerField(
@@ -186,7 +186,7 @@ class Sushi(models.Model):
         choices=SOY_OIL, default=1)
     wasabi = models.IntegerField(
         choices=WASABI, default=1)
-    # customer = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    
     order_time = models.DateTimeField(auto_now_add=True, null=True)
 
     
@@ -213,8 +213,7 @@ class Sushi(models.Model):
     @property
     def wasabi_choice(self):
         return self.WASABI[self.wasabi-1][1]
-    # def __str__(self) -> str:
-    #     return "SUSHI"
+    
 
     def save(self, *args, **kwargs):
         price = self.NIGIRI_SUSHI_PRICE[self.nigiri_sushi-1][1] + self.INARI_SUSHI_PRICE[self.inari_sushi-1][1] + self.MAKI_SUSHI_PRICE[self.maki_sushi-1][1] + self.TEMAKI_SUSHI_PRICE[self.temaki_sushi-1][1] + self.SOY_OIL_PRICE[self.soy_oil-1][1] + self.WASABI_PRICE[self.wasabi-1][1]
@@ -288,7 +287,7 @@ class Drink(models.Model):
         (2, 0),
     )
     price = models.DecimalField(
-        max_digits=100, decimal_places=2, default=00.00, null=True, blank=True)  # 22.12
+        max_digits=100, decimal_places=2, default=00.00, null=True, blank=True)  
     sake = models.IntegerField(
         choices=SAKE, default=1)
     beer = models.IntegerField(choices=BEER, default=1)
