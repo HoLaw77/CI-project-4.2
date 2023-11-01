@@ -62,20 +62,16 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 
 <h2>How to Check Order</h2>
 
-<li>User can click on the "Confirm Order" button at the top right corner of the page</li>
-<li>User can also view and amend previous orders at the bottom of the order.html page by pressing the "View all orders" button</li>
+<li>User can click on the "Confirm Order" button at the top right corner of the page to view and amend orders at the order.html page.</li>
 
 <h3>Confirm Order button</h3>
 
 ![confirm_order](static/documentations/confirm_order.png)
 
-<h3>View all orders button </h3>
-
-![view_all_orders](static/documentations/view_all_order.png)
-
 <h2>How to Reserve Booking</h2>
 <li>User can reserve booking by filling the reservation form at the bottom of the order page.</li>
 <li>It will collect the user's name, email, date of visiting, time of arrival, number of people visiting and email.</li>
+<li>After submitting the booking form, the order form will be cleaned and user can submit another order after that.</li>
 
 <h3>Confirm booking form</h3>
 
