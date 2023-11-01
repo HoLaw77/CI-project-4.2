@@ -99,7 +99,7 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 ![wire_frame_2](static/documentations/wire_frame_2.png)
 ![wire_frame_3](static/documentations/wire_frame_3.png)
 
-![flow_chart](static/documentations/Flowchart%20Template.jpg)
+![flow_chart](static/documentations/Flowchart%20Template.png)
 
 <li>In my original setting, I would like to offer user choices in choosing the soup, side_dish and noodles for ramen options and different types of sushi in the same form.</li>
 <li>After doing more research and building the page, I realise that it would be too complicated so I simplified the number of options for users to choose.</li>
