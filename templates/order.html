@@ -2,7 +2,7 @@
 
 <h1 class="order-list">Here is your Order:</h1>
 <div class="order">
-    <!-- test -->
+    
 
     <table class="order-table">
         {% if order.ramen %}
@@ -259,6 +259,7 @@
 
     </table>
     <p class="total-price">Total Price: £ {{order.total_price}}</p>
+    <button><a href="{% url 'view_order' %}"><p class="total-price">View All Order</p></a></button>
     <br>
     <br>
 
