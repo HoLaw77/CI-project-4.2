@@ -42,12 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.sites',
-    'cloudinary_storage',
-    'django.contrib.staticfiles',
-    'cloudinary',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'cloudinary_storage',
+    'django.contrib.staticfiles',
+    'cloudinary',
     'order',
 
 
