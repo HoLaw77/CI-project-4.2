@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['8001-holaw77-ci-project-42-2pj6n0j8ch.us2.codeanyapp.com',
                  '8000-holaw77-ci-project-42-2pj6n0j8ch.us2.codeanyapp.com',
                  '8005-holaw77-ci-project-42-2pj6n0j8ch.us2.codeanyapp.com',
-                 'https://ramensushibar707-cdc30d46d9dd.herokuapp.com']
+                 'ramensushibar707-cdc30d46d9dd.herokuapp.com']
 
 
 # Application definition
