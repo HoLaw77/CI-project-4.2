@@ -215,8 +215,12 @@ class Sushi(models.Model):
         return self.WASABI[self.wasabi-1][1]
 
     def save(self, *args, **kwargs):
-        price = self.NIGIRI_SUSHI_PRICE[self.nigiri_sushi-1][1] + self.INARI_SUSHI_PRICE[self.inari_sushi-1][1] + self.MAKI_SUSHI_PRICE[self.maki_sushi -
-                                                                                                                                        1][1] + self.TEMAKI_SUSHI_PRICE[self.temaki_sushi-1][1] + self.SOY_OIL_PRICE[self.soy_oil-1][1] + self.WASABI_PRICE[self.wasabi-1][1]
+        price = self.NIGIRI_SUSHI_PRICE[self.nigiri_sushi-1][1] + \
+                self.INARI_SUSHI_PRICE[self.inari_sushi-1][1] + \
+                self.MAKI_SUSHI_PRICE[self.maki_sushi - 1][1] + \
+                self.TEMAKI_SUSHI_PRICE[self.temaki_sushi-1][1] + \
+                self.SOY_OIL_PRICE[self.soy_oil-1][1] + \
+                self.WASABI_PRICE[self.wasabi-1][1]
         self.price = decimal.Decimal(price)
 
         super(Sushi, self).save(*args, **kwargs)
@@ -316,8 +320,11 @@ class Drink(models.Model):
         return self.WATER[self.water-1][1]
 
     def save(self, *args, **kwargs):
-        price = self.SAKE_PRICE[self.sake-1][1] + self.BEER_PRICE[self.beer-1][1] + self.CHOYA_PRICE[self.choya -
-                                                                                                     1][1] + self.GREEN_TEA_PRICE[self.green_tea-1][1] + self.WATER_PRICE[self.water-1][1]
+        price = self.SAKE_PRICE[self.sake-1][1] + \
+            self.BEER_PRICE[self.beer-1][1] + \
+            self.CHOYA_PRICE[self.choya - 1][1] + \
+            self.GREEN_TEA_PRICE[self.green_tea-1][1] + \
+            self.WATER_PRICE[self.water-1][1]
         self.price = decimal.Decimal(price)
 
         super(Drink, self).save(*args, **kwargs)
