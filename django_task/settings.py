@@ -16,7 +16,7 @@ if os.path.isfile('env.py'):
      import env
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -27,10 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8001-holaw77-ci-project-42-2pj6n0j8ch.us2.codeanyapp.com',
-                 '8000-holaw77-ci-project-42-2pj6n0j8ch.us2.codeanyapp.com',
-                 '8005-holaw77-ci-project-42-2pj6n0j8ch.us2.codeanyapp.com',
-                 'ramensushibar707-cdc30d46d9dd.herokuapp.com']
+ALLOWED_HOSTS = ['ramensushibar707-cdc30d46d9dd.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -77,6 +74,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'templates', 'allauth'),
+            TEMPLATES_DIR
             ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -154,3 +152,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),] 
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+DEFAULT_FILE_sTORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
