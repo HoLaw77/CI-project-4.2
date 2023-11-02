@@ -132,7 +132,7 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 <li>CSS: No error was found using official W3C Validator.</li>
 <li>Accesssibility: I confirm the design and layout of the page is easy to read and accessible by running it through lighthouse in devtools.
 </li>
-<li>PEP8: No Errors return from https://pep8ci.herokuapp.com/#</li>
+<li>PEP8: No Errors return from https://pep8ci.herokuapp.com/# (views and test files only)</li>
 
 ![lighthouse](static/documentations/lighthouse_testing%20.png)
 <h2>Deployment</h2>
