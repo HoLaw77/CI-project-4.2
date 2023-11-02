@@ -1,9 +1,8 @@
 from django.urls import path, include
 from order import views
 from order.views import confirm_order
-from django.conf import settings
-from django.conf.urls.static import static
- 
+
+
 urlpatterns = [
     path('', views.SushiList.as_view(), name='home'),
     path('order/', views.order, name='order'),
@@ -21,4 +20,4 @@ urlpatterns = [
     path('edit_ramen_order/<order_id>', views.edit_ramen_order, name='edit_ramen_order'),
     path('edit_sushi_order/<order_id>', views.edit_sushi_order, name='edit_sushi_order'),
     
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
