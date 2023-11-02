@@ -4,12 +4,11 @@ from .models import Ramen, Sushi, Drink, Order, Confirm
 
 class TestModels(TestCase):
 
-
     def setUp(self):
         Ramen.objects.create(
             toppings_choice= 1,
-            soup_choice=1,
-            side_dish=1
+            soup_choice= 1,
+            side_dish= 1
             )
         Sushi.objects.create(
             nigiri_sushi = 1,

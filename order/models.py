@@ -5,7 +5,6 @@ import decimal
 from datetime import datetime
 
 
-
 class Ramen(models.Model):
     TOPPINGS_CHOICES = (
         (1, "Egg"),
@@ -61,29 +60,31 @@ class Ramen(models.Model):
     )
 
     price = models.DecimalField(
-         max_digits=5, decimal_places=2, default=10.00, null=True, blank=True)  
+        max_digits=5, decimal_places=2, default=10.00, null=True, blank=True)
     toppings_choice = models.IntegerField(
         choices=TOPPINGS_CHOICES, default=1)
     side_dish = models.IntegerField(choices=SIDE_DISH_CHOICES, default=1)
     soup_choice = models.IntegerField(
         choices=SOUP_CHOICES, default=1)
-    
+
     order_time = models.DateTimeField(auto_now_add=True, null=True)
 
     @property
     def topping(self):
         return self.TOPPINGS_CHOICES[self.toppings_choice-1][1]
-    
+
     @property
     def side(self):
         return self.SIDE_DISH_CHOICES[self.side_dish-1][1]
-    
+
     @property
     def soup(self):
         return self.SOUP_CHOICES[self.soup_choice-1][1]
-    
+
     def save(self, *args, **kwargs):
-        price = self.TOPPING_CHOICES_PRICE[self.toppings_choice-1][1] + self.SIDE_DISH_PRICE[self.side_dish-1][1] + self.SOUP_PRICE[self.soup_choice-1][1] 
+        price = self.TOPPING_CHOICES_PRICE[self.toppings_choice-1][1] + \
+            self.SIDE_DISH_PRICE[self.side_dish-1][1] + \
+            self.SOUP_PRICE[self.soup_choice-1][1]
         self.price = decimal.Decimal(price)
 
         super(Ramen, self).save(*args, **kwargs)
@@ -99,7 +100,7 @@ class Sushi(models.Model):
         (6, "amberjack  x 3 "),
         (7, "None"),
     )
-    
+
     NIGIRI_SUSHI_PRICE = (
         (1, 10),
         (2, 10),
@@ -115,11 +116,11 @@ class Sushi(models.Model):
         (2, "None"),
 
     )
-    
+
     INARI_SUSHI_PRICE = (
         (1, 3),
         (2, 0),
-        
+
     )
 
     MAKI_SUSHI = (
@@ -128,7 +129,7 @@ class Sushi(models.Model):
         (3, "sesame, cucumber, egg, crab stick x 6"),
         (4, "None")
     )
-    
+
     MAKI_SUSHI_PRICE = (
         (1, 10),
         (2, 10),
@@ -143,7 +144,7 @@ class Sushi(models.Model):
         (4, "Salmon  x 3 "),
         (5, "None")
     )
-    
+
     TEMAKI_SUSHI_PRICE = (
         (1, 10),
         (2, 10),
@@ -156,7 +157,7 @@ class Sushi(models.Model):
         (1, "Yes"),
         (2, "No"),
     )
-    
+
     SOY_OIL_PRICE = (
         (1, 0),
         (2, 0),
@@ -166,14 +167,14 @@ class Sushi(models.Model):
         (1, "Yes"),
         (2, "No"),
     )
-    
+
     WASABI_PRICE = (
         (1, 0),
         (2, 0),
     )
 
     price = models.DecimalField(
-        max_digits=5, decimal_places=2, default=10.00, null=True, blank=True)  
+        max_digits=5, decimal_places=2, default=10.00, null=True, blank=True)
     nigiri_sushi = models.IntegerField(
         choices=NIGIRI_SUSHI, default=1)
     inari_sushi = models.IntegerField(
@@ -186,40 +187,38 @@ class Sushi(models.Model):
         choices=SOY_OIL, default=1)
     wasabi = models.IntegerField(
         choices=WASABI, default=1)
-    
+
     order_time = models.DateTimeField(auto_now_add=True, null=True)
 
-    
     @property
     def nigiri(self):
         return self.NIGIRI_SUSHI[self.nigiri_sushi-1][1]
-    
+
     @property
     def inari(self):
         return self.INARI_SUSHI[self.inari_sushi-1][1]
-    
+
     @property
     def maki(self):
         return self.MAKI_SUSHI[self.maki_sushi-1][1]
-    
+
     @property
     def temaki(self):
         return self.TEMAKI_SUSHI[self.temaki_sushi-1][1]
-    
+
     @property
     def soy(self):
         return self.SOY_OIL[self.soy_oil-1][1]
-    
+
     @property
     def wasabi_choice(self):
         return self.WASABI[self.wasabi-1][1]
-    
 
     def save(self, *args, **kwargs):
-        price = self.NIGIRI_SUSHI_PRICE[self.nigiri_sushi-1][1] + self.INARI_SUSHI_PRICE[self.inari_sushi-1][1] + self.MAKI_SUSHI_PRICE[self.maki_sushi-1][1] + self.TEMAKI_SUSHI_PRICE[self.temaki_sushi-1][1] + self.SOY_OIL_PRICE[self.soy_oil-1][1] + self.WASABI_PRICE[self.wasabi-1][1]
+        price = self.NIGIRI_SUSHI_PRICE[self.nigiri_sushi-1][1] + self.INARI_SUSHI_PRICE[self.inari_sushi-1][1] + self.MAKI_SUSHI_PRICE[self.maki_sushi -
+                                                                                                                                        1][1] + self.TEMAKI_SUSHI_PRICE[self.temaki_sushi-1][1] + self.SOY_OIL_PRICE[self.soy_oil-1][1] + self.WASABI_PRICE[self.wasabi-1][1]
         self.price = decimal.Decimal(price)
-       
-                    
+
         super(Sushi, self).save(*args, **kwargs)
 
 
@@ -253,7 +252,7 @@ class Drink(models.Model):
         (3, 7),
         (4, 7),
         (5, 0),
-        
+
     )
     CHOYA = (
         (1, "1 bottle original favor"),
@@ -282,12 +281,12 @@ class Drink(models.Model):
         (2, "None"),
     )
 
-    WATER_PRICE =(
+    WATER_PRICE = (
         (1, 0),
         (2, 0),
     )
     price = models.DecimalField(
-        max_digits=100, decimal_places=2, default=00.00, null=True, blank=True)  
+        max_digits=100, decimal_places=2, default=00.00, null=True, blank=True)
     sake = models.IntegerField(
         choices=SAKE, default=1)
     beer = models.IntegerField(choices=BEER, default=1)
@@ -296,29 +295,29 @@ class Drink(models.Model):
     water = models.IntegerField(choices=WATER, default=1)
     order_time = models.DateTimeField(auto_now_add=True, null=True)
 
-    
     @property
     def sake_choice(self):
         return self.SAKE[self.sake-1][1]
-    
+
     @property
     def beer_choice(self):
         return self.BEER[self.beer-1][1]
-    
+
     @property
     def choya_choice(self):
         return self.CHOYA[self.choya-1][1]
-    
+
     @property
     def green_tea_choice(self):
         return self.GREEN_TEA[self.green_tea-1][1]
-    
+
     @property
     def water_choice(self):
         return self.WATER[self.water-1][1]
-    
+
     def save(self, *args, **kwargs):
-        price = self.SAKE_PRICE[self.sake-1][1] + self.BEER_PRICE[self.beer-1][1] + self.CHOYA_PRICE[self.choya-1][1] + self.GREEN_TEA_PRICE[self.green_tea-1][1] + self.WATER_PRICE[self.water-1][1]
+        price = self.SAKE_PRICE[self.sake-1][1] + self.BEER_PRICE[self.beer-1][1] + self.CHOYA_PRICE[self.choya -
+                                                                                                     1][1] + self.GREEN_TEA_PRICE[self.green_tea-1][1] + self.WATER_PRICE[self.water-1][1]
         self.price = decimal.Decimal(price)
 
         super(Drink, self).save(*args, **kwargs)
@@ -326,7 +325,7 @@ class Drink(models.Model):
 
 class Order(models.Model):
     customer = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    ramen =models.ForeignKey(
+    ramen = models.ForeignKey(
         Ramen, related_name="orders", on_delete=models.CASCADE, null=True, blank=True)
     sushi = models.ForeignKey(
         Sushi, related_name="orders", on_delete=models.CASCADE, null=True, blank=True)
@@ -336,6 +335,7 @@ class Order(models.Model):
         max_digits=6, decimal_places=2, default=0.00, null=True, blank=True)
     confirmed = models.BooleanField(default=False)
     order_time = models.DateTimeField(auto_now_add=True, null=True)
+
     def save(self, *args, **kwargs):
         self.total_price = 0
         if self.sushi:
@@ -345,18 +345,17 @@ class Order(models.Model):
         if self.ramen:
             self.total_price += self.ramen.price
         super().save(*args, **kwargs)
-    
-      
 
 
 class Confirm(models.Model):
-    NUM_CHOICES = zip( range(1,6), range(1,6) )
+    NUM_CHOICES = zip(range(1, 6), range(1, 6))
     your_name = models.CharField(max_length=100)
     dinning_time = models.TimeField(auto_now=False, auto_now_add=False)
     arriving_date = models.DateField(auto_now=False, auto_now_add=False)
     number_of_people = models.IntegerField(choices=NUM_CHOICES)
     email = models.EmailField(max_length=100)
-    order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True, related_name="confirm")
+    order = models.ForeignKey(
+        Order, on_delete=models.CASCADE, null=True, related_name="confirm")
 
     def save(self, *args, **kwargs):
 
