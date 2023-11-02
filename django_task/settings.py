@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 import dj_database_url
-
+if os.path.isfile('env.py'):
+     import env
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-1gbt&m(0njm=ubi)8@7wbfww7wx+z8)rnjb^vklv6m6hm0dp!w'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -103,8 +104,8 @@ WSGI_APPLICATION = 'django_task.wsgi.application'
 # }
 
 DATABASES = {
-   'default': dj_database_url.parse('postgres://saohgsvi:DtskJHMv9aVSM0B-yGi3B3Rrcd8_nQdJ@ella.db.elephantsql.com/saohgsvi')
-}
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+ }
 
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
@@ -152,4 +153,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),] 
