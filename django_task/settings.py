@@ -29,7 +29,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['ramensushibar707-cdc30d46d9dd.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['ramensushibar707-cdc30d46d9dd.herokuapp.com', 'localhost', 'https://8005-holaw77-ci-project-42-2pj6n0j8ch.us2.codeanyapp.com']
 
 
 # Application definition
@@ -74,7 +74,9 @@ ROOT_URLCONF = 'django_task.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR],
+        'DIRS': [
+            os.environ.join(BASE_DIR, 'templates')
+            TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
