@@ -32,7 +32,7 @@ a:link {
 
 
 .main {
-    background-image: url("static/images/main_background.jpeg");
+    background-image: url("../images/main_background.jpeg");
 }
 
 /* Clear floats after the columns */
