@@ -134,7 +134,7 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 </li>
 <li>PEP8: No Errors return from https://pep8ci.herokuapp.com/# </li>
 
-![lighthouse](static/documentations/lighthouse_testing%20.png)
+![lighthouse](static/documentations/lighthouse_testing.png)
 <h2>Deployment</h2>
 
 <p>The page is deployed using heroku, following the below steps:</p>
