@@ -124,6 +124,7 @@
 <li>I confirmed the project is responsive, look goods and function on all standard size screen using devtool device tool bar.</li>
 <li>Code tested in my local terminal and confirmed using coverage.</li>
 
+[python_automated_Test_coverage_Report](static/documentations/python_coverage_test_report.png)
 <h2>Bugs</h2>
 
 <h3>Solving bugs</h3>
