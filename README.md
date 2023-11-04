@@ -243,4 +243,3 @@
 <p>https://xn--cesu66k.net/introduce/tosashiragiku/</p>
 <p>https://www.flickr.com/photos/iirraa/218063307</p>
 <p>https://commons.wikimedia.org/wiki/File:Glass-of-water.jpg</p>
-{::ignore rule="MD033"}
