@@ -1,11 +1,15 @@
 <h1>Ramen and Sushi Bar</h1>
 
 ![logo](static/images/japan-red-cloud.png)
+
 <p>Logo: meaning authentic and tasty in Japanese</p>
+![responsiveness_mobile](static/documentations/responsiveness_mobile.png)
+![responsiveness_desktop](static/documentations/responsiveness_desktop.png)
+<p>Note: I have attempted to use amiresponsive but were unable to without a https url. so I used screenshot from chrome to show responsiveness</p>
 
 <p>
 
-Ramen and Sushi Bar is a full-stack project that enables user to make order on three types of Japanese food products: Ramen, Sushi, and drink and reserve table for meal.
+[Ramen and Sushi Bar] (https://ramensushibar707-cdc30d46d9dd.herokuapp.com/) is a full-stack project that enables user to make order on three types of Japanese food products: Ramen, Sushi, and drink and reserve table for meal.
 
 </p>
 
