@@ -11,9 +11,7 @@
 
 <p>
 
-[Ramen and Sushi Bar] (https://ramensushibar707-cdc30d46d9dd.herokuapp.com/)
-
- is a full-stack project that enables user to make order on three types of Japanese food products: Ramen, Sushi, and drink and reserve table for meal.
+[Ramen and Sushi Bar](https://ramensushibar707-cdc30d46d9dd.herokuapp.com/) is a full-stack project that enables user to make order on three types of Japanese food products: Ramen, Sushi, and drink and reserve table for meal.
 
 </p>
 
