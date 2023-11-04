@@ -31,7 +31,7 @@ DEBUG = False
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = [
-    'rmensushibar707-cdc30d46d9dd.herokuapp.com', 
+    'ramensushibar707-cdc30d46d9dd.herokuapp.com', 
     'localhost',    '8005-holaw77-ci-project-42-2pj6n0j8ch.us2.codeanyapp.com', 
     'https://8005-holaw77-ci-project-42-2pj6n0j8ch.us2.codeanyapp.com'    ]
 
