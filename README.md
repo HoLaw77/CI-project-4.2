@@ -150,7 +150,7 @@ Ramen and Sushi Bar is a full-stack project that enables user to make order on t
 <li>Set The SECRET_KEY in setting.py</li>
 <li>Once the link is deployed, the link is generated</li>
 
-<p>The link is below</p>
+<p>The link is below https://ramensushibar707-cdc30d46d9dd.herokuapp.com/</p>
 
 
 <h2>Credit</h2>
